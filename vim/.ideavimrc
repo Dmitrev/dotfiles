@@ -1,0 +1,10 @@
+source ~/.vimrc
+
+" enable vim-surround plugin
+set surround
+
+" Go to definition
+nnoremap <leader>gd :action GotoImplementation<CR>
+
+
+nnoremap <leader>y :action CopyContentRootPath<CR>
