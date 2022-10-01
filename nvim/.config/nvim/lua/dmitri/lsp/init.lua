@@ -1,6 +1,6 @@
 require'cmp'.setup {
     sources = {
-        { name = 'nvim_lsp' }
+        {name ='nvim_lsp' }
     }
 }
 
@@ -54,6 +54,7 @@ require'lspconfig'.clangd.setup {
   capabilities = capabilities,
 }
 
+-- PHP
 require'lspconfig'.intelephense.setup{
     on_attach = on_attach,
     flags = lsp_flags,
@@ -70,6 +71,12 @@ require('lspconfig')['html'].setup{
 }
 
 require('lspconfig')['jsonls'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+-- Python
+require('lspconfig')['jedi_language_server'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
