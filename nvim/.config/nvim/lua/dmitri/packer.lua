@@ -37,6 +37,7 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
+    use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',

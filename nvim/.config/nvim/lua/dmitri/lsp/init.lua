@@ -1,6 +1,12 @@
 require'cmp'.setup {
+    snippet = {
+        expand = function(args) 
+            require('luasnip').lsp_expand(args.body)
+        end,
+    },
     sources = {
-        {name ='nvim_lsp' }
+        { name ='nvim_lsp' },
+        { name ='luasnip' }
     }
 }
 
@@ -76,7 +82,13 @@ require('lspconfig')['jsonls'].setup{
 }
 
 -- Python
-require('lspconfig')['jedi_language_server'].setup{
+require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+}
+
+require('lspconfig')['emmet_ls'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    filetypes = {'html', 'typescript'},
 }
