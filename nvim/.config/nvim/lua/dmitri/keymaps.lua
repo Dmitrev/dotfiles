@@ -16,6 +16,7 @@ vim.api.nvim_set_keymap("v", "<", "< <gv", { noremap = true })
 
 -- LSP keybindings
 vim.api.nvim_set_keymap("n", "<Leader>ff", ":lua require('telescope.builtin').find_files({hidden=true})<CR>", { noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>fa", ":lua require('telescope.builtin').find_files({hidden=true, no_ignore=true})<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", { noremap = true})

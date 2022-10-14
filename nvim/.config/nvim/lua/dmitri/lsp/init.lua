@@ -74,6 +74,7 @@ require('lspconfig')['tsserver'].setup{
 require('lspconfig')['html'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    filetypes={'html', 'php'},
 }
 
 require('lspconfig')['jsonls'].setup{
@@ -86,9 +87,9 @@ require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
-
+ 
 require('lspconfig')['emmet_ls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
-    filetypes = {'html', 'typescript'},
+    filetypes = {'html', 'typescript'}, -- I defined this blade type myself with autocmd
 }
