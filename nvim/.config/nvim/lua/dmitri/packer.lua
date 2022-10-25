@@ -46,6 +46,10 @@ return require('packer').startup(function()
     }
     use { "nvim-telescope/telescope-file-browser.nvim" }
 
+
+    -- programming specific --
+    use 'nelsyeung/twig.vim'
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
