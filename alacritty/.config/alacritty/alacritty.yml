@@ -11,6 +11,10 @@ env:
 
 
 font:
-  size: 20 
+  size: 14 
   normal: 
     family: "PragmataProMonoLiga NFM"
+
+  offset:
+      x: 0    # For letter spacing.
+      y: 5   # For line spacing. 
