@@ -95,3 +95,8 @@ require('lspconfig')['yamlls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
+
+require('lspconfig')['volar'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}

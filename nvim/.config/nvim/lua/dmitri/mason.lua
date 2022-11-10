@@ -1,4 +1,12 @@
 require("mason").setup()
+
 require("mason-lspconfig").setup({
-    ensure_installed = {"intelephense", "html", "tsserver", "jsonls", "yamlls"}
+    ensure_installed = {
+        "intelephense", -- PHP, requires license for premium features in ~/intelephense/licence.txt
+        "html",
+        "tsserver", 
+        "jsonls",
+        "yamlls",
+        "volar", -- vuejs
+    }
 })

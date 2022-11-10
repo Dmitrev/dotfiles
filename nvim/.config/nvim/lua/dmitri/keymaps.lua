@@ -1,3 +1,6 @@
+-- reload
+vim.api.nvim_set_keymap("n", "<leader><leader>r", "<cmd> lua require('dmitri.utils').reload('dmitri')<CR>", { noremap = true })
+
 -- Exit to Normal mode
 vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true })
 -- save file 
@@ -15,14 +18,14 @@ vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true })
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true })
 
 -- LSP keybindings
-vim.api.nvim_set_keymap("n", "<Leader>ff", ":lua require('telescope.builtin').find_files({hidden=true})<CR>", { noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>ff", ":lua require('telescope.builtin').find_files({hidden=true, winblend=10})<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>fa", ":lua require('telescope.builtin').find_files({hidden=true, no_ignore=true})<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>lds", ":lua require('telescope.builtin').lsp_document_symbols()<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>e", ":lua require('telescope.builtin').oldfiles()<CR>", { noremap = true})
-vim.api.nvim_set_keymap("n", "<Leader>gg", ":lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>", { noremap = true})
+vim.api.nvim_set_keymap("n", "<C-_>", ":lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>gr", ":lua require('telescope.builtin').lsp_references()<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>lic", ":lua require('telescope.builtin').lsp_incoming_calls()<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>loc", ":lua require('telescope.builtin').lsp_outgoing_calls()<CR>", { noremap = true})
