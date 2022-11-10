@@ -8,6 +8,9 @@ vim.opt.inccommand="nosplit"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- Make the colors more vivid https://github.com/morhetz/gruvbox/wiki/Terminal-specific#0-recommended-neovimvim-true-color-support
+vim.opt.termguicolors = true
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4

@@ -16,18 +16,19 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-    use 'terrortylor/nvim-comment'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }   use 'terrortylor/nvim-comment'
     use {
         'yamatsum/nvim-nonicons',
         requires = {'kyazdani42/nvim-web-devicons'}
     }
-    use 'folke/tokyonight.nvim'
     use { 
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     }
-    use { "catppuccin/nvim", as = "catppuccin" }
 
     use 'tpope/vim-fugitive'
     use 'itchyny/lightline.vim'
@@ -39,12 +40,21 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-cmdline'
     use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
 
+    -- telescope and extensions
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     use { "nvim-telescope/telescope-file-browser.nvim" }
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    -- themes --
+    use { 'rose-pine/neovim', as = 'rose-pine' }
+    use 'folke/tokyonight.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
+    use { "NLKNguyen/papercolor-theme" }
+    use { 'morhetz/gruvbox' }
+    use { 'rebelot/kanagawa.nvim' }
 
 
     -- programming specific --
