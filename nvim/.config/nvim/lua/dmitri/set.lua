@@ -11,15 +11,20 @@ vim.opt.relativenumber = true
 -- Make the colors more vivid https://github.com/morhetz/gruvbox/wiki/Terminal-specific#0-recommended-neovimvim-true-color-support
 vim.opt.termguicolors = true
 
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+
 vim.opt.hlsearch = false
 -- search as you type --
 vim.opt.incsearch = true
 vim.api.nvim_command('set noshowmode')
-vim.opt.smartindent = true
 vim.opt.wrap = false
 
 -- disable netrw at the very start of your init.lua (strongly advised)

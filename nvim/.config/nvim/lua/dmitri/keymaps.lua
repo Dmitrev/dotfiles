@@ -31,6 +31,7 @@ vim.api.nvim_set_keymap("n", "<Leader>lic", ":lua require('telescope.builtin').l
 vim.api.nvim_set_keymap("n", "<Leader>loc", ":lua require('telescope.builtin').lsp_outgoing_calls()<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>lws", ":lua require('telescope.builtin').lsp_workspace_symbols()<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>gi", ":lua require('telescope.builtin').lsp_implementations()<CR>", { noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>dl", ":lua require('telescope.builtin').diagnostics()<CR>", { noremap = true})
 
 
 vim.api.nvim_set_keymap("n", "<Leader>y", ":let @+=expand(\"%\")<CR>", { noremap = true })

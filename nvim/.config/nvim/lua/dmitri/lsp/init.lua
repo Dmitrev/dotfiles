@@ -34,6 +34,7 @@ local on_attach = function(client, bufnr)
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
@@ -41,9 +42,11 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, bufopts)
-  vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+
+  vim.keymap.set('n', '<leader>dj', vim.diagnostic.goto_next, bufopts)
+  vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, bufopts)
 end
 
 local lsp_flags = {
@@ -61,42 +64,50 @@ require'lspconfig'.clangd.setup {
 require'lspconfig'.intelephense.setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    capabilities = capabilities,
 }
 
 require('lspconfig')['tsserver'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    capabilities = capabilities,
 }
 
 require('lspconfig')['html'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    capabilities = capabilities,
     filetypes={'html', 'php'},
 }
 
 require('lspconfig')['jsonls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    capabilities = capabilities,
 }
 
 -- Python
 require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    capabilities = capabilities,
 }
  
 require('lspconfig')['emmet_ls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    capabilities = capabilities,
     filetypes = {'html', 'typescript'}, -- I defined this blade type myself with autocmd
 }
 
 require('lspconfig')['yamlls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    capabilities = capabilities,
 }
 
 require('lspconfig')['volar'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    capabilities = capabilities,
 }

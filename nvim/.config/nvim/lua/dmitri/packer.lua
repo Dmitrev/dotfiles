@@ -19,7 +19,14 @@ return require('packer').startup(function()
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
-    }   use 'terrortylor/nvim-comment'
+    }
+
+    use {
+        'nvim-treesitter/playground',
+        run = ':TSInstall query'
+    }
+
+    use 'terrortylor/nvim-comment'
     use {
         'yamatsum/nvim-nonicons',
         requires = {'kyazdani42/nvim-web-devicons'}
