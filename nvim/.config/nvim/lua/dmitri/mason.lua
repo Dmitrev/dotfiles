@@ -8,5 +8,6 @@ require("mason-lspconfig").setup({
         "jsonls",
         "yamlls",
         "volar", -- vuejs
+        "sumneko_lua",
     }
 })

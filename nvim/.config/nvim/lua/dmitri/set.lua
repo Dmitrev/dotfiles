@@ -1,14 +1,18 @@
+-- map leader key to space 
 vim.g.mapleader = " "
 
 -- Keep the cursor fat in insert mode
 vim.opt.guicursor = ""
 -- Preview the result of the command as you type (for subtitute mainly)
 vim.opt.inccommand="nosplit"
-
-vim.opt.nu = true
+--
+-- print line numbers
+vim.opt.nu = true 
+ -- make line numbers relative to where the cursor is
 vim.opt.relativenumber = true
 
 -- Make the colors more vivid https://github.com/morhetz/gruvbox/wiki/Terminal-specific#0-recommended-neovimvim-true-color-support
+-- Enables 24-bit RGB color in the TUI
 vim.opt.termguicolors = true
 
 vim.opt.autoindent = true

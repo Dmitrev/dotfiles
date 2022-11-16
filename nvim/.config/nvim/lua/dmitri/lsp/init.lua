@@ -14,6 +14,7 @@ require'cmp'.setup {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+vim.lsp.set_log_level("debug")
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -77,7 +78,7 @@ require('lspconfig')['html'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
-    filetypes={'html', 'php'},
+    filetypes={'html'},
 }
 
 require('lspconfig')['jsonls'].setup{
@@ -107,6 +108,12 @@ require('lspconfig')['yamlls'].setup{
 }
 
 require('lspconfig')['volar'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities,
+}
+
+require('lspconfig')['sumneko_lua'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
     capabilities = capabilities,
