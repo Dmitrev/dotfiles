@@ -1,4 +1,5 @@
 require("dmitri.packer")
+require("dmitri.devicons")
 require("dmitri.mason")
 require("dmitri.lsp")
 require("dmitri.completion")

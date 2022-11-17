@@ -27,10 +27,7 @@ return require('packer').startup(function()
     }
 
     use 'terrortylor/nvim-comment'
-    use {
-        'yamatsum/nvim-nonicons',
-        requires = {'kyazdani42/nvim-web-devicons'}
-    }
+    use 'nvim-tree/nvim-web-devicons'
     use { 
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
