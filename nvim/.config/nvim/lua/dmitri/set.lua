@@ -10,6 +10,8 @@ vim.opt.inccommand="nosplit"
 vim.opt.nu = true 
  -- make line numbers relative to where the cursor is
 vim.opt.relativenumber = true
+-- highlight current line
+vim.opt.cursorline = true
 
 -- Make the colors more vivid https://github.com/morhetz/gruvbox/wiki/Terminal-specific#0-recommended-neovimvim-true-color-support
 -- Enables 24-bit RGB color in the TUI
