@@ -59,7 +59,7 @@ return require('packer').startup(function()
     use { "NLKNguyen/papercolor-theme" }
     use { 'morhetz/gruvbox' }
     use { 'rebelot/kanagawa.nvim' }
-
+    use 'navarasu/onedark.nvim'
 
     -- programming specific --
     use 'nelsyeung/twig.vim'
