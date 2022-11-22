@@ -13,7 +13,7 @@ end
 local packer_bootstrap = ensure_packer()
 
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     use {
@@ -28,7 +28,7 @@ return require('packer').startup(function()
 
     use 'terrortylor/nvim-comment'
     use 'nvim-tree/nvim-web-devicons'
-    use { 
+    use {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
