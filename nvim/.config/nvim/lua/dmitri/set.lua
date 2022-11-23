@@ -7,7 +7,7 @@ vim.opt.guicursor = ""
 vim.opt.inccommand="nosplit"
 --
 -- print line numbers
-vim.opt.nu = true 
+vim.opt.nu = true
  -- make line numbers relative to where the cursor is
 vim.opt.relativenumber = true
 -- highlight current line
@@ -37,3 +37,6 @@ vim.opt.wrap = false
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- persist undos when neovim is exited
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand("~/nvim/undo/")
