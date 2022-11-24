@@ -12,6 +12,7 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 -- highlight current line
 vim.opt.cursorline = true
+vim.opt.colorcolumn = "80"
 
 -- Make the colors more vivid https://github.com/morhetz/gruvbox/wiki/Terminal-specific#0-recommended-neovimvim-true-color-support
 -- Enables 24-bit RGB color in the TUI
