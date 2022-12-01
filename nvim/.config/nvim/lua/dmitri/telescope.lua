@@ -2,7 +2,7 @@
 -- IMPORTANT!: this is only a showcase of how you can set default options!
 require("telescope").setup {
   defaults = {
-     winblend = 30,
+     -- winblend = 30, -- add transparency 
   },
   extensions = {
     file_browser = {
