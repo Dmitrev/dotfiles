@@ -1,8 +1,23 @@
--- You don't need to set any of these options.
--- IMPORTANT!: this is only a showcase of how you can set default options!
+local previewers = require("telescope.previewers")
+local new_maker = function(filepath, bufnr, opts)
+    opts = opts or {}
+
+    filepath = vim.fn.expand(filepath)
+    vim.loop.fs_stat(filepath, function(_, stat)
+        if not stat then return end
+        if stat.size > 1000000 then
+            return
+        else
+            previewers.buffer_previewer_maker(filepath, bufnr, opts)
+        end
+    end)
+end
+
+
 require("telescope").setup {
   defaults = {
      -- winblend = 30, -- add transparency 
+     buffer_previewer_maker = new_maker
   },
   extensions = {
     file_browser = {
