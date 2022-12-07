@@ -1,4 +1,4 @@
-local theme = 'gruvbox';
+local theme = 'rose-pine';
 local dark = true;
 
  if not dark then

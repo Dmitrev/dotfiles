@@ -7,6 +7,13 @@ vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>q", ":q<cr>", { noremap = true })
 
+vim.api.nvim_set_keymap("n", "<c-c>", '"+y', { noremap = true }) -- copy
+vim.api.nvim_set_keymap("n", "<c-v>", '"+p', { noremap = true }) -- paste
+
+-- Moving up and down and recenter screen
+vim.api.nvim_set_keymap("n", "<c-d>", "<c-d>zz", { noremap = true})
+vim.api.nvim_set_keymap("n", "<c-u>", "<c-u>zz", { noremap = true})
+
 -- Move line in visual mode
 -- From last cursor position move down one line
 -- gv reselects the line
@@ -40,6 +47,7 @@ vim.api.nvim_set_keymap("n", "<Leader>gi", "<cmd> lua ".. builtin..".lsp_impleme
 vim.api.nvim_set_keymap("n", "<Leader>dl", "<cmd> lua ".. builtin..".diagnostics(".. theme .."())<CR>", { noremap = true})
 
 
+-- copy file path into clipboard, I used this to run a specific test
 vim.api.nvim_set_keymap("n", "<Leader>y", ":let @+=expand(\"%\")<CR>", { noremap = true })
 
 

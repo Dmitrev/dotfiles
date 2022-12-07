@@ -44,3 +44,20 @@ vim.opt.undodir = vim.fn.expand("~/nvim/undo/")
 
 -- auto reload file when updated outside VIM
 vim.opt.autoread = true
+
+-- no swapfiles
+vim.opt.swapfile = false
+
+-- enables auto save functionality, main reason is that if you do an LSP rename, 
+-- you don't have to save all buffers manually
+vim.opt.autowrite = true
+vim.opt.autowriteall = true
+
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
