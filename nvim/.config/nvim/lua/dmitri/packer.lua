@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
             })
         end
     })
+    use 'onsails/lspkind.nvim'
     use 'itchyny/lightline.vim'
     -- Auto complete
     use 'hrsh7th/nvim-cmp'
@@ -52,7 +53,14 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
-    use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
+
+    use({
+        "L3MON4D3/LuaSnip", -- Lua snippets engine
+        tag = "v<CurrentMajor>.*",
+        requires = {
+            {'saadparwaiz1/cmp_luasnip'} -- required to autocomplete luasnips!!
+        }
+    })
 
     -- telescope and extensions
     use {
