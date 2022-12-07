@@ -41,3 +41,6 @@ vim.g.loaded_netrwPlugin = 1
 -- persist undos when neovim is exited
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("~/nvim/undo/")
+
+-- auto reload file when updated outside VIM
+vim.opt.autoread = true
