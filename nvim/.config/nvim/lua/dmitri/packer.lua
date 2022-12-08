@@ -153,8 +153,21 @@ return require('packer').startup(function(use)
     use { 'rebelot/kanagawa.nvim' }
     use 'navarasu/onedark.nvim'
 
+
     -- programming specific --
     use 'nelsyeung/twig.vim'
+
+    -- html
+    use {
+        'windwp/nvim-ts-autotag',
+        config = function()
+            require('nvim-ts-autotag').setup({
+                autotag = {
+                    enable = true
+                }
+            })
+        end
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
