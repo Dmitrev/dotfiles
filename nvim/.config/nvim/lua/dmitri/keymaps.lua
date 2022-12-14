@@ -7,8 +7,8 @@ vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>q", ":q<cr>", { noremap = true })
 
-vim.api.nvim_set_keymap("n", "<c-c>", '"+y', { noremap = true }) -- copy
-vim.api.nvim_set_keymap("n", "<c-v>", '"+p', { noremap = true }) -- paste
+vim.keymap.set({"v"}, "<c-c>", '"+y', { noremap = true }) -- copy
+vim.keymap.set({"n", "i"}, "<c-v>", '"+p', { noremap = true }) -- paste
 
 -- Moving up and down and recenter screen
 vim.api.nvim_set_keymap("n", "<c-d>", "<c-d>zz", { noremap = true})
