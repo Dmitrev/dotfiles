@@ -27,6 +27,8 @@ vim.opt.expandtab = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- leave 8 lines above and below when scrolling
+vim.opt.scrolloff = 8;
 
 vim.opt.hlsearch = false
 -- search as you type --
@@ -52,6 +54,10 @@ vim.opt.swapfile = false
 -- you don't have to save all buffers manually
 vim.opt.autowrite = true
 vim.opt.autowriteall = true
+
+-- This is used for indent-blankline to show end of line char
+-- vim.opt.list = true
+-- vim.opt.listchars:append "eol:↴"
 
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
