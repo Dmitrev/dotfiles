@@ -66,73 +66,24 @@ return require('packer').startup(function(use)
     use {
         'lewis6991/gitsigns.nvim',
         config = function()
-            require('gitsigns').setup({
-                signs = {
-                    add = { text = '+' },
-                    change = { text = '~' },
-                    delete = { text = '_' },
-                    topdelete = { text = '‾' },
-                    changedelete = { text = '~' },
-                }
-            })
+            require('gitsigns').setup()
         end
     }
-
     -- allows to surround text with quotes, tags, brackets etc..
     use({
         "kylechui/nvim-surround",
         --tag = "*", -- Use for stability; omit to use `main` branch for the latest features
         config = function()
-            require("nvim-surround").setup({
-                -- Configuration here, or leave empty to use defaults
-            })
+            require("nvim-surround").setup()
         end
     })
     use 'onsails/lspkind.nvim'
+
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = function()
-            require('lualine').setup {
-                options = {
-                    icons_enabled = true,
-                    theme = 'auto',
-                    component_separators = { left = '', right = ''},
-                    section_separators = { left = '', right = ''},
-                    disabled_filetypes = {
-                        statusline = {},
-                        winbar = {},
-                    },
-                    ignore_focus = {},
-                    always_divide_middle = true,
-                    globalstatus = false,
-                    refresh = {
-                        statusline = 1000,
-                        tabline = 1000,
-                        winbar = 1000,
-                    }
-                },
-                sections = {
-                    lualine_a = {'mode'},
-                    lualine_b = {'branch', 'diff', 'diagnostics'},
-                    lualine_c = {'filename'},
-                    lualine_x = {'encoding', 'fileformat', 'filetype'},
-                    lualine_y = {'progress'},
-                    lualine_z = {'location'}
-                },
-                inactive_sections = {
-                    lualine_a = {},
-                    lualine_b = {},
-                    lualine_c = {'filename'},
-                    lualine_x = {'location'},
-                    lualine_y = {},
-                    lualine_z = {}
-                },
-                tabline = {},
-                winbar = {},
-                inactive_winbar = {},
-                extensions = {}
-            }
+            require('lualine').setup({})
         end
     }
     -- Auto complete
@@ -158,19 +109,28 @@ return require('packer').startup(function(use)
     }
     use { "nvim-telescope/telescope-file-browser.nvim" }
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            require("which-key").setup({})
+        end
+    }
+
     -- themes --
-    use { 'rose-pine/neovim', as = 'rose-pine' }
     use 'folke/tokyonight.nvim'
-    use { "catppuccin/nvim", as = "catppuccin" }
-    use { "NLKNguyen/papercolor-theme" }
-    use { 'morhetz/gruvbox' }
-    use { 'rebelot/kanagawa.nvim' }
     use 'navarasu/onedark.nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
-
-    -- programming specific --
-    use 'nelsyeung/twig.vim'
-
+    use {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v2.x",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+        }
+    }
     -- html
     use {
         'windwp/nvim-ts-autotag',
@@ -183,9 +143,12 @@ return require('packer').startup(function(use)
         end
     }
 
+    use 'lukas-reineke/indent-blankline.nvim'
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
 	    require('packer').sync()
     end
 end)
+

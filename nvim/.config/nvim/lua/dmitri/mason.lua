@@ -9,5 +9,6 @@ require("mason-lspconfig").setup({
         "yamlls",
         "volar", -- vuejs
         "sumneko_lua",
+        "rust_analyzer",
     }
 })

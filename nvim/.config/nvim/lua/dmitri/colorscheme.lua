@@ -1,4 +1,5 @@
-local theme = 'rose-pine';
+local theme = 'tokyonight-moon';
+-- local theme = 'catppuccin-mocha';
 local dark = true;
 
  if not dark then
