@@ -144,6 +144,7 @@ return require('packer').startup(function(use)
     }
 
     use 'lukas-reineke/indent-blankline.nvim'
+    use "rafamadriz/friendly-snippets"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

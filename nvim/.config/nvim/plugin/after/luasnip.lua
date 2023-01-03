@@ -24,6 +24,9 @@ local conds = require("luasnip.extras.expand_conditions")
 local postfix = require("luasnip.extras.postfix").postfix
 local parse = require("luasnip.util.parser").parse_snippet
 
+-- load VSCode style snippets
+require("luasnip.loaders.from_vscode").lazy_load()
+
 ls.config.set_config({
     -- allows you to jump back into the previous snippet
     history = true,
@@ -59,10 +62,85 @@ end, {silent = true})
 -- shortcut to reload snippets
 vim.keymap.set({"n"}, "<leader><leader>s", "<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>")
 
+local get_filename = function()
+    return vim.fn.fnamemodify(vim.fn.expand('%'),':t')
+end
 
-ls.add_snippets("all", {
-    s("expand", {
-        t("-- this thing just expanded")
-    })
+local get_class_name = function()
+    local file_name = get_filename()
+    return string.gsub(file_name, '.php', '')
+end
+
+local get_namespace = function()
+    -- local path = vim.fn.expand("%:p") -- absolute path
+    local path = vim.fn.expand("%") -- get relative path
+
+    -- captilize first letter in path
+    local first_letter = string.sub(path, 1, 1)
+    local rest_of_path = string.sub(path, 2)
+    path = string.upper(first_letter) .. rest_of_path
+
+    path = string.gsub(path, "/", "\\")
+    path = string.gsub(path, get_filename(), "") -- remove filename from namespace
+    path = string.sub(path, 1, -2) -- remove the last \ at end of line
+
+    return path
+end
+
+ls.add_snippets("php", {
+    s("!!php", {
+        t({
+            "<?php",
+            "",
+            "declare(strict_types=1);",
+            "",
+            "",
+        }),
+        i(0),
+    }),
+
+    s("!!class", {
+        t({
+            "<?php",
+            "",
+            "declare(strict_types=1);",
+            "",
+            "namespace ",
+        }),
+        f(get_namespace, {}),
+        t({
+            ";",
+            "",
+            "class ",
+        }),
+        f(get_class_name, {}),
+        t({"", "{", ""}),
+        t("    "),
+        i(0),
+        t({"", "}"}),
+    }),
+
+    s("!!test", {
+        t({
+            "<?php",
+            "",
+            "declare(strict_types=1);",
+            "",
+            "namespace ",
+        }),
+        f(get_namespace, {}),
+        t({
+            ";",
+            "",
+            "use Tests\\TestCase;",
+            "",
+            "class ",
+        }),
+        f(get_class_name, {}),
+        t({" extends TestCase", "{", ""}),
+        t("    "),
+        i(0),
+        t({"", "}"}),
+    }),
 })
 
