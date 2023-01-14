@@ -1,25 +1,10 @@
-local theme = 'tokyonight-moon';
--- local theme = 'catppuccin-mocha';
-local dark = true;
-
- if not dark then
-     local status_ok, _ = pcall(vim.cmd, "set background=light")
-     if not status_ok then
-         vim.notify("Could not set background to light");
-     end
- end
-
- local status_ok, _ = pcall(vim.cmd, "colorscheme "..theme)
-
- if not status_ok then
-     vim.notify("Could not load colorscheme");
- end
-
--- require('onedark').setup {
---     style = 'deep',
---     highlights = {
---         ['@visibility_modifier'] = {fg = '$purple'}
---     }
--- }
--- require('onedark').load()
-
+require("themer").setup({
+    colorscheme = "jellybeans",
+    -- styles = {
+    --     ["function"] = { style = 'italic' },
+    --     functionbuiltin = { style = 'italic' },
+    --     variable = { style = 'italic' },
+    --     variableBuiltIn = { style = 'italic' },
+    --     parameter  = { style = 'italic' },
+    -- }
+})

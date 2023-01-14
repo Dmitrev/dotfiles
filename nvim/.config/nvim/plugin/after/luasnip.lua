@@ -24,9 +24,6 @@ local conds = require("luasnip.extras.expand_conditions")
 local postfix = require("luasnip.extras.postfix").postfix
 local parse = require("luasnip.util.parser").parse_snippet
 
--- load VSCode style snippets
-require("luasnip.loaders.from_vscode").lazy_load()
-
 ls.config.set_config({
     -- allows you to jump back into the previous snippet
     history = true,
@@ -39,14 +36,13 @@ ls.config.set_config({
 })
 
 
-vim.keymap.set({ "i", "s"}, "<c-k>", function ()
-    print('does this get called?')
+vim.keymap.set({ "i", "s"}, "<c-j>", function ()
    if ls.expand_or_jumpable() then
     ls.expand_or_jump()
    end
 end, {silent = true})
 
-vim.keymap.set({ "i", "s"}, "<c-j>", function ()
+vim.keymap.set({ "i", "s"}, "<c-k>", function ()
    if ls.jumpable(-1) then
     ls.jump(-1)
    end
@@ -141,6 +137,16 @@ ls.add_snippets("php", {
         t("    "),
         i(0),
         t({"", "}"}),
+    }),
+
+    s("pubf", {
+        t("public function "), i(1, "name"), t("("), i(2, "args"), t("): "), i(3, "void"), t(""),
+        t("{"),
+        t("    "), i(0),
+        t({"", "}"}),
+    }),
+    s("yield", {
+        t("yield ["), i(0), t("];"),
     }),
 })
 

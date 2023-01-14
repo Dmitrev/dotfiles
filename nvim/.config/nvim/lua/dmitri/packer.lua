@@ -69,6 +69,7 @@ return require('packer').startup(function(use)
             require('gitsigns').setup()
         end
     }
+    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     -- allows to surround text with quotes, tags, brackets etc..
     use({
         "kylechui/nvim-surround",
@@ -118,10 +119,7 @@ return require('packer').startup(function(use)
     }
 
     -- themes --
-    use 'folke/tokyonight.nvim'
-    use 'navarasu/onedark.nvim'
-    use { "catppuccin/nvim", as = "catppuccin" }
-
+    use { "themercorp/themer.lua" }
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
@@ -144,8 +142,6 @@ return require('packer').startup(function(use)
     }
 
     use 'lukas-reineke/indent-blankline.nvim'
-    use "rafamadriz/friendly-snippets"
-
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
