@@ -67,3 +67,10 @@ vim.api.nvim_set_keymap("n", "<leader>co", "<cmd>copen<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>cc", "<cmd>cclose<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>cn", "<cmd>cnext<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>cp", "<cmd>cprev<CR>", { noremap = true })
+
+
+-- NEOGit
+-- open file browser in current dir
+vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope file_browser hidden=true path=%:p:h<CR>", { noremap = true, desc = "File browser cwd" })
+-- open file browser from root dir
+vim.api.nvim_set_keymap("n", "<leader>fB", ":Telescope file_browser hidden=true<CR>", { noremap = true, desc = "File browser root" })
