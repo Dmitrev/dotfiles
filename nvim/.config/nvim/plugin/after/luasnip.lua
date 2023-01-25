@@ -129,14 +129,27 @@ ls.add_snippets("php", {
             ";",
             "",
             "use Tests\\TestCase;",
+            "use Illuminate\\Foundation\\Testing\\RefreshDatabase;",
             "",
             "class ",
         }),
         f(get_class_name, {}),
         t({" extends TestCase", "{", ""}),
-        t("    "),
+        t({"    use RefreshDatabase;", "", ""}),
+        t({
+            "    public function testItWorks(): void",
+            "    {"
+        }),
+        t({
+            "",
+            "        $this->assertTrue(true);"
+        }),
         i(0),
-        t({"", "}"}),
+        t({
+            "",
+            "    }",
+            "}"
+        }),
     }),
 
     s("pubf", {
@@ -147,6 +160,15 @@ ls.add_snippets("php", {
     }),
     s("yield", {
         t("yield ["), i(0), t("];"),
+    }),
+
+    -- create data provider doc block data provider method
+    s("dataprovider", {
+        t({
+            "/**",
+            "*",
+            "*/",
+        }), i(0), t("];"),
     }),
 })
 
