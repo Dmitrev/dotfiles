@@ -1,14 +1,22 @@
--- reload
 vim.api.nvim_set_keymap("n", "<leader><leader>r", "<cmd> lua require('dmitri.utils').reload('dmitri')<CR>", { noremap = true })
 
--- Exit to Normal mode
-vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true })
 -- save file 
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>q", ":q<cr>", { noremap = true })
 
-vim.keymap.set({"v"}, "<c-c>", '"+y', { noremap = true }) -- copy
-vim.keymap.set({"n", "i"}, "<c-v>", '"+p', { noremap = true }) -- paste
+vim.keymap.set({"v"}, "<leader>yc", '"+y', { noremap = true }) -- copy
+vim.keymap.set({"n"}, "<leader>yy", '"+yy', { noremap = true }) -- copy
+vim.keymap.set({"n"}, "<leader>p", '"+p', { noremap = true }) -- paste
+vim.keymap.set({"v"}, "<leader>pc", '"_d"+P', { noremap = true }) -- paste
+vim.keymap.set({"v"}, "<leader>pr", '"_dp', { noremap = true }) -- paste
+vim.keymap.set({"n"}, "<leader>P", '"+P', { noremap = true }) -- paste
+vim.keymap.set({"n"}, "<leader>dd", '"_dd', { noremap = true })
+
+
+-- register
+-- clipboard
+-- clipboard is some register
+
 
 -- Moving up and down and recenter screen
 vim.api.nvim_set_keymap("n", "<c-d>", "<c-d>zz", { noremap = true})
@@ -47,14 +55,7 @@ vim.api.nvim_set_keymap("n", "<Leader>dl", "<cmd> lua ".. builtin..".diagnostics
 
 
 -- copy file path into clipboard, I used this to run a specific test
-vim.api.nvim_set_keymap("n", "<Leader>y", ":let @+=expand(\"%\")<CR>", { noremap = true, desc = "Copy relative path to system clipboard"})
-
-
--- File tree keybindings
-vim.api.nvim_set_keymap("n", "<leader>tt", ":NvimTreeToggle<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>tf", ":NvimTreeFocus<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>ts", ":NvimTreeFindFile<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>tc", ":NvimTreeCollapse<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>yf", ":let @+=expand(\"%\")<CR>", { noremap = true, desc = "Copy relative path to system clipboard"})
 
 -- open file browser in current dir
 vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope file_browser hidden=true path=%:p:h<CR>", { noremap = true, desc = "File browser cwd" })
@@ -74,3 +75,14 @@ vim.api.nvim_set_keymap("n", "<leader>cp", "<cmd>cprev<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope file_browser hidden=true path=%:p:h<CR>", { noremap = true, desc = "File browser cwd" })
 -- open file browser from root dir
 vim.api.nvim_set_keymap("n", "<leader>fB", ":Telescope file_browser hidden=true<CR>", { noremap = true, desc = "File browser root" })
+
+
+-- Harppon
+vim.api.nvim_set_keymap("n", "<leader>hh", '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, desc = "Open Harpoon UI" })
+vim.api.nvim_set_keymap("n", "<leader>ha", '<cmd>lua require("harpoon.mark").add_file()<CR>', { noremap = true, desc = "Add file tot Harpoon" })
+
+vim.api.nvim_set_keymap("n", "<c-t>1", '<cmd>lua require("harpoon.ui").nav_file(1)<CR>', { noremap = true, desc = "Go to file 1 Harpoon" })
+vim.api.nvim_set_keymap("n", "<c-t>2", '<cmd>lua require("harpoon.ui").nav_file(2)<CR>', { noremap = true, desc = "Go to file 2 Harpoon" })
+vim.api.nvim_set_keymap("n", "<c-t>3", '<cmd>lua require("harpoon.ui").nav_file(3)<CR>', { noremap = true, desc = "Go to file 3 Harpoon" })
+vim.api.nvim_set_keymap("n", "<c-t>4", '<cmd>lua require("harpoon.ui").nav_file(4)<CR>', { noremap = true, desc = "Go to file 4 Harpoon" })
+vim.api.nvim_set_keymap("n", "<c-t>5", '<cmd>lua require("harpoon.ui").nav_file(5)<CR>', { noremap = true, desc = "Go to file 5 Harpoon" })

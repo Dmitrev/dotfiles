@@ -118,8 +118,6 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- themes --
-    use { "themercorp/themer.lua" }
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
@@ -129,6 +127,9 @@ return require('packer').startup(function(use)
             "MunifTanjim/nui.nvim",
         }
     }
+
+    -- themes --
+    use 'navarasu/onedark.nvim'
     -- html
     use {
         'windwp/nvim-ts-autotag',
@@ -142,6 +143,11 @@ return require('packer').startup(function(use)
     }
 
     use 'lukas-reineke/indent-blankline.nvim'
+
+    use {
+        'ThePrimeagen/harpoon',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
