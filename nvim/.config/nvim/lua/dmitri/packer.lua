@@ -10,7 +10,10 @@ local ensure_packer = function()
   return false
 end
 
+local util = require('packer.util')
 local packer_bootstrap = ensure_packer()
+local join_paths = util.join_paths
+local stdpath = vim.fn.stdpath
 
 
 return require('packer').startup(function(use)
@@ -104,7 +107,8 @@ return require('packer').startup(function(use)
 
     -- telescope and extensions
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        'nvim-telescope/telescope.nvim', 
+        tag = '0.1.1',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
@@ -153,5 +157,9 @@ return require('packer').startup(function(use)
     if packer_bootstrap then
 	    require('packer').sync()
     end
-end)
+end, {
+        config = {
+            snapshot_path = join_paths(stdpath('config'), 'packer.nvim'),
+        }
+})
 
