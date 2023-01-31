@@ -8,15 +8,9 @@ vim.keymap.set({"v"}, "<leader>yc", '"+y', { noremap = true }) -- copy
 vim.keymap.set({"n"}, "<leader>yy", '"+yy', { noremap = true }) -- copy
 vim.keymap.set({"n"}, "<leader>p", '"+p', { noremap = true }) -- paste
 vim.keymap.set({"v"}, "<leader>pc", '"_d"+P', { noremap = true }) -- paste
-vim.keymap.set({"v"}, "<leader>pr", '"_dp', { noremap = true }) -- paste
+vim.keymap.set({"v"}, "<leader>pr", '"_dP', { noremap = true }) -- paste
 vim.keymap.set({"n"}, "<leader>P", '"+P', { noremap = true }) -- paste
 vim.keymap.set({"n"}, "<leader>dd", '"_dd', { noremap = true })
-
-
--- register
--- clipboard
--- clipboard is some register
-
 
 -- Moving up and down and recenter screen
 vim.api.nvim_set_keymap("n", "<c-d>", "<c-d>zz", { noremap = true})
