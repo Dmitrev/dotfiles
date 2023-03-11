@@ -164,11 +164,9 @@ ls.add_snippets("php", {
 
     -- create data provider doc block data provider method
     s("dataprovider", {
-        t({
-            "/**",
-            "*",
-            "*/",
-        }), i(0), t("];"),
+        t({"/**"}),
+        t("* @dataProvider "), i(1, "name"),
+        t("*/"),
     }),
 })
 

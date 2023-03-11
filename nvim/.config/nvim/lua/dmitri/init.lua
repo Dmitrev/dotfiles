@@ -1,4 +1,5 @@
 require("dmitri.packer")
+require("dmitri.filetypes")
 require("dmitri.colorscheme")
 require("dmitri.devicons")
 require("dmitri.mason")

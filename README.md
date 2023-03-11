@@ -1,3 +1,7 @@
+# Dependencies
+    - GNU stow `sudo apt install stow`
+    - [EB CLI](https://docs.amazonaws.cn/en_us/elasticbeanstalk/latest/dg/eb-cli3-install.html)
+
 # Automated installation (Mac only)
 
 ```sh

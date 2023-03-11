@@ -7,6 +7,7 @@ vim.api.nvim_set_keymap("n", "<leader>q", ":q<cr>", { noremap = true })
 vim.keymap.set({"v"}, "<leader>yc", '"+y', { noremap = true }) -- copy
 vim.keymap.set({"n"}, "<leader>yy", '"+yy', { noremap = true }) -- copy
 vim.keymap.set({"n"}, "<leader>p", '"+p', { noremap = true }) -- paste
+vim.keymap.set({"n"}, "<leader>op", 'o<ESC>"+p', { noremap = true }) -- paste as new line below
 vim.keymap.set({"v"}, "<leader>pc", '"_d"+P', { noremap = true }) -- paste
 vim.keymap.set({"v"}, "<leader>pr", '"_dP', { noremap = true }) -- paste
 vim.keymap.set({"n"}, "<leader>P", '"+P', { noremap = true }) -- paste
@@ -30,8 +31,8 @@ vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true })
 local builtin = "require('telescope.builtin')";
 local theme = "require('telescope.themes').get_ivy";
 
-vim.api.nvim_set_keymap("n", "<Leader>ff", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true}))<CR>", { noremap = true, desc = "Find files"})
-vim.api.nvim_set_keymap("n", "<Leader>fa", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, no_ignore=true}))<CR>", { noremap = true, desc = "Find all files"})
+vim.api.nvim_set_keymap("n", "<Leader>ff", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false}))<CR>", { noremap = true, desc = "Find files"})
+vim.api.nvim_set_keymap("n", "<Leader>fa", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false,no_ignore=true}))<CR>", { noremap = true, desc = "Find all files"})
 vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua ".. builtin..".live_grep(".. theme .."())<CR>", { noremap = true, desc = "Grep files"})
 vim.api.nvim_set_keymap("n", "<leader>fG", "<cmd>lua ".. builtin..".live_grep(".. theme .."({no_ignore=true}))<CR>", { noremap = true, desc = "Grep all files"})
 vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua ".. builtin..".buffers(".. theme .."())<CR>", { noremap = true, desc = "File browser in cwd"})

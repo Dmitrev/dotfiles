@@ -132,8 +132,19 @@ return require('packer').startup(function(use)
         }
     }
 
+    use "gpanders/editorconfig.nvim" -- can be removed from Neovim 9
+
     -- themes --
     use 'navarasu/onedark.nvim'
+    use { "ellisonleao/gruvbox.nvim" }
+    use {'nyoom-engineering/oxocarbon.nvim'}
+    use 'folke/tokyonight.nvim'
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+    })
+    use { "catppuccin/nvim", as = "catppuccin" }
+    use "rebelot/kanagawa.nvim"
     -- html
     use {
         'windwp/nvim-ts-autotag',
@@ -146,7 +157,7 @@ return require('packer').startup(function(use)
         end
     }
 
-    use 'lukas-reineke/indent-blankline.nvim'
+    -- use 'lukas-reineke/indent-blankline.nvim'
 
     use {
         'ThePrimeagen/harpoon',
