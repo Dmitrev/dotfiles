@@ -133,8 +133,13 @@ alias ssh_prod="meg_prod && eb ssh"
 alias rbt="sudo /etc/init.d/bluetooth restart"
 
 ## tmux shortcuts
-alias meg="~/tmux/meg.sh"
+# alias meg="~/tmux/meg.sh"
 alias dot="tmux new -s dotfiles -c ~/dotfiles"
+
+# zellij shortcuts
+alias meg="zellij -s meg --layout ~/.config/zellij/layouts/meg.kdl"
+alias dot="zellij -s dotfiles --layout ~/.config/zellij/layouts/dotfiles.kdl"
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
