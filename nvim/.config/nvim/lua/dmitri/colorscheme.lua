@@ -1,36 +1,5 @@
-require('onedark').setup({
-  style = 'warmer'
-})
-
-require('onedark').load()
-
-
-require("gruvbox").setup({
-  undercurl = true,
-  underline = true,
-  bold = true,
-  italic = true,
-  strikethrough = true,
-  invert_selection = false,
-  invert_signs = false,
-  invert_tabline = false,
-  invert_intend_guides = false,
-  inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "", -- can be "hard", "soft" or empty string
-  palette_overrides = {},
-  overrides = {},
-  dim_inactive = false,
-  transparent_mode = false,
-})
-
-require("rose-pine").setup({
-  -- dark_variant = "moon" 
-})
 -- vim.o.background = "light"
--- vim.cmd('colorscheme rose-pine')
--- vim.cmd("colorscheme gruvbox")
 vim.cmd("colorscheme catppuccin-mocha")
--- vim.cmd("colorscheme kanagawa")
 
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)

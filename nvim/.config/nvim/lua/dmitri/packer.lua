@@ -122,29 +122,11 @@ return require('packer').startup(function(use)
         end
     }
 
-    use {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
-        requires = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim",
-        }
-    }
-
     use "gpanders/editorconfig.nvim" -- can be removed from Neovim 9
 
     -- themes --
-    use 'navarasu/onedark.nvim'
-    use { "ellisonleao/gruvbox.nvim" }
-    use {'nyoom-engineering/oxocarbon.nvim'}
-    use 'folke/tokyonight.nvim'
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-    })
     use { "catppuccin/nvim", as = "catppuccin" }
-    use "rebelot/kanagawa.nvim"
+    --
     -- html
     use {
         'windwp/nvim-ts-autotag',
