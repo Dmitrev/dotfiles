@@ -137,9 +137,10 @@ alias rbt="sudo /etc/init.d/bluetooth restart"
 alias dot="tmux new -s dotfiles -c ~/dotfiles"
 
 # zellij shortcuts
-alias meg="zellij -s meg --layout ~/.config/zellij/layouts/meg.kdl"
-alias dot="zellij -s dotfiles --layout ~/.config/zellij/layouts/dotfiles.kdl"
-
+alias zj="zellij"
+alias meg="zellij attach meg || zellij -s meg --layout ~/.config/zellij/layouts/meg.kdl"
+alias dot="zellij attach dotfiles || zellij -s dotfiles --layout ~/.config/zellij/layouts/dotfiles.kdl"
+alias rust="zellij --layout ~/.config/zellij/layouts/rust.kdl"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
