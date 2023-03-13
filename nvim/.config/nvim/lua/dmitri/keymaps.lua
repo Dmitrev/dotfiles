@@ -81,3 +81,7 @@ vim.api.nvim_set_keymap("n", "<c-t>2", '<cmd>lua require("harpoon.ui").nav_file(
 vim.api.nvim_set_keymap("n", "<c-t>3", '<cmd>lua require("harpoon.ui").nav_file(3)<CR>', { noremap = true, desc = "Go to file 3 Harpoon" })
 vim.api.nvim_set_keymap("n", "<c-t>4", '<cmd>lua require("harpoon.ui").nav_file(4)<CR>', { noremap = true, desc = "Go to file 4 Harpoon" })
 vim.api.nvim_set_keymap("n", "<c-t>5", '<cmd>lua require("harpoon.ui").nav_file(5)<CR>', { noremap = true, desc = "Go to file 5 Harpoon" })
+
+
+-- LSP
+vim.keymap.set('n', 'g?', '<cmd>lua vim.diagnostic.open_float()<CR>')
