@@ -142,6 +142,9 @@ alias meg="zellij attach meg || zellij -s meg --layout ~/.config/zellij/layouts/
 alias dot="zellij attach dotfiles || zellij -s dotfiles --layout ~/.config/zellij/layouts/dotfiles.kdl"
 alias rust="zellij --layout ~/.config/zellij/layouts/rust.kdl"
 
+# work shortcuts
+alias jira="open https://mediaexchangegroup.atlassian.net/jira/software/projects/MEG/boards/1"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
