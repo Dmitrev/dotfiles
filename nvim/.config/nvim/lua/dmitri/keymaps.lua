@@ -31,6 +31,7 @@ vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true })
 local builtin = "require('telescope.builtin')";
 local theme = "require('telescope.themes').get_ivy";
 
+vim.api.nvim_set_keymap("n", "<Leader>fr", "<cmd> lua ".. builtin..".resume()<CR>", { noremap = true, desc = "Resume last Telescope instance"})
 vim.api.nvim_set_keymap("n", "<Leader>ff", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false}))<CR>", { noremap = true, desc = "Find files"})
 vim.api.nvim_set_keymap("n", "<Leader>fa", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false,no_ignore=true}))<CR>", { noremap = true, desc = "Find all files"})
 vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua ".. builtin..".live_grep(".. theme .."())<CR>", { noremap = true, desc = "Grep files"})
@@ -76,11 +77,11 @@ vim.api.nvim_set_keymap("n", "<leader>fB", ":Telescope file_browser hidden=true<
 vim.api.nvim_set_keymap("n", "<leader>hh", '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, desc = "Open Harpoon UI" })
 vim.api.nvim_set_keymap("n", "<leader>ha", '<cmd>lua require("harpoon.mark").add_file()<CR>', { noremap = true, desc = "Add file tot Harpoon" })
 
-vim.api.nvim_set_keymap("n", "<c-t>1", '<cmd>lua require("harpoon.ui").nav_file(1)<CR>', { noremap = true, desc = "Go to file 1 Harpoon" })
-vim.api.nvim_set_keymap("n", "<c-t>2", '<cmd>lua require("harpoon.ui").nav_file(2)<CR>', { noremap = true, desc = "Go to file 2 Harpoon" })
-vim.api.nvim_set_keymap("n", "<c-t>3", '<cmd>lua require("harpoon.ui").nav_file(3)<CR>', { noremap = true, desc = "Go to file 3 Harpoon" })
-vim.api.nvim_set_keymap("n", "<c-t>4", '<cmd>lua require("harpoon.ui").nav_file(4)<CR>', { noremap = true, desc = "Go to file 4 Harpoon" })
-vim.api.nvim_set_keymap("n", "<c-t>5", '<cmd>lua require("harpoon.ui").nav_file(5)<CR>', { noremap = true, desc = "Go to file 5 Harpoon" })
+vim.api.nvim_set_keymap("n", "<leader>h1", '<cmd>lua require("harpoon.ui").nav_file(1)<CR>', { noremap = true, desc = "Go to file 1 Harpoon" })
+vim.api.nvim_set_keymap("n", "<leader>h2", '<cmd>lua require("harpoon.ui").nav_file(2)<CR>', { noremap = true, desc = "Go to file 2 Harpoon" })
+vim.api.nvim_set_keymap("n", "<leader>h3", '<cmd>lua require("harpoon.ui").nav_file(3)<CR>', { noremap = true, desc = "Go to file 3 Harpoon" })
+vim.api.nvim_set_keymap("n", "<leader>h4", '<cmd>lua require("harpoon.ui").nav_file(4)<CR>', { noremap = true, desc = "Go to file 4 Harpoon" })
+vim.api.nvim_set_keymap("n", "<leader>h5", '<cmd>lua require("harpoon.ui").nav_file(5)<CR>', { noremap = true, desc = "Go to file 5 Harpoon" })
 
 
 -- LSP
