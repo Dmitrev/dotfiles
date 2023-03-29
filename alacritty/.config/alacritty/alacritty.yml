@@ -12,7 +12,7 @@ env:
 font:
   size: 14
   normal: 
-    family: "PragmataProMono NFM"
+    family: "PragmataPro Mono Liga"
     # family: "JetBrainsMono NFM"
 
   offset:
