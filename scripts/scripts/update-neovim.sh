@@ -15,6 +15,12 @@ echo
 if [[ $REPLY =~ ^[yY]$ ]]
 then
     echo "upgrading neovim... to $latest_tag";
+    git checkout $latest_tag;
+
+    # clean up
+    rm -r build/
+    make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$HOME/nvim install
+    nvim --version
 else
 
     echo "Aborting upgrade";
