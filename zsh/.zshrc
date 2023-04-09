@@ -145,6 +145,10 @@ alias rust="zellij --layout ~/.config/zellij/layouts/rust.kdl"
 # work shortcuts
 alias jira="open https://mediaexchangegroup.atlassian.net/jira/software/projects/MEG/boards/1"
 
+# nvim stuff
+# LSP cache clear
+alias lcc='rm ~/.local/state/nvim/lsp.log && echo "cleared LSP log"';
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
