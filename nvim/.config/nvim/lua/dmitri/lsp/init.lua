@@ -50,116 +50,18 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>dk', vim.diagnostic.goto_prev, bufopts)
 end
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
+local servers = require('dmitri.lsp.servers')
+for server, server_config in pairs(servers.getLspConfig()) do
+    -- default config
+    local lsp_config = {
+        on_attach = on_attach,
+        capabilities = capabilities,
+    }
 
+    -- merge in additional config
+    for index, value in pairs(server_config) do
+        lsp_config[index] = value
+    end
 
--- The following example advertise capabilities to `clangd`.
-require'lspconfig'.clangd.setup {
-  capabilities = capabilities,
-}
-
--- PHP
-require'lspconfig'.intelephense.setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-}
-
--- require'lspconfig'.phpactor.setup{
---     on_attach = on_attach,
---     flags = lsp_flags,
---     capabilities = capabilities,
---     cmd = {'nc', 'localhost', '8888'},
--- }
-
-require('lspconfig')['tsserver'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-}
-
-require('lspconfig')['html'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-    filetypes={'html'},
-}
-
-require('lspconfig')['jsonls'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-}
-
--- Python
-require('lspconfig')['pyright'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-}
- 
-require('lspconfig')['emmet_ls'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-    filetypes = {'html', 'typescript'}, -- I defined this blade type myself with autocmd
-}
-
-require('lspconfig')['yamlls'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-}
-
-require('lspconfig')['rust_analyzer'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-}
-
-require('lspconfig')['volar'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-}
-
-require('lspconfig')['cssls'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-}
-
-require('lspconfig')['psalm'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-}
-
-require('lspconfig')['lua_ls'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities,
-    settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  }
-}
+    require('lspconfig')[server].setup(lsp_config)
+end
