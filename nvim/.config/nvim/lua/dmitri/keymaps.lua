@@ -36,7 +36,7 @@ vim.api.nvim_set_keymap("n", "<Leader>ff", "<cmd> lua ".. builtin..".find_files(
 vim.api.nvim_set_keymap("n", "<Leader>fa", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false,no_ignore=true}))<CR>", { noremap = true, desc = "Find all files"})
 vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua ".. builtin..".live_grep(".. theme .."())<CR>", { noremap = true, desc = "Grep files"})
 vim.api.nvim_set_keymap("n", "<leader>fG", "<cmd>lua ".. builtin..".live_grep(".. theme .."({no_ignore=true}))<CR>", { noremap = true, desc = "Grep all files"})
-vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua ".. builtin..".buffers(".. theme .."())<CR>", { noremap = true, desc = "File browser in cwd"})
+vim.api.nvim_set_keymap("n", "<leader>fl", "<cmd>lua ".. builtin..".buffers(".. theme .."())<CR>", { noremap = true, desc = "File browser in cwd"})
 vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua ".. builtin..".help_tags(".. theme .."())<CR>", { noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>lds", "<cmd> lua ".. builtin..".lsp_document_symbols(".. theme .."())<CR>", { noremap = true, desc = "List document symbols"})
 vim.api.nvim_set_keymap("n", "<Leader>lws", "<cmd> lua ".. builtin..".lsp_workspace_symbols(".. theme .."())<CR>", { noremap = true, desc = "List workspace symbols"})
@@ -52,6 +52,8 @@ vim.api.nvim_set_keymap("n", "<Leader>dl", "<cmd> lua ".. builtin..".diagnostics
 
 -- copy file path into clipboard, I used this to run a specific test
 vim.api.nvim_set_keymap("n", "<leader>yf", ":let @+=expand(\"%\")<CR>", { noremap = true, desc = "Copy relative path to system clipboard"})
+vim.api.nvim_set_keymap("n", "<leader>yg", "<cmd>lua require('dmitri.utils').copy_github_link()<CR>", { noremap = true, desc = "Get link to github"})
+vim.api.nvim_set_keymap("v", "<leader>yg", "<cmd>lua require('dmitri.utils').copy_github_link()<CR>", { noremap = true, desc = "Get link to github"})
 
 -- open file browser in current dir
 vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope file_browser hidden=true path=%:p:h<CR>", { noremap = true, desc = "File browser cwd" })
