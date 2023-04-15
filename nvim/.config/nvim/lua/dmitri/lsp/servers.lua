@@ -4,7 +4,16 @@ local M = {}
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#html
 local lsp_servers = {
    -- PHP
-   intelephense = {}, -- PHP, requires license for premium features in ~/intelephense/licence.txt
+   intelephense = {
+      settings = {
+        intelephense = {
+          files = {
+            maxSize = 3000000;
+          }
+        }
+        -- See https://github.com/bmewburn/intelephense-docs
+      }
+   }, -- PHP, requires license for premium features in ~/intelephense/licence.txt
    psalm = {},
    -- phpactor = {},
    -- END PHP
@@ -17,6 +26,7 @@ local lsp_servers = {
    volar = {}, -- vuejs
    rust_analyzer = {},
    cssls = {},
+   tailwindcss = {},
    lua_ls = {
       settings = {
          Lua = {
