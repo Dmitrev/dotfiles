@@ -116,7 +116,62 @@ ls.add_snippets("php", {
         t({"", "}"}),
     }),
 
+    s("!!interface", {
+        t({
+            "<?php",
+            "",
+            "declare(strict_types=1);",
+            "",
+            "namespace ",
+        }),
+        f(get_namespace, {}),
+        t({
+            ";",
+            "",
+            "interface ",
+        }),
+        f(get_class_name, {}),
+        t({"", "{", ""}),
+        t("    "),
+        i(0),
+        t({"", "}"}),
+    }),
+
     s("!!test", {
+        t({
+            "<?php",
+            "",
+            "declare(strict_types=1);",
+            "",
+            "namespace ",
+        }),
+        f(get_namespace, {}),
+        t({
+            ";",
+            "",
+            "use PHPUnit\\Framework\\TestCase;",
+            "",
+            "class ",
+        }),
+        f(get_class_name, {}),
+        t({" extends TestCase", "{", ""}),
+        t({
+            "    public function testItWorks(): void",
+            "    {"
+        }),
+        t({
+            "",
+            "        $this->assertTrue(true);"
+        }),
+        i(0),
+        t({
+            "",
+            "    }",
+            "}"
+        }),
+    }),
+
+    s("!!laratest", {
         t({
             "<?php",
             "",
