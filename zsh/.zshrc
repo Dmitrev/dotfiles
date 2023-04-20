@@ -133,14 +133,14 @@ alias ssh_prod="meg_prod && eb ssh"
 alias rbt="sudo /etc/init.d/bluetooth restart"
 
 ## tmux shortcuts
-# alias meg="~/tmux/meg.sh"
+alias meg="~/scripts/meg.sh"
 alias dot="tmux new -s dotfiles -c ~/dotfiles"
 
 # zellij shortcuts
 alias zj="zellij"
-alias meg="zellij attach meg || zellij -s meg --layout ~/.config/zellij/layouts/meg.kdl"
-alias dot="zellij attach dotfiles || zellij -s dotfiles --layout ~/.config/zellij/layouts/dotfiles.kdl"
-alias rust="zellij --layout ~/.config/zellij/layouts/rust.kdl"
+# alias meg="zellij attach meg || zellij -s meg --layout ~/.config/zellij/layouts/meg.kdl"
+# alias dot="zellij attach dotfiles || zellij -s dotfiles --layout ~/.config/zellij/layouts/dotfiles.kdl"
+# alias rust="zellij --layout ~/.config/zellij/layouts/rust.kdl"
 
 # work shortcuts
 alias jira="open https://mediaexchangegroup.atlassian.net/jira/software/projects/MEG/boards/1"
