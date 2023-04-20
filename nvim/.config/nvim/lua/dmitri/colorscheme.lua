@@ -1,5 +1,10 @@
 -- vim.o.background = "light"
-vim.cmd("colorscheme catppuccin-mocha")
+
+require("nord").setup({
+  errors = { mode = "none" }
+})
+
+vim.cmd("colorscheme nord")
 
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)

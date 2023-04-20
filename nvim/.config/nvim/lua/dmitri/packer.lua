@@ -125,7 +125,7 @@ return require('packer').startup(function(use)
     use "gpanders/editorconfig.nvim" -- can be removed from Neovim 9
 
     -- themes --
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use 'gbprod/nord.nvim'
     --
     -- html
     use {
