@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# credit: https://dev.to/acro5piano/edit-tmux-output-with-editor-i1c
 # $HOME/bin/vim-edit-tmux-output
 
 file=`mktemp`.sh
