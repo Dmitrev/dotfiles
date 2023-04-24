@@ -22,7 +22,13 @@ local lsp_servers = {
    },
    tsserver = {},
    jsonls = {},
-   yamlls = {},
+   yamlls = {
+      settings = {
+         yaml = {
+            keyOrdering = false
+         }
+      }
+   },
    volar = {}, -- vuejs
    rust_analyzer = {},
    cssls = {},
