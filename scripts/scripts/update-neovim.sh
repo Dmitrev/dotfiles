@@ -2,8 +2,8 @@
 current_dir=$(pwd);
 neovim_dir="$HOME/neovim";
 neovim_install_dir="$HOME/nvim";
-
-[ ! -d "$neovim_dir" ] && git clone --depth 1 https://github.com/neovim/neovim.git
+ 
+[ ! -d "$neovim_dir" ] && git clone --depth 1 https://github.com/neovim/neovim.git $neovim_dir
 [ ! -d "$neovim_install_dir" ] && mkdir $neovim_install_dir
 
 cd $neovim_dir;
