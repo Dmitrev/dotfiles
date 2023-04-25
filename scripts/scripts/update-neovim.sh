@@ -1,7 +1,10 @@
 #!/bin/bash
-
 current_dir=$(pwd);
 neovim_dir="$HOME/neovim";
+neovim_install_dir="$HOME/nvim";
+
+[ ! -d "$neovim_dir" ] && git clone --depth 1 https://github.com/neovim/neovim.git
+[ ! -d "$neovim_install_dir" ] && mkdir $neovim_install_dir
 
 cd $neovim_dir;
 
@@ -19,7 +22,7 @@ then
 
     # clean up
     rm -r build/
-    make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$HOME/nvim install
+    make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$neovim_install_dir install
     nvim --version
 else
 
