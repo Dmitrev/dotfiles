@@ -37,8 +37,8 @@ vim.api.nvim_command('set noshowmode')
 vim.opt.wrap = false
 
 -- disable netrw at the very start of your init.lua (strongly advised)
-vim.g.loaded = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded = 1
+-- vim.g.loaded_netrwPlugin = 1
 
 -- persist undos when neovim is exited
 vim.opt.undofile = true
