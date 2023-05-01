@@ -78,7 +78,7 @@ local get_namespace = function()
     local rest_of_path = string.sub(path, 2)
     path = string.upper(first_letter) .. rest_of_path
 
-    path = string.gsub(path, cwd, "")
+    path = string.gsub(path, cwd, "") -- sometimes the path is absolute so we need to make it relative
     path = string.gsub(path, "/", "\\")
     path = string.gsub(path, get_filename(), "") -- remove filename from namespace
     path = string.sub(path, 1, -2) -- remove the last \ at end of line
