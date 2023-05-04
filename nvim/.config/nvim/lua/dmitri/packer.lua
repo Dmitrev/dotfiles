@@ -57,6 +57,8 @@ return require('packer').startup(function(use)
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     }
+
+    -- Show LSP progress
     use {
         'j-hui/fidget.nvim',
         config = function()
@@ -118,7 +120,7 @@ return require('packer').startup(function(use)
 
     -- telescope and extensions
     use {
-        'nvim-telescope/telescope.nvim', 
+        'nvim-telescope/telescope.nvim',
         tag = '0.1.1',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
@@ -132,9 +134,7 @@ return require('packer').startup(function(use)
             require("which-key").setup({})
         end
     }
-
-    use "gpanders/editorconfig.nvim" -- can be removed from Neovim 9
-
+    --
     -- themes --
     use 'gbprod/nord.nvim'
     --
