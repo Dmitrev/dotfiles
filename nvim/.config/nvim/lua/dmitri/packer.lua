@@ -19,6 +19,8 @@ local stdpath = vim.fn.stdpath
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+
+    use "folke/neodev.nvim"
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
