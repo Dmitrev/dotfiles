@@ -64,9 +64,18 @@ return require('packer').startup(function(use)
         end
     }
 
+    use { 'ibhagwan/fzf-lua',
+      -- optional for icon support
+      requires = { 'nvim-tree/nvim-web-devicons' }
+    }
 
+
+    -- Automatically set shiftwidth, expand tab and alld that kind of buff options (respects EDITORCONFIG)
     use 'tpope/vim-sleuth'
+
+    -- Awesome Git plugin
     use 'tpope/vim-fugitive'
+
     -- show git diff inside neovim
     use {
         'lewis6991/gitsigns.nvim',
