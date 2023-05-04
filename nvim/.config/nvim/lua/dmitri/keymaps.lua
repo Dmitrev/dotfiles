@@ -56,9 +56,10 @@ vim.api.nvim_set_keymap("n", "<leader>yg", "<cmd>lua require('dmitri.utils').cop
 vim.api.nvim_set_keymap("v", "<leader>yg", "<cmd>lua require('dmitri.utils').copy_github_link()<CR>", { noremap = true, desc = "Get link to github"})
 
 -- open file browser in current dir
-vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope file_browser hidden=true path=%:p:h<CR>", { noremap = true, desc = "File browser cwd" })
+-- vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope file_browser hidden=true path=%:p:h<CR>", { noremap = true, desc = "File browser cwd" })
 -- open file browser from root dir
-vim.api.nvim_set_keymap("n", "<leader>fB", ":Telescope file_browser hidden=true<CR>", { noremap = true, desc = "File browser root" })
+-- vim.api.nvim_set_keymap("n", "<leader>fB", ":Telescope file_browser hidden=true<CR>", { noremap = true, desc = "File browser root" })
+vim.keymap.set("n", "<leader>fb", "<cmd>Ex<CR>", {desc = "Open file browser"});
 
 
 -- Quickfix list
@@ -66,13 +67,6 @@ vim.api.nvim_set_keymap("n", "<leader>co", "<cmd>copen<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>cc", "<cmd>cclose<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>cn", "<cmd>cnext<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>cp", "<cmd>cprev<CR>", { noremap = true })
-
-
--- NEOGit
--- open file browser in current dir
-vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope file_browser hidden=true path=%:p:h<CR>", { noremap = true, desc = "File browser cwd" })
--- open file browser from root dir
-vim.api.nvim_set_keymap("n", "<leader>fB", ":Telescope file_browser hidden=true<CR>", { noremap = true, desc = "File browser root" })
 
 
 -- Harppon
@@ -88,3 +82,4 @@ vim.api.nvim_set_keymap("n", "<leader>h5", '<cmd>lua require("harpoon.ui").nav_f
 
 -- LSP
 vim.keymap.set('n', 'g?', '<cmd>lua vim.diagnostic.open_float()<CR>')
+
