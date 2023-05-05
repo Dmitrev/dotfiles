@@ -77,6 +77,7 @@ return require('packer').startup(function(use)
 
     -- Awesome Git plugin
     use 'tpope/vim-fugitive'
+    use { 'stevearc/oil.nvim' }
 
     -- show git diff inside neovim
     use {

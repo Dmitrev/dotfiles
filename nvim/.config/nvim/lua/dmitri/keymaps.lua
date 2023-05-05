@@ -59,7 +59,6 @@ vim.api.nvim_set_keymap("v", "<leader>yg", "<cmd>lua require('dmitri.utils').cop
 -- vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope file_browser hidden=true path=%:p:h<CR>", { noremap = true, desc = "File browser cwd" })
 -- open file browser from root dir
 -- vim.api.nvim_set_keymap("n", "<leader>fB", ":Telescope file_browser hidden=true<CR>", { noremap = true, desc = "File browser root" })
-vim.keymap.set("n", "<leader>fb", "<cmd>Ex<CR>", {desc = "Open file browser"});
 
 
 -- Quickfix list
@@ -83,3 +82,5 @@ vim.api.nvim_set_keymap("n", "<leader>h5", '<cmd>lua require("harpoon.ui").nav_f
 -- LSP
 vim.keymap.set('n', 'g?', '<cmd>lua vim.diagnostic.open_float()<CR>')
 
+-- Netrw
+vim.keymap.set("n", "<leader>fb", "<cmd>Oil<CR>", {desc = "Open file browser"});
