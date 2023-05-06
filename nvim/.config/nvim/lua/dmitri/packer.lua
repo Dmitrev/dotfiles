@@ -138,6 +138,8 @@ return require('packer').startup(function(use)
     --
     -- themes --
     use 'gbprod/nord.nvim'
+    
+    use 'Shatur/neovim-ayu'
     --
     -- html
     use {

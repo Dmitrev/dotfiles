@@ -4,7 +4,7 @@ require("nord").setup({
   errors = { mode = "none" }
 })
 
-vim.cmd("colorscheme nord")
+vim.cmd("colorscheme ayu-mirage")
 
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)
