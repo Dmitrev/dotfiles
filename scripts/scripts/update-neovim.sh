@@ -23,12 +23,16 @@ then
     # clean up
     rm -r build/
     make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$neovim_install_dir install
-    nvim --version
 else
 
     echo "Aborting upgrade";
     exit 0;
 fi
 
+if [ ! -f ~/bin/nvim ]; then
+    ln -s ~/nvim/bin/nvim ~/bin/nvim
+fi
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+nvim --version
 
 cd $current_dir;
