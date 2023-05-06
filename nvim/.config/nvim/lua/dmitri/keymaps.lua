@@ -31,6 +31,8 @@ vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true })
 local builtin = "require('telescope.builtin')";
 local theme = "require('telescope.themes').get_ivy";
 
+local fzflua = require("fzf-lua")
+-- vim.keymap.set({"n"}, "<leader>ff", function() fzflua.files({hidden = true}) end)
 vim.api.nvim_set_keymap("n", "<Leader>fr", "<cmd> lua ".. builtin..".resume()<CR>", { noremap = true, desc = "Resume last Telescope instance"})
 vim.api.nvim_set_keymap("n", "<Leader>ff", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false}))<CR>", { noremap = true, desc = "Find files"})
 vim.api.nvim_set_keymap("n", "<Leader>fa", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false,no_ignore=true}))<CR>", { noremap = true, desc = "Find all files"})
@@ -82,5 +84,10 @@ vim.api.nvim_set_keymap("n", "<leader>h5", '<cmd>lua require("harpoon.ui").nav_f
 -- LSP
 vim.keymap.set('n', 'g?', '<cmd>lua vim.diagnostic.open_float()<CR>')
 
+
+local oil = require('oil')
+local cwd = vim.fn.getcwd()
+
 -- Netrw
-vim.keymap.set("n", "<leader>fb", "<cmd>Oil<CR>", {desc = "Open file browser"});
+vim.keymap.set("n", "<leader>fb", function() oil.open() end, {desc = "Open file browser in file location"});
+vim.keymap.set("n", "<leader>fB", function() oil.open(cwd) end, {desc = "Open file browser in project root"});
