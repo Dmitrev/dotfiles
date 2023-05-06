@@ -70,15 +70,22 @@ end
 local get_namespace = function()
     -- local path = vim.fn.expand("%:p") -- absolute path
     local path = vim.fn.expand("%") -- get relative path
-
     local cwd = vim.fn.getcwd()
 
+    path = string.gsub(path, cwd, "") -- sometimes the path is absolute so we need to make it relative
+
     -- captilize first letter in path
-    local first_letter = string.sub(path, 1, 1)
-    local rest_of_path = string.sub(path, 2)
+    local first_letter_index = 1
+    local first_letter = string.sub(path, first_letter_index, first_letter_index)
+
+    if first_letter == "/" then
+        first_letter_index = first_letter_index + 1
+        first_letter = string.sub(path, first_letter_index, first_letter_index)
+    end
+
+    local rest_of_path = string.sub(path, first_letter_index + 1)
     path = string.upper(first_letter) .. rest_of_path
 
-    path = string.gsub(path, cwd, "") -- sometimes the path is absolute so we need to make it relative
     path = string.gsub(path, "/", "\\")
     path = string.gsub(path, get_filename(), "") -- remove filename from namespace
     path = string.sub(path, 1, -2) -- remove the last \ at end of line
