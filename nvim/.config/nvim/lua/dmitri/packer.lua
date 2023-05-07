@@ -10,8 +10,8 @@ local ensure_packer = function()
   return false
 end
 
-local util = require('packer.util')
 local packer_bootstrap = ensure_packer()
+local util = require('packer.util')
 local join_paths = util.join_paths
 local stdpath = vim.fn.stdpath
 

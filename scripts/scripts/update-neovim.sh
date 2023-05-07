@@ -32,7 +32,7 @@ fi
 if [ ! -f ~/bin/nvim ]; then
     ln -s ~/nvim/bin/nvim ~/bin/nvim
 fi
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
 nvim --version
 
 cd $current_dir;
