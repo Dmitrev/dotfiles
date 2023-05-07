@@ -7,7 +7,7 @@ export PATH=$HOME/nvim/bin:$PATH
 export PATH="$HOME/.ebcli-virtual-env/executables:$PATH"
 
 # EBS install
-export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT="$HOME/deps/pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 ## END EBS install
