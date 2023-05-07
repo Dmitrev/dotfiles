@@ -1,8 +1,9 @@
-#!/usr/bin/zsh
+#!/bin/bash
 
 current_dir=$(pwd);
 neovim_dir="$HOME/neovim";
 neovim_install_dir="$HOME/nvim";
+nvim_bin_path="$HOME/bin/nvim"
  
 [ ! -d "$neovim_dir" ] && git clone --depth 1 https://github.com/neovim/neovim.git $neovim_dir
 [ ! -d "$neovim_install_dir" ] && mkdir $neovim_install_dir
@@ -23,11 +24,11 @@ git checkout $latest_tag;
 rm -r build/
 make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$neovim_install_dir install
 
-if [ ! -f ~/bin/nvim ]; then
-    ln -s ~/nvim/bin/nvim ~/bin/nvim
+if [ ! -f $nvim_bin_path]; then
+    ln -s "${neovim_install_dir}/bin/nvim" $nvim_bin_path
 fi
 
-nvim --headless -c 'autocmd User PackerComplete quitall'
-nvim --version
+$nvim_bin_path --headless -c 'autocmd User PackerComplete quitall'
+$nvim_bin_path --version
 
 cd $current_dir;
