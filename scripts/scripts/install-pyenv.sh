@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
 
 INSTALL_DIR=~/deps/pyenv
 

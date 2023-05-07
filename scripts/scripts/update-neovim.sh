@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/zsh
+
 current_dir=$(pwd);
 neovim_dir="$HOME/neovim";
 neovim_install_dir="$HOME/nvim";
@@ -26,6 +27,7 @@ if [ ! -f ~/bin/nvim ]; then
     ln -s ~/nvim/bin/nvim ~/bin/nvim
 fi
 
+nvim --headless -c 'autocmd User PackerComplete quitall'
 nvim --version
 
 cd $current_dir;
