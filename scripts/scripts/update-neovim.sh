@@ -15,19 +15,12 @@ latest_tag=$(git tag | tail -1);
 read -p "Found NVIM version $latest_tag are you sure you want to update now? (y/n)" -n 1 -r
 echo
 
-if [[ $REPLY =~ ^[yY]$ ]]
-then
-    echo "upgrading neovim... to $latest_tag";
-    git checkout $latest_tag;
+echo "upgrading neovim... to $latest_tag";
+git checkout $latest_tag;
 
-    # clean up
-    rm -r build/
-    make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$neovim_install_dir install
-else
-
-    echo "Aborting upgrade";
-    exit 0;
-fi
+# clean up
+rm -r build/
+make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$neovim_install_dir install
 
 if [ ! -f ~/bin/nvim ]; then
     ln -s ~/nvim/bin/nvim ~/bin/nvim
