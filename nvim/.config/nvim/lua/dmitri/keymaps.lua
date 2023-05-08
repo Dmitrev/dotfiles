@@ -32,6 +32,7 @@ local builtin = "require('telescope.builtin')";
 local theme = "require('telescope.themes').get_ivy";
 
 local fzflua = require("fzf-lua")
+require("dmitri.set")
 -- vim.keymap.set({"n"}, "<leader>ff", function() fzflua.files({hidden = true}) end)
 vim.api.nvim_set_keymap("n", "<Leader>fr", "<cmd> lua ".. builtin..".resume()<CR>", { noremap = true, desc = "Resume last Telescope instance"})
 vim.api.nvim_set_keymap("n", "<Leader>ff", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false}))<CR>", { noremap = true, desc = "Find files"})
