@@ -1,7 +1,7 @@
 #!/bin/bash
 
 current_dir=$(pwd);
-neovim_dir="$HOME/neovim";
+neovim_dir="$HOME/deps/neovim";
 neovim_install_dir="$HOME/nvim";
 nvim_bin_path="$HOME/bin/nvim"
  
