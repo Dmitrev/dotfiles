@@ -28,7 +28,6 @@ if [ ! -f $nvim_bin_path ]; then
     ln -s "${neovim_install_dir}/bin/nvim" $nvim_bin_path
 fi
 
-$nvim_bin_path --headless -c 'autocmd User PackerComplete quitall'
 $nvim_bin_path --version
 
 cd $current_dir;
