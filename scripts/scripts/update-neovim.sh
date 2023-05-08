@@ -24,7 +24,7 @@ git checkout $latest_tag;
 rm -r build/
 make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$neovim_install_dir install
 
-if [ ! -f $nvim_bin_path]; then
+if [ ! -f $nvim_bin_path ]; then
     ln -s "${neovim_install_dir}/bin/nvim" $nvim_bin_path
 fi
 
