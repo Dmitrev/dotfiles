@@ -14,9 +14,6 @@ git fetch --tags && git fetch && git checkout master && git pull;
 
 latest_tag=$(git tag | tail -1);
 
-read -p "Found NVIM version $latest_tag are you sure you want to update now? (y/n)" -n 1 -r
-echo
-
 echo "upgrading neovim... to $latest_tag";
 git checkout $latest_tag;
 
