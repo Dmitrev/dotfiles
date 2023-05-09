@@ -54,7 +54,11 @@ vim.api.nvim_set_keymap("n", "<Leader>dl", "<cmd> lua ".. builtin..".diagnostics
 
 
 -- copy file path into clipboard, I used this to run a specific test
-vim.api.nvim_set_keymap("n", "<leader>yf", ":let @+=expand(\"%\")<CR>", { noremap = true, desc = "Copy relative path to system clipboard"})
+vim.keymap.set({"n"}, "<leader>yf", function()
+    local utils = require('dmitri.utils')
+    vim.fn.setreg("+", utils.get_relative_path())
+end)
+
 vim.api.nvim_set_keymap("n", "<leader>yg", "<cmd>lua require('dmitri.utils').copy_github_link()<CR>", { noremap = true, desc = "Get link to github"})
 vim.api.nvim_set_keymap("v", "<leader>yg", "<cmd>lua require('dmitri.utils').copy_github_link()<CR>", { noremap = true, desc = "Get link to github"})
 

@@ -6,6 +6,23 @@ M.reload = function(module)
 
     dofile(vim.env.MYVIMRC)
 end
+
+M.get_relative_path = function()
+    local path = vim.fn.expand("%") -- get relative path
+    local cwd = vim.fn.getcwd()
+
+    path = string.gsub(path, cwd, "") -- sometimes the path is absolute so we need to make it relative
+
+    local first_char = string.sub(path, 1, 1)
+
+    if first_char == "/" then
+        path = string.sub(path, 2) -- skip first char
+    end
+
+    return path
+end
+
+
 M.copy_github_link = function()
     local relative_path = vim.fn.expand("%")
     local git_cmd = "git ls-remote --get-url origin"
