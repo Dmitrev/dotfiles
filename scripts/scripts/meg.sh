@@ -14,10 +14,6 @@ if [ $? != 0 ]; then
 
     # Open docker related windows
     window=2
-    tmux new-window -t $session:$window -n 'git' -c $dir
-    tmux send-keys -t $session:$window 'lazygit' C-m
-
-    window=3
     tmux new-window -t $session:$window -n 'docker' -c $dir
     tmux split-window -t $session:$window.1 -h -c $dir
     tmux split-window -t $session:$window.1 -v -c $dir 
@@ -32,12 +28,12 @@ if [ $? != 0 ]; then
     tmux send-keys -t $session:$window.2 'make queue' C-m
 
 
-    window=4
+    window=3
     tmux new-window -t $session:$window -n 'workspace' -c $dir
     tmux send-keys -t $session:$window 'make enter' C-m
 
-    # swap window 3 & 4
-    tmux swap-window -s 3 -t 4
+    # swap window 2 & 3
+    tmux swap-window -s 2 -t 3
 fi
 
 # Get into the session
