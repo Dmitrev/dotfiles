@@ -1,10 +1,11 @@
 -- vim.o.background = "light"
 
-require("nord").setup({
-  errors = { mode = "none" }
-})
+-- require("nord").setup({
+--   errors = { mode = "none" }
+-- })
 
 vim.cmd("colorscheme ayu-mirage")
+-- vim.cmd("colorscheme hardhacker")
 
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)
