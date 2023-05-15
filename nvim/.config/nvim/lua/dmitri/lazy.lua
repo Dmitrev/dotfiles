@@ -138,7 +138,6 @@ require("lazy").setup({
     -- themes --
     'gbprod/nord.nvim',
     'Shatur/neovim-ayu',
-    --
     -- html
     {
         'windwp/nvim-ts-autotag',
@@ -154,5 +153,32 @@ require("lazy").setup({
     {
         'ThePrimeagen/harpoon',
         dependencies = { {'nvim-lua/plenary.nvim'} }
+    },
+
+    {
+        "kndndrj/nvim-dbee",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+        },
+        build = function()
+            -- Install tries to automatically detect the install method.
+            -- if it fails, try calling it with one of these parameters:
+            --    "curl", "wget", "bitsadmin", "go"
+            require("dbee").install()
+        end,
+        config = function()
+            require("dbee").setup(
+                {
+                    connections = {
+                        {
+                            name = "meg",
+                            type = "mysql",
+                            url="user:pass@tcp(localhost:33060)/database"
+
+                        },
+                    },
+                }
+            )
+        end,
     },
 }, opts)
