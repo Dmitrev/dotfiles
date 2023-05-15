@@ -11,9 +11,17 @@ config.font = wezterm.font(
     { weight = 'Regular' }
 )
 
-config.freetype_load_target = 'Light'
-config.freetype_render_target = 'HorizontalLcd'
+config.freetype_load_target = 'Normal'
+-- config.freetype_render_target = 'Normal'
 
 config.color_scheme = 'Catppuccin Mocha'
 config.font_size = 14
+
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
+
 return config
