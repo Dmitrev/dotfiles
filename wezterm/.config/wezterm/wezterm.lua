@@ -14,7 +14,7 @@ config.font = wezterm.font(
 config.freetype_load_target = 'Normal'
 -- config.freetype_render_target = 'Normal'
 
-config.color_scheme = 'Catppuccin Mocha'
+config.color_scheme = 'Ayu Mirage'
 config.font_size = 14
 
 config.window_padding = {

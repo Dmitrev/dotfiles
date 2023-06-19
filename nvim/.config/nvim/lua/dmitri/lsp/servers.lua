@@ -29,9 +29,12 @@ local lsp_servers = {
          }
       }
    },
-   volar = {}, -- vuejs
+   volar = {
+      filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+   }, -- vuejs
    rust_analyzer = {},
    cssls = {},
+   gopls = {},
    -- tailwindcss = {},
    lua_ls = {
       settings = {

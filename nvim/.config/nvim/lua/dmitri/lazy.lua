@@ -98,9 +98,7 @@ require("lazy").setup({
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require('lualine').setup({})
-        end
+        lazy = false,
     },
 
     -- Auto complete
@@ -136,8 +134,29 @@ require("lazy").setup({
     },
     --
     -- themes --
-    'gbprod/nord.nvim',
     'Shatur/neovim-ayu',
+    { "catppuccin/nvim", name = "catppuccin" },
+    "savq/melange-nvim",
+    { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
+    {
+        'ribru17/bamboo.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require('bamboo').setup {
+                -- optional configuration here
+            }
+            require('bamboo').load()
+        end,
+    },
+    'jacoborus/tender.vim',
+    "rebelot/kanagawa.nvim",
+    "rmehri01/onenord.nvim",
+    'ramojus/mellifluous.nvim',
+    'pbrisbin/vim-colors-off',
+    'p00f/alabaster.nvim',
+     'talha-akram/noctis.nvim',
+
     -- html
     {
         'windwp/nvim-ts-autotag',

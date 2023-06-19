@@ -13,7 +13,8 @@ font:
   size: 14
   normal: 
     family: "PragmataPro Mono Liga"
-    # family: "JetBrainsMono NFM"
+    # family: "JetBrainsMono"
+    # family: "FiraCode"
 
   offset:
       x: 0    # For letter spacing.

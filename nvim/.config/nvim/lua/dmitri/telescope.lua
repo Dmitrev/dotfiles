@@ -19,6 +19,11 @@ require("telescope").setup {
      -- winblend = 30, -- add transparency 
      buffer_previewer_maker = new_maker
   },
+  pickers = {
+    oldfiles = {
+      cwd_only = true
+    }
+  },
   extensions = {
     file_browser = {
       hidden = true,
