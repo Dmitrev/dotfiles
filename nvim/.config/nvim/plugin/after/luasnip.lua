@@ -92,6 +92,11 @@ local get_namespace = function()
     return path
 end
 
+ls.add_snippets("all" , {
+    s("pound", t("£")),
+    s("euro", t("€")),
+})
+
 ls.add_snippets("php", {
     s("!!php", {
         t({
