@@ -4,18 +4,22 @@ local M = {}
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#html
 local lsp_servers = {
    -- PHP
-   intelephense = {
-      settings = {
-        intelephense = {
-          files = {
-            maxSize = 3000000;
-          }
-        }
-        -- See https://github.com/bmewburn/intelephense-docs
+   -- intelephense = {
+   --    settings = {
+   --      intelephense = {
+   --        files = {
+   --          maxSize = 3000000;
+   --        }
+   --      }
+   --      -- See https://github.com/bmewburn/intelephense-docs
+   --    }
+   -- }, -- PHP, requires license for premium features in ~/intelephense/licence.txt
+   -- psalm = {},
+   phpactor = {
+      language_server_psalm = {
+         enabled = true
       }
-   }, -- PHP, requires license for premium features in ~/intelephense/licence.txt
-   psalm = {},
-   -- phpactor = {},
+   },
    -- END PHP
    html = {
       filetypes = {'html'},
