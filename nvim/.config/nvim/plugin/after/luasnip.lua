@@ -130,6 +130,40 @@ ls.add_snippets("php", {
         t({"", "}"}),
     }),
 
+    s("!!dto", {
+        t({
+            "<?php",
+            "",
+            "declare(strict_types=1);",
+            "",
+            "namespace ",
+        }),
+        f(get_namespace, {}),
+        t({
+            ";",
+            "",
+            "use JsonSerializable;",
+            "",
+            "",
+        }),
+        t("class "), f(get_class_name, {}), t(" implements JsonSerializable"),
+        t({
+            "",
+            "{    ",
+            "    public function jsonSerialize(): mixed",
+            "    {",
+            "        return [",
+            "",
+        }),
+        t("            "), i(0),
+        t({
+            "",
+            "        ];",
+            "    }",
+        }),
+        t({"", "}"}),
+    }),
+
     s("!!interface", {
         t({
             "<?php",
