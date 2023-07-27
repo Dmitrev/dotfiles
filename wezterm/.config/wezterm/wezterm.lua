@@ -7,7 +7,7 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font(
-    "PragmataPro",
+    "Berkeley Mono Variable",
     { weight = 'Regular' }
 )
 
@@ -15,7 +15,7 @@ config.freetype_load_target = 'Normal'
 -- config.freetype_render_target = 'Normal'
 
 config.color_scheme = 'Ayu Mirage'
-config.font_size = 14
+config.font_size = 16
 
 config.window_padding = {
   left = 0,
