@@ -53,9 +53,11 @@ require("lazy").setup({
         "neovim/nvim-lspconfig",
     },
 
--- Show LSP progress
+-- Show LSP progressbar
+    -- TODO: update version when fidget is updated
     {
         'j-hui/fidget.nvim',
+        tag = "legacy",
         config = function()
             require('fidget').setup()
         end
@@ -72,6 +74,12 @@ require("lazy").setup({
 
     -- Awesome Git plugin
     'tpope/vim-fugitive',
+
+    -- Use DB
+    'tpope/vim-dadbod',
+    'kristijanhusak/vim-dadbod-ui',
+
+    -- Cool file browser
     { 'stevearc/oil.nvim' },
 
     -- show git diff inside neovim
@@ -81,8 +89,6 @@ require("lazy").setup({
             require('gitsigns').setup()
         end
     },
-
-    { 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
 
     -- allows to surround text with quotes, tags, brackets etc..
     {
@@ -94,7 +100,6 @@ require("lazy").setup({
     },
 
     "onsails/lspkind.nvim",
-
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -110,7 +115,7 @@ require("lazy").setup({
 
     {
         "L3MON4D3/LuaSnip", -- Lua snippets engine
-        tag = "v<CurrentMajor>.*",
+        tag = "v1.2.1",
         dependencies = {
             {'saadparwaiz1/cmp_luasnip'} -- required to autocomplete luasnips!!
         }
@@ -134,29 +139,15 @@ require("lazy").setup({
     },
     --
     -- themes --
-    'Shatur/neovim-ayu',
-    { "catppuccin/nvim", name = "catppuccin" },
-    "savq/melange-nvim",
-    { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
+    "rebelot/kanagawa.nvim",
     {
-        'ribru17/bamboo.nvim',
+        'AlexvZyl/nordic.nvim',
         lazy = false,
         priority = 1000,
         config = function()
-            require('bamboo').setup {
-                -- optional configuration here
-            }
-            require('bamboo').load()
-        end,
+            require 'nordic' .load()
+        end
     },
-    'jacoborus/tender.vim',
-    "rebelot/kanagawa.nvim",
-    "rmehri01/onenord.nvim",
-    'ramojus/mellifluous.nvim',
-    'pbrisbin/vim-colors-off',
-    'p00f/alabaster.nvim',
-     'talha-akram/noctis.nvim',
-
     -- html
     {
         'windwp/nvim-ts-autotag',
@@ -174,30 +165,50 @@ require("lazy").setup({
         dependencies = { {'nvim-lua/plenary.nvim'} }
     },
 
-    {
-        "kndndrj/nvim-dbee",
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-        },
-        build = function()
-            -- Install tries to automatically detect the install method.
-            -- if it fails, try calling it with one of these parameters:
-            --    "curl", "wget", "bitsadmin", "go"
-            require("dbee").install()
-        end,
-        config = function()
-            require("dbee").setup(
-                {
-                    connections = {
-                        {
-                            name = "meg",
-                            type = "mysql",
-                            url="user:pass@tcp(localhost:33060)/database"
 
-                        },
-                    },
-                }
-            )
+    {
+        "epwalsh/obsidian.nvim",
+        lazy = true,
+        -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
+        event = { "BufReadPre " .. vim.fn.expand "~" .. "/Documents/obsidian/Personal/**.md" },
+        dependencies = {
+            -- Required.
+            "nvim-lua/plenary.nvim",
+
+            -- Optional, for completion.
+            "hrsh7th/nvim-cmp",
+
+            -- Optional, for search and quick-switch functionality.
+            "nvim-telescope/telescope.nvim",
+
+            -- Optional, an alternative to telescope for search and quick-switch functionality.
+            -- "ibhagwan/fzf-lua"
+
+            -- Optional, another alternative to telescope for search and quick-switch functionality.
+            -- "junegunn/fzf",
+            -- "junegunn/fzf.vim"
+
+            -- Optional, alternative to nvim-treesitter for syntax highlighting.
+            -- "godlygeek/tabular",
+            -- "preservim/vim-markdown",
+        },
+        opts = {
+            dir = "~/Documents/obsidian/Personal",  -- no need to call 'vim.fn.expand' here
+
+            -- see below for full list of options 👇
+        },
+        config = function(_, opts)
+            require("obsidian").setup(opts)
+
+            -- Optional, override the 'gf' keymap to utilize Obsidian's search functionality.
+            -- see also: 'follow_url_func' config option below.
+            vim.keymap.set("n", "gf", function()
+                if require("obsidian").util.cursor_on_markdown_link() then
+                    return "<cmd>ObsidianFollowLink<CR>"
+                else
+                    return "gf"
+                end
+            end, { noremap = false, expr = true })
         end,
-    },
+    }
 }, opts)
