@@ -39,8 +39,12 @@ alias ssh_prod="meg_prod && eb ssh"
 alias rbt="sudo /etc/init.d/bluetooth restart"
 
 ## tmux shortcuts
-alias meg="~/scripts/meg.sh"
-alias dot="tmux new -s dotfiles -c ~/dotfiles"
+alias meg="~/scripts/meg.sh" # old setup
+alias megfeat="~/scripts/meg_feature.sh" # feature branch in new setup
+alias dot="~/scripts/dot.sh"
+
+## docker aliases
+alias dockstop="docker container ls | awk '{print $$1 spnsorshipEntityName \" $$2}' | fzf | awk '{print $$1}' | xargs -I {} docker container stop" 
 
 # zellij shortcuts
 alias zj="zellij"
