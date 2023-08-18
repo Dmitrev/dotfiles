@@ -1,0 +1,12 @@
+{
+    "$schema": "/home/dmitri/deps/phpactor/phpactor.schema.json",
+    "language_server_indexer.workspace_symbol_search_limit": 100000,
+    "rpc.store_replay": true,
+    "logger.name": "server",
+    "indexer.exclude_patterns": [
+        "/vendor/**/Tests/**/*",
+        "/vendor/**/tests/**/*",
+        "/vendor/composer/**/*",
+        "/vendor/rector/**/*"
+    ]
+}
