@@ -2,15 +2,29 @@
 
 -- require("nord").setup({
 --   errors = { mode = "none" }
--- })
+require('kanagawa').setup({
+    commentStyle = { italic = false },
+    keywordStyle = { italic = false},
+})
 
--- vim.cmd("colorscheme ayu-mirage")
+require('tokyonight').setup({
+  styles = {
+    comments = {italic = false},
+    keywords = {italic = false},
+  }
+})
+
+-- vim.cmd("colorscheme ayu-dark")
 -- vim.cmd("colorscheme melange")
 -- vim.cmd("colorscheme nightfly")
 -- vim.cmd("colorscheme tender")
 -- vim.cmd("colorscheme catppuccin")
 -- vim.cmd("colorscheme bamboo")
-vim.cmd("colorscheme kanagawa-dragon")
+-- vim.cmd("colorscheme kanagawa-dragon")
+vim.cmd("colorscheme tokyonight-night")
+-- vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme everblush")
+-- vim.cmd("colorscheme spaceduck")
 -- vim.cmd("colorscheme nordic")
 -- vim.cmd("colorscheme mellifluous")
 -- vim.cmd("colorscheme onenord")

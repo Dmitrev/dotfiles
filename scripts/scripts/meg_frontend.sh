@@ -1,6 +1,6 @@
 #!/bin/bash
-session='meg_feature'
-dir="$HOME/sites/meg-worktree/feature"
+session='meg_frontend'
+dir="$HOME/sites/meg-worktree/frontend"
 
 tmux has-session -t $session 2>/dev/null
 if [ $? != 0 ]; then

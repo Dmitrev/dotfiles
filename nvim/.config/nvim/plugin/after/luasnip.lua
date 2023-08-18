@@ -69,9 +69,13 @@ end
 
 local get_namespace = function()
     -- local path = vim.fn.expand("%:p") -- absolute path
+    local debug = {}
     local path = vim.fn.expand("%") -- get relative path
+    debug.path = path
     local cwd = vim.fn.getcwd()
+    debug.cwd = cwd
     path = string.gsub(path, cwd, "") -- sometimes the path is absolute so we need to make it relative
+    debug.path_after_making_relative = path
 
     -- captilize first letter in path
     local first_letter_index = 1
@@ -84,11 +88,16 @@ local get_namespace = function()
 
     local rest_of_path = string.sub(path, first_letter_index + 1)
     path = string.upper(first_letter) .. rest_of_path
+    debug.path_after_uppercase = path
 
     path = string.gsub(path, "/", "\\")
+    debug.path_after_fix_slash = path
     path = string.gsub(path, get_filename(), "") -- remove filename from namespace
+    debug.path_after_remove_filename = path
     path = string.sub(path, 1, -2) -- remove the last \ at end of line
+    debug.path_after_remove_final_slash = path
 
+    print(vim.inspect(debug))
     return path
 end
 

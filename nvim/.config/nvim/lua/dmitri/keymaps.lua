@@ -3,6 +3,7 @@ vim.api.nvim_set_keymap("n", "<leader><leader>r", "<cmd> lua require('dmitri.uti
 -- save file 
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<cr>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>q", ":q<cr>", { noremap = true })
+vim.keymap.set({"n", "v", "i"}, "<c-c>", "<ESC>", { noremap = true })
 
 vim.keymap.set({"v"}, "<leader>yc", '"+y', { noremap = true }) -- copy
 vim.keymap.set({"n"}, "<leader>yy", '"+yy', { noremap = true }) -- copy

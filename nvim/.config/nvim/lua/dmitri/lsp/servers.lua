@@ -18,6 +18,16 @@ local lsp_servers = {
    phpactor = {
       language_server_psalm = {
          enabled = true
+      },
+      indexer = {
+        exclude_pattens = {
+            -- Default patterns
+            "/vendor/**/Tests/**/*",
+            "/vendor/**/tests/**/*",
+            "/vendor/composer/**/*",
+            -- Rector messes with the PHPUnit Base TestCase
+            "/vendor/rector/rector/stubs-rector/PHPUnit/**/*",
+         }
       }
    },
    -- END PHP
@@ -39,6 +49,7 @@ local lsp_servers = {
    rust_analyzer = {},
    cssls = {},
    gopls = {},
+   pyright = {},
    -- tailwindcss = {},
    lua_ls = {
       settings = {

@@ -25,10 +25,10 @@ fi
 # login to development
 alias src="source ~/.zshrc"
 
-alias meg_dev="eb use media-exchange-develop"
-alias meg_test="eb use media-exchange-test"
-alias meg_demo="eb use media-exchange-demo"
-alias meg_prod="eb use media-exchange-live"
+alias meg_dev="eb use MEG-Development-81"
+alias meg_test="eb use MEG-Testing-81"
+alias meg_demo="eb use MEG-Staging-81"
+alias meg_prod="eb use MEG-Live-81"
 
 alias ssh_dev="meg_dev && eb ssh"
 alias ssh_test="meg_test && eb ssh"
@@ -41,6 +41,9 @@ alias rbt="sudo /etc/init.d/bluetooth restart"
 ## tmux shortcuts
 alias meg="~/scripts/meg.sh" # old setup
 alias megfeat="~/scripts/meg_feature.sh" # feature branch in new setup
+alias megfrontend="~/scripts/meg_frontend.sh" # feature branch in new setup
+alias megmysql="~/scripts/meg_mysql.sh" # feature branch in new setup
+alias megpr="~/scripts/meg_pr.sh" # feature branch in new setup
 alias dot="~/scripts/dot.sh"
 
 ## docker aliases
