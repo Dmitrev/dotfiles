@@ -141,19 +141,6 @@ require("lazy").setup({
     -- themes --
     "rebelot/kanagawa.nvim",
     {
-        'AlexvZyl/nordic.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require 'nordic' .load()
-        end
-    },
-    {
-        'pineapplegiant/spaceduck',
-        lazy = false,
-        priority = 1000,
-    },
-    {
         'Shatur/neovim-ayu',
         lazy = false,
         priority = 1000,
@@ -164,9 +151,8 @@ require("lazy").setup({
       priority = 1000,
       opts = {},
     },
-    { "ellisonleao/gruvbox.nvim", priority = 1000 },
-    { "shaunsingh/moonlight.nvim", priority = 1000 },
-    { 'Everblush/nvim', name = 'everblush', priority = 1000 },
+    -- { "ellisonleao/gruvbox.nvim", priority = 1000 },
+    { 'sainnhe/gruvbox-material', priority = 1000 },
     -- html
     {
         'windwp/nvim-ts-autotag',
