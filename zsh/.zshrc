@@ -38,6 +38,10 @@ alias ssh_prod="meg_prod && eb ssh"
 # restart bluetooth
 alias rbt="sudo /etc/init.d/bluetooth restart"
 
+# reload bluetooth kernel module, in case when bluetooth won't turn on any more
+# In most cases rbt is enough
+alias rkbt="sudo modprobe -r btusb && sudo modprobe btusb"
+
 ## tmux shortcuts
 alias meg="~/scripts/meg.sh" # old setup
 alias megfeat="~/scripts/meg_feature.sh" # feature branch in new setup
