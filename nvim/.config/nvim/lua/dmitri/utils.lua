@@ -11,6 +11,9 @@ M.get_relative_path = function()
     local path = vim.fn.expand("%") -- get relative path
     local cwd = vim.fn.getcwd()
 
+    -- Escape special characters that have meaning in regex
+    cwd = string.gsub(cwd, "%-", "%%-")
+    print(vim.inspect({path = path, cwd = cwd}))
     path = string.gsub(path, cwd, "") -- sometimes the path is absolute so we need to make it relative
 
     local first_char = string.sub(path, 1, 1)

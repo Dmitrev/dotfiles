@@ -68,14 +68,7 @@ local get_class_name = function()
 end
 
 local get_namespace = function()
-    -- local path = vim.fn.expand("%:p") -- absolute path
-    local debug = {}
-    local path = vim.fn.expand("%") -- get relative path
-    debug.path = path
-    local cwd = vim.fn.getcwd()
-    debug.cwd = cwd
-    path = string.gsub(path, cwd, "") -- sometimes the path is absolute so we need to make it relative
-    debug.path_after_making_relative = path
+    local path = require('dmitri.utils').get_relative_path()
 
     -- captilize first letter in path
     local first_letter_index = 1
