@@ -1,20 +1,6 @@
--- vim.o.background = "light"
--- vim.cmd("colorscheme ayu-mirage")
--- vim.cmd("colorscheme melange")
--- vim.cmd("colorscheme nightfly")
--- vim.cmd("colorscheme tender")
--- vim.cmd("colorscheme catppuccin")
--- vim.cmd("colorscheme bamboo")
--- vim.cmd("colorscheme kanagawa-dragon")
--- vim.cmd("colorscheme tokyonight-night")
-vim.cmd("colorscheme gruvbox-material")
--- vim.cmd("colorscheme everblush")
--- vim.cmd("colorscheme spaceduck")
--- vim.cmd("colorscheme nordic")
--- vim.cmd("colorscheme mellifluous")
--- vim.cmd("colorscheme onenord")
--- vim.cmd("colorscheme alabaster")
--- vim.cmd("colorscheme noctis")
+vim.o.background = "dark"
+
+vim.cmd("colorscheme ayu-dark")
 
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)

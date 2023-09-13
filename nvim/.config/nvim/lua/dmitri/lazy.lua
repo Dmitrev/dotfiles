@@ -128,7 +128,6 @@ require("lazy").setup({
         -- or                            , branch = '0.1.x',
         dependencies = { {'nvim-lua/plenary.nvim'} }
     },
-    { "nvim-telescope/telescope-file-browser.nvim" },
     {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
     {
@@ -139,20 +138,11 @@ require("lazy").setup({
     },
     --
     -- themes --
-    "rebelot/kanagawa.nvim",
     {
         'Shatur/neovim-ayu',
         lazy = false,
         priority = 1000,
     },
-    {
-      "folke/tokyonight.nvim",
-      lazy = false,
-      priority = 1000,
-      opts = {},
-    },
-    -- { "ellisonleao/gruvbox.nvim", priority = 1000 },
-    { 'sainnhe/gruvbox-material', priority = 1000 },
     -- html
     {
         'windwp/nvim-ts-autotag',
@@ -164,13 +154,10 @@ require("lazy").setup({
             })
         end
     },
-
     {
         'ThePrimeagen/harpoon',
         dependencies = { {'nvim-lua/plenary.nvim'} }
     },
-
-
     {
         "epwalsh/obsidian.nvim",
         lazy = true,
@@ -215,5 +202,8 @@ require("lazy").setup({
                 end
             end, { noremap = false, expr = true })
         end,
+    },
+    {
+        'rest-nvim/rest.nvim'
     }
 }, opts)
