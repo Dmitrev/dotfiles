@@ -1,6 +1,6 @@
 vim.o.background = "dark"
 
-vim.cmd("colorscheme ayu-dark")
+vim.cmd("colorscheme nightfox")
 
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)

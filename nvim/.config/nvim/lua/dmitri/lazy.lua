@@ -144,6 +144,11 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
     },
+    {
+        "EdenEast/nightfox.nvim",
+        lazy = false,
+        priority = 1000,
+    },
     -- html
     {
         'windwp/nvim-ts-autotag',
