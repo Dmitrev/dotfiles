@@ -40,6 +40,7 @@ cmp.setup({
                 luasnip = "[snip]",
                 gh_issues = "[issues]",
                 tn = "[TabNine]",
+                ['vim-dadbod-completion'] = "[DadBod]",
             },
             mode = 'symbol_text', -- show only symbol annotations
             maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)

@@ -78,6 +78,7 @@ require("lazy").setup({
     -- Use DB
     'tpope/vim-dadbod',
     'kristijanhusak/vim-dadbod-ui',
+    'kristijanhusak/vim-dadbod-completion',
 
     -- Cool file browser
     { 'stevearc/oil.nvim' },
