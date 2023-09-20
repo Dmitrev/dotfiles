@@ -87,6 +87,10 @@ vim.api.nvim_set_keymap("n", "<leader>h3", '<cmd>lua require("harpoon.ui").nav_f
 vim.api.nvim_set_keymap("n", "<leader>h4", '<cmd>lua require("harpoon.ui").nav_file(4)<CR>', { noremap = true, desc = "Go to file 4 Harpoon" })
 vim.api.nvim_set_keymap("n", "<leader>h5", '<cmd>lua require("harpoon.ui").nav_file(5)<CR>', { noremap = true, desc = "Go to file 5 Harpoon" })
 
+-- DBUI
+vim.keymap.set("n", "<leader>dt", "<cmd>DBUIToggle<CR>", { noremap = true, desc = "Toggle DBUI"})
+vim.keymap.set("n", "<leader>db", "<cmd>DBUIFindBuffer<CR>", { noremap = true, desc = "Find DBUI buffer"})
+
 
 -- LSP
 vim.keymap.set('n', 'g?', '<cmd>lua vim.diagnostic.open_float()<CR>')
