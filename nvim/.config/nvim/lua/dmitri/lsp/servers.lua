@@ -50,7 +50,9 @@ local lsp_servers = {
    cssls = {},
    gopls = {},
    pyright = {},
-   tailwindcss = {},
+   tailwindcss = {
+      filetypes = {'vue'}
+   },
    lua_ls = {
       settings = {
          Lua = {
