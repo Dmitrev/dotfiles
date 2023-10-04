@@ -38,5 +38,14 @@ require'nvim-treesitter.configs'.setup {
       -- and should return true of false
       include_surrounding_whitespace = true,
     },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader>sn"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<leader>sp"] = "@parameter.inner",
+      },
+    },
   },
 }
