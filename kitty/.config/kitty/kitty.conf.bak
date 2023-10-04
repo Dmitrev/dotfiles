@@ -1,0 +1,81 @@
+# Install via https://github.com/ronniedroid/getnf
+# Verify installation via `kitty list-fonts | grep Jet`
+
+font_family PragmataPro Mono Liga
+# https://berkeleygraphics.com/products/FX-100/
+# font_family Berkeley Mono Variable 
+# italic_font Berkeley Mono Variable Regular
+# font_family SauceCodePro Nerd Font Mono
+# font_family Comic Code Ligatures
+# font_family Codelia Ligatures
+# Use symbol font
+
+# - Use additional nerd symbols
+# See https://github.com/be5invis/Iosevka/issues/248
+# See https://github.com/ryanoasis/nerd-fonts/wiki/Glyph-Sets-and-Code-Points
+# Seti-UI + Custom
+symbol_map U+E5FA-U+E6AC Symbols Nerd Font
+# Devicons
+symbol_map U+E700-U+E7C5 Symbols Nerd Font
+# Font Awesome
+symbol_map U+F000-U+F2E0 Symbols Nerd Font
+# Font Awesome Extension
+symbol_map U+E200-U+E2A9 Symbols Nerd Font
+# Material Design Icons
+symbol_map U+F500-U+FD46 Symbols Nerd Font
+# Weather
+symbol_map U+E300-U+E3EB Symbols Nerd Font
+# Octicons
+symbol_map U+F400-U+F4A8,U+2665,U+26A1,U+F27C Symbols Nerd Font
+# Powerline Extra Symbols
+symbol_map U+E0A3,U+E0B4-U+E0C8,U+E0CC-U+E0D2,U+E0D4 Symbols Nerd Font
+# IEC Power Symbols
+symbol_map U+23FB-U+23FE,U+2b58 Symbols Nerd Font
+# Font Logos
+symbol_map U+F300-U+F313 Symbols Nerd Font
+# Pomicons
+symbol_map U+E000-U+E00D Symbols Nerd Font
+
+symbol_map U+f101-U+f208 nonicon
+
+font_size 18
+adjust_line_height 110%
+
+cursor_blink_interval 0
+window_padding_width 0
+#hide_window_decorations yes
+remember_window_size yes
+initial_window_width 1680
+initial_window_height 1200
+enable_audio_bell no
+shell_integration no-cursor
+
+# fix terminal for ssh
+term xterm-256color
+
+# This allows me to map CTRL + number in vim
+# Example mapping
+  # nnoremap <c-t>1 1gt
+  # nnoremap <c-t>2 2gt
+  # nnoremap <c-t>3 3gt
+  # nnoremap <c-t>4 4gt
+  # nnoremap <c-t>5 5gt
+  # nnoremap <c-t>6 6gt
+  # nnoremap <c-t>7 7gt
+  # nnoremap <c-t>8 8gt
+  # nnoremap <c-t>9 9gt
+ 
+map ctrl+1 send_text application \x14\x31
+map ctrl+2 send_text application \x14\x32
+map ctrl+3 send_text application \x14\x33
+map ctrl+4 send_text application \x14\x34
+map ctrl+5 send_text application \x14\x35
+map ctrl+6 send_text application \x14\x36
+map ctrl+7 send_text application \x14\x37
+map ctrl+8 send_text application \x14\x38
+map ctrl+9 send_text application \x14\x39
+
+# BEGIN_KITTY_THEME
+# Nightfox
+include current-theme.conf
+# END_KITTY_THEME
