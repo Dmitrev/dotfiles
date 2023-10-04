@@ -104,6 +104,6 @@ vim.keymap.set("n", "<leader>fb", function() oil.open() end, {desc = "Open file 
 vim.keymap.set("n", "<leader>fB", function() oil.open(cwd) end, {desc = "Open file browser in project root"});
 
 -- rest
-vim.keymap.set('n', 're', '<Plug>RestNvim', { desc = 'execute request' })
-vim.keymap.set('n', 'rp', '<Plug>RestNvimPreview', { desc = 'preview curl' })
-vim.keymap.set('n', 'rl', '<Plug>RestNvimLast', { desc = 'repeat last request' })
+vim.keymap.set('n', '<leader>re', '<Plug>RestNvim', { desc = 'execute request' })
+vim.keymap.set('n', '<leader>rp', '<Plug>RestNvimPreview', { desc = 'preview curl' })
+vim.keymap.set('n', '<leader>rl', '<Plug>RestNvimLast', { desc = 'repeat last request' })
