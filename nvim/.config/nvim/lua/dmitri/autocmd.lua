@@ -9,13 +9,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- Autoload skeleton files
-local skeleton_group = vim.api.nvim_create_augroup('Skeleton', { clear = true });
-
-vim.api.nvim_create_autocmd('BufNewFile', {
-    callback = function()
-      vim.cmd([[ 0r ~/.config/nvim/skeletons/skeleton.php]])
-    end,
-    group = skeleton_group,
-    pattern = '*.php'
-})
