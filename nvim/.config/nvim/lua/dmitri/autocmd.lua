@@ -9,3 +9,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+local dbui_group = vim.api.nvim_create_augroup('DadBodUI', { clear = true })
+
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function()
+    -- disable folding
+    vim.opt_local.foldenable = false
+  end,
+  pattern = 'dbout',
+  group = dbui_group
+})

@@ -266,6 +266,9 @@ ls.add_snippets("php", {
     s("yield", {
         t("yield ["), i(0), t("];"),
     }),
+    s("strict", {
+        t("declare(strict_types=1);"),
+    }),
 
     -- create data provider doc block data provider method
     s("dataprovider", {
