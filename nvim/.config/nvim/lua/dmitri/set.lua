@@ -28,7 +28,8 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- leave 8 lines above and below when scrolling
-vim.opt.scrolloff = 8;
+vim.o.scrolloff = 10
+vim.o.sidescrolloff = 5
 
 vim.opt.hlsearch = false
 -- search as you type --
