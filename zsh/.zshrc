@@ -66,6 +66,8 @@ alias jira="open https://mediaexchangegroup.atlassian.net/jira/software/projects
 # LSP cache clear
 alias lcc='rm ~/.local/state/nvim/lsp.log && echo "cleared LSP log"';
 
+# open mobility foler with streching excercises
+alias mob='xdg-open /mnt/nas/Ebooks/mobility';
 
 # random useful stuff
 alias last_downloaded_file="ls -t ~/Downloads | head -n 1 | xargs -I {} echo '$HOME/Downloads/{}'"
