@@ -14,6 +14,14 @@ vim.keymap.set({"v"}, "<leader>pr", '"_dP', { noremap = true }) -- paste
 vim.keymap.set({"n"}, "<leader>P", '"+P', { noremap = true }) -- paste
 vim.keymap.set({"n"}, "<leader>dd", '"_dd', { noremap = true })
 
+-- tabs
+vim.keymap.set({"n"}, "<leader>tc", '<cmd>tabnew<CR>', { noremap = true })
+vim.keymap.set({"n"}, "<leader>tq", '<cmd>tabclose<CR>', { noremap = true })
+vim.keymap.set({"n"}, "<leader>tn", '<cmd>tabnext<CR>', { noremap = true })
+vim.keymap.set({"n"}, "<leader>tp", '<cmd>tabprevious<CR>', { noremap = true })
+vim.keymap.set({"n"}, "<leader>tj", '<cmd>-tabmove<CR>', { noremap = true })
+vim.keymap.set({"n"}, "<leader>tk", '<cmd>tabmove<CR>', { noremap = true })
+
 -- Moving up and down and recenter screen
 vim.api.nvim_set_keymap("n", "<c-d>", "<c-d>zz", { noremap = true})
 vim.api.nvim_set_keymap("n", "<c-u>", "<c-u>zz", { noremap = true})
