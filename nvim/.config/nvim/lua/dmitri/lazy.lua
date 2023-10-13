@@ -134,19 +134,6 @@ require("lazy").setup({
     {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
     {
-        "folke/which-key.nvim",
-        config = function()
-            -- require("which-key").setup({})
-        end
-    },
-    --
-    -- themes --
-    {
-        'Shatur/neovim-ayu',
-        lazy = false,
-        priority = 1000,
-    },
-    {
         "EdenEast/nightfox.nvim",
         lazy = false,
         priority = 1000,
