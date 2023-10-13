@@ -115,3 +115,8 @@ vim.keymap.set("n", "<leader>fB", function() oil.open(cwd) end, {desc = "Open fi
 vim.keymap.set('n', '<leader>re', '<Plug>RestNvim', { desc = 'execute request' })
 vim.keymap.set('n', '<leader>rp', '<Plug>RestNvimPreview', { desc = 'preview curl' })
 vim.keymap.set('n', '<leader>rl', '<Plug>RestNvimLast', { desc = 'repeat last request' })
+
+
+-- Setup hover.nvim
+-- vim.keymap.set("n", "K", require("hover").hover, {desc = "hover.nvim"})
+-- vim.keymap.set("n", "gK", require("hover").hover_select, {desc = "hover.nvim (select)"})
