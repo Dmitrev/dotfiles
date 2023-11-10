@@ -36,6 +36,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.api.nvim_command('set noshowmode')
 vim.opt.wrap = false
+vim.opt.splitright = true
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 -- vim.g.loaded = 1
