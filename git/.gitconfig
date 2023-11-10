@@ -6,5 +6,6 @@
 [core]
 	editor = nvim
 	filemode = false
+	excludesFile = ~/.gitignore
 [status]
 	showUntrackedFiles = all
