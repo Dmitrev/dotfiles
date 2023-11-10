@@ -1,6 +1,12 @@
 vim.o.background = "dark"
+-- Lua
+-- require('onedark').setup {
+--     style = 'warmer'
+-- }
+require('onedark').load()
 
-vim.cmd("colorscheme nightfox")
+-- vim.cmd("colorscheme gruvbox-material")
+-- vim.cmd("colorscheme onedark")
 
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)

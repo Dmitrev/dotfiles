@@ -132,12 +132,8 @@ require("lazy").setup({
         dependencies = { {'nvim-lua/plenary.nvim'} }
     },
     {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    { 'navarasu/onedark.nvim', priority = 1000},
 
-    {
-        "EdenEast/nightfox.nvim",
-        lazy = false,
-        priority = 1000,
-    },
     -- html
     {
         'windwp/nvim-ts-autotag',
