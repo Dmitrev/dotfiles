@@ -39,7 +39,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
   -- Setup keymaps
   vim.keymap.set("n", "K", require("hover").hover, {desc = "hover.nvim"})
-  vim.keymap.et("n", "gK", require("hover").hover_select, {desc = "hover.nvim (select)"})
+  vim.keymap.set("n", "gK", require("hover").hover_select, {desc = "hover.nvim (select)"})
   vim.keymap.set({'n', 'i'}, '<C-k>', vim.lsp.buf.signature_help, bufopts)
   -- vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
   -- vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
