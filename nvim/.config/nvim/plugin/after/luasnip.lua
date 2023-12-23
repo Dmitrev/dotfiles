@@ -99,6 +99,25 @@ ls.add_snippets("all" , {
     s("euro", t("€")),
 })
 
+local debugobj = function()
+    return s("debugobj", {
+        t(
+            "console.debug(JSON.parse(JSON.stringify("
+        ),
+        i(0),
+        t(")));")
+    })
+end
+ls.add_snippets("javascript", {
+    -- debug javascript object
+    debugobj()
+});
+
+ls.add_snippets("vue", {
+    -- debug javascript object
+    debugobj()
+});
+
 ls.add_snippets("php", {
     s("!!php", {
         t({
