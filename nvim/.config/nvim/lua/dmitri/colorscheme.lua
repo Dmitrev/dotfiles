@@ -1,8 +1,8 @@
 vim.o.background = "dark"
 -- Lua
--- require('onedark').setup {
---     style = 'warmer'
--- }
+require('onedark').setup {
+    -- style = 'deep'
+}
 require('onedark').load()
 
 -- vim.cmd("colorscheme gruvbox-material")
