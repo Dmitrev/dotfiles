@@ -1,4 +1,12 @@
-require'cmp'.setup {
+local cmp_loaded, cmp = pcall(require, "cmp")
+local cmp_nvim_lsp_loaded, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+local lspconfig_loaded, lspconfig = pcall(require, "lspconfig")
+
+if not cmp_loaded or not cmp_nvim_lsp_loaded or not lspconfig_loaded then
+    return
+end
+
+cmp.setup {
     snippet = {
         expand = function(args) 
             require('luasnip').lsp_expand(args.body)
@@ -12,7 +20,7 @@ require'cmp'.setup {
 
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 -- set to "debug" if debugging is required otherwise "off"
 vim.lsp.set_log_level("off")
@@ -66,5 +74,5 @@ for server, server_config in pairs(servers.getLspConfig()) do
         lsp_config[index] = value
     end
 
-    require('lspconfig')[server].setup(lsp_config)
+    lspconfig[server].setup(lsp_config)
 end

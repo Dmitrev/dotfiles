@@ -1,9 +1,14 @@
+local ok, cmp = pcall(require, 'cmp')
+if not ok then
+    return
+end
+
 local augroup = vim.api.nvim_create_augroup("vim-dadbod-completion", {})
 vim.api.nvim_create_autocmd("FileType", {
     pattern = {"sql", "mysql", "plsql"},
     callback = function()
         vim.schedule(function()
-            require('cmp').setup.buffer({
+            cmp.setup.buffer({
                 sources = {
                     {
                         name = 'vim-dadbod-completion'

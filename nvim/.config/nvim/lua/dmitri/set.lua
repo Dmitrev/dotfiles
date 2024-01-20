@@ -16,7 +16,7 @@ vim.opt.colorcolumn = "120"
 
 -- Make the colors more vivid https://github.com/morhetz/gruvbox/wiki/Terminal-specific#0-recommended-neovimvim-true-color-support
 -- Enables 24-bit RGB color in the TUI
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 
 vim.opt.autoindent = true
 vim.opt.smartindent = true

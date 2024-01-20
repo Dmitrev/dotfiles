@@ -1,4 +1,10 @@
-require'nvim-treesitter.configs'.setup {
+local ok, ntc = pcall(require, 'nvim-treesitter.configs')
+
+if not ok then
+    return
+end
+
+ntc.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "php", "html", "css", "json", "dockerfile", "javascript", "kdl", "go", "markdown", "markdown_inline", "python", "http" },
 

@@ -1,8 +1,8 @@
 vim.api.nvim_set_keymap("n", "<leader><leader>r", "<cmd> lua require('dmitri.utils').reload('dmitri')<CR>", { noremap = true })
 
 -- save file 
-vim.api.nvim_set_keymap("n", "<leader>w", ":w<cr>", { noremap = false })
-vim.api.nvim_set_keymap("n", "<leader>q", ":q<cr>", { noremap = true })
+vim.keymap.set({"n"}, "<leader>w", "<cmd>w<CR>", { noremap = false })
+vim.keymap.set({"n"}, "<leader>q", "<cmd>q<CR>", { noremap = true })
 vim.keymap.set({"n", "v", "i"}, "<c-c>", "<ESC>", { noremap = true })
 
 vim.keymap.set({"v"}, "<leader>yc", '"+y', { noremap = true }) -- copy
@@ -37,30 +37,31 @@ vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true })
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true })
 
 -- LSP keybindings
-local builtin = "require('telescope.builtin')";
-local theme = "require('telescope.themes').get_ivy";
+local ok, telescope = pcall(require, 'telescope')
+if ok then
+    local builtin = "require('telescope.builtin')";
+    local theme = "require('telescope.themes').get_ivy";
 
-local fzflua = require("fzf-lua")
-require("dmitri.set")
--- vim.keymap.set({"n"}, "<leader>ff", function() fzflua.files({hidden = true}) end)
-vim.api.nvim_set_keymap("n", "<Leader>fr", "<cmd> lua ".. builtin..".resume()<CR>", { noremap = true, desc = "Resume last Telescope instance"})
-vim.api.nvim_set_keymap("n", "<Leader>ff", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false}))<CR>", { noremap = true, desc = "Find files"})
-vim.api.nvim_set_keymap("n", "<Leader>fa", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false,no_ignore=true}))<CR>", { noremap = true, desc = "Find all files"})
-vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua ".. builtin..".live_grep(".. theme .."())<CR>", { noremap = true, desc = "Grep files"})
-vim.api.nvim_set_keymap("n", "<leader>fG", "<cmd>lua ".. builtin..".live_grep(".. theme .."({no_ignore=true}))<CR>", { noremap = true, desc = "Grep all files"})
-vim.api.nvim_set_keymap("n", "<leader>fl", "<cmd>lua ".. builtin..".buffers(".. theme .."())<CR>", { noremap = true, desc = "File browser in cwd"})
-vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua ".. builtin..".help_tags(".. theme .."())<CR>", { noremap = true})
-vim.api.nvim_set_keymap("n", "<Leader>lds", "<cmd> lua ".. builtin..".lsp_document_symbols(".. theme .."())<CR>", { noremap = true, desc = "List document symbols"})
-vim.api.nvim_set_keymap("n", "<Leader>lws", "<cmd> lua ".. builtin..".lsp_workspace_symbols(".. theme .."())<CR>", { noremap = true, desc = "List workspace symbols"})
-vim.api.nvim_set_keymap("n", "<Leader>ldws", "<cmd> lua ".. builtin..".lsp_dynamic_workspace_symbols(".. theme .."())<CR>", { noremap = true, desc = "List dynamic workspace symbols"})
--- vim.api.nvim_set_keymap("n", "<Leader>e", "<cmd> lua ".. builtin..".oldfiles(".. theme .."({previewer=false}))<CR>", { noremap = true, desc = "Recent files"})
-vim.api.nvim_set_keymap("n", "<Leader>e", "<cmd> lua ".. builtin..".oldfiles(".. theme .."({previewer=false}))<CR>", { noremap = true, desc = "Recent files"})
-vim.api.nvim_set_keymap("n", "<C-_>", "<cmd> lua ".. builtin..".current_buffer_fuzzy_find(".. theme .."())<CR>", { noremap = true, desc = "Fuzzy find buffer"})
-vim.api.nvim_set_keymap("n", "<Leader>gr", "<cmd> lua ".. builtin..".lsp_references(".. theme .."())<CR>", { noremap = true, desc = "LSP References"})
-vim.api.nvim_set_keymap("n", "<Leader>lic", "<cmd> lua ".. builtin..".lsp_incoming_calls(".. theme .."())<CR>", { noremap = true, desc = "LSP incoming calls"})
-vim.api.nvim_set_keymap("n", "<Leader>loc", "<cmd> lua ".. builtin..".lsp_outgoing_calls(".. theme .."())<CR>", { noremap = true, desc = "LSP outgoing calls"})
-vim.api.nvim_set_keymap("n", "<Leader>gi", "<cmd> lua ".. builtin..".lsp_implementations(".. theme .."())<CR>", { noremap = true, desc = "LSP implementations"})
-vim.api.nvim_set_keymap("n", "<Leader>dl", "<cmd> lua ".. builtin..".diagnostics(".. theme .."())<CR>", { noremap = true, desc = "List Diagnostics"})
+    require("dmitri.set")
+    vim.api.nvim_set_keymap("n", "<Leader>fr", "<cmd> lua ".. builtin..".resume()<CR>", { noremap = true, desc = "Resume last Telescope instance"})
+    vim.api.nvim_set_keymap("n", "<Leader>ff", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false}))<CR>", { noremap = true, desc = "Find files"})
+    vim.api.nvim_set_keymap("n", "<Leader>fa", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false,no_ignore=true}))<CR>", { noremap = true, desc = "Find all files"})
+    vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua ".. builtin..".live_grep(".. theme .."())<CR>", { noremap = true, desc = "Grep files"})
+    vim.api.nvim_set_keymap("n", "<leader>fG", "<cmd>lua ".. builtin..".live_grep(".. theme .."({no_ignore=true}))<CR>", { noremap = true, desc = "Grep all files"})
+    vim.api.nvim_set_keymap("n", "<leader>fl", "<cmd>lua ".. builtin..".buffers(".. theme .."())<CR>", { noremap = true, desc = "File browser in cwd"})
+    vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua ".. builtin..".help_tags(".. theme .."())<CR>", { noremap = true})
+    vim.api.nvim_set_keymap("n", "<Leader>lds", "<cmd> lua ".. builtin..".lsp_document_symbols(".. theme .."())<CR>", { noremap = true, desc = "List document symbols"})
+    vim.api.nvim_set_keymap("n", "<Leader>lws", "<cmd> lua ".. builtin..".lsp_workspace_symbols(".. theme .."())<CR>", { noremap = true, desc = "List workspace symbols"})
+    vim.api.nvim_set_keymap("n", "<Leader>ldws", "<cmd> lua ".. builtin..".lsp_dynamic_workspace_symbols(".. theme .."())<CR>", { noremap = true, desc = "List dynamic workspace symbols"})
+    -- vim.api.nvim_set_keymap("n", "<Leader>e", "<cmd> lua ".. builtin..".oldfiles(".. theme .."({previewer=false}))<CR>", { noremap = true, desc = "Recent files"})
+    vim.api.nvim_set_keymap("n", "<Leader>e", "<cmd> lua ".. builtin..".oldfiles(".. theme .."({previewer=false}))<CR>", { noremap = true, desc = "Recent files"})
+    vim.api.nvim_set_keymap("n", "<C-_>", "<cmd> lua ".. builtin..".current_buffer_fuzzy_find(".. theme .."())<CR>", { noremap = true, desc = "Fuzzy find buffer"})
+    vim.api.nvim_set_keymap("n", "<Leader>gr", "<cmd> lua ".. builtin..".lsp_references(".. theme .."())<CR>", { noremap = true, desc = "LSP References"})
+    vim.api.nvim_set_keymap("n", "<Leader>lic", "<cmd> lua ".. builtin..".lsp_incoming_calls(".. theme .."())<CR>", { noremap = true, desc = "LSP incoming calls"})
+    vim.api.nvim_set_keymap("n", "<Leader>loc", "<cmd> lua ".. builtin..".lsp_outgoing_calls(".. theme .."())<CR>", { noremap = true, desc = "LSP outgoing calls"})
+    vim.api.nvim_set_keymap("n", "<Leader>gi", "<cmd> lua ".. builtin..".lsp_implementations(".. theme .."())<CR>", { noremap = true, desc = "LSP implementations"})
+    vim.api.nvim_set_keymap("n", "<Leader>dl", "<cmd> lua ".. builtin..".diagnostics(".. theme .."())<CR>", { noremap = true, desc = "List Diagnostics"})
+end
 
 
 -- copy file path into clipboard, I used this to run a specific test
@@ -104,12 +105,14 @@ vim.keymap.set("n", "<leader>db", "<cmd>DBUIFindBuffer<CR>", { noremap = true, d
 vim.keymap.set('n', 'g?', '<cmd>lua vim.diagnostic.open_float()<CR>')
 
 
-local oil = require('oil')
-local cwd = vim.fn.getcwd()
+local ok, oil = pcall(require, 'oil')
+if ok then
+    local cwd = vim.fn.getcwd()
 
--- Netrw
-vim.keymap.set("n", "<leader>fb", function() oil.open() end, {desc = "Open file browser in file location"});
-vim.keymap.set("n", "<leader>fB", function() oil.open(cwd) end, {desc = "Open file browser in project root"});
+    -- Netrw
+    vim.keymap.set("n", "<leader>fb", function() oil.open() end, {desc = "Open file browser in file location"});
+    vim.keymap.set("n", "<leader>fB", function() oil.open(cwd) end, {desc = "Open file browser in project root"});
+end
 
 -- rest
 vim.keymap.set('n', '<leader>re', '<Plug>RestNvim', { desc = 'execute request' })

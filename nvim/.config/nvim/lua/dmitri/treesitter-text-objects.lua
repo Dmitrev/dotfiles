@@ -1,4 +1,10 @@
-require'nvim-treesitter.configs'.setup {
+local ok, ntc = pcall(require, 'nvim-treesitter.configs')
+
+if not ok then
+    return
+end
+
+ntc.setup {
   textobjects = {
     select = {
       enable = true,

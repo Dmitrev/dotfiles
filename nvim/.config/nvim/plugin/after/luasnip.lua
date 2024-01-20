@@ -1,4 +1,8 @@
-local ls = require "luasnip"
+local ok, ls = pcall(require, 'luasnip')
+if not ok then
+    return
+end
+
 local types = require "luasnip.util.types"
 local s = ls.snippet
 local sn = ls.snippet_node

@@ -1,3 +1,9 @@
+local telescope_loaded, telescope = pcall(require, 'telescope')
+
+if not telescope_loaded then
+    return
+end
+
 local previewers = require("telescope.previewers")
 local new_maker = function(filepath, bufnr, opts)
     opts = opts or {}
@@ -14,7 +20,7 @@ local new_maker = function(filepath, bufnr, opts)
 end
 
 
-require("telescope").setup {
+telescope.setup {
   defaults = {
      -- winblend = 30, -- add transparency 
      buffer_previewer_maker = new_maker

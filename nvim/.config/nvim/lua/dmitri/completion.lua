@@ -1,8 +1,13 @@
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
-local cmp = require('cmp')
-local lspkind = require('lspkind')
+local cmp_loaded, cmp = pcall(require, 'cmp')
+local lspkind_loaded, lspkind = pcall(require, 'lspkind')
+local luasnip_loaded, luasnip = pcall(require, 'luasnip')
+
+if not cmp_loaded or not lspkind_loaded or not luasnip_loaded then
+    return
+end
 
 cmp.setup({
     sources = cmp.config.sources({
@@ -18,7 +23,7 @@ cmp.setup({
     },
     snippet = {
         expand = function(args)
-            require("luasnip").lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
 
