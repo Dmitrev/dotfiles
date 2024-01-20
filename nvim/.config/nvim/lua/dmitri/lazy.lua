@@ -133,6 +133,7 @@ require("lazy").setup({
     },
     {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     { 'navarasu/onedark.nvim', priority = 1000},
+    { "rebelot/kanagawa.nvim", priority = 1000 },
 
     -- html
     {
@@ -175,5 +176,6 @@ require("lazy").setup({
                 title = true
             }
         end
-    }
+    },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 }, opts)
