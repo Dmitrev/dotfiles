@@ -37,25 +37,53 @@ vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true })
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true })
 
 -- LSP keybindings
+local ok, fzf = pcall(require, 'fzf-lua')
+if ok then
+    vim.keymap.set({"n"}, "<Leader><Leader>f", "<cmd>FzfLua resume<CR>", {desc = "resume fzf"})
+    vim.keymap.set({"n"}, "<Leader>fa", "<cmd>FzfLua<CR>", {desc = "run fzf"})
+
+    vim.keymap.set({"n"}, "<Leader>ff", function()
+        fzf.files({fd_opts = '--type file --hidden --follow --no-ignore --exclude vendor --exclude node_modules --exclude docker/data'})
+    end, {desc = "search files"})
+
+    vim.keymap.set({"n"}, "<Leader>fF", function()
+        fzf.files({fd_opts = '--type file --hidden --follow --no-ignore --exclude vendor --exclude node_modules'})
+    end, {desc = "search files include all hidden files"})
+
+    vim.keymap.set({"n"}, "<Leader>bb", function()
+        fzf.buffers()
+    end, {desc = "search buffers"})
+
+    vim.keymap.set({"n"}, "<Leader>fg", function()  fzf.live_grep_glob() end, {desc = "search pattern files"})
+    vim.keymap.set({"n"}, "<Leader>fh", function()  fzf.help_tags() end, {desc = "search help"})
+    vim.keymap.set({"n"}, "<Leader>e", function()  fzf.oldfiles() end, {desc = "oldfiles"})
+    vim.keymap.set({"n"}, "<C-_>", function()  fzf.blines() end, {desc = "buffer lines"})
+
+    -- vim.keymap.set({"n"}, "<Leader>ff", "<cmd>FzfLua files<CR>", {desc = "search files"})
+    -- vim.keymap.set({"n"}, "<Leader>ff", function() fzf.files({ fzf_opts = {['--layout'] = 'reverse-list'} }) end, {desc = "search files"})
+    -- vim.keymap.set({"n"}, "<Leader>ff", function() fzf.files({prompt="LS>", cms="ls", cwd="~/rust"}) end, {desc = "search files"})
+    
+    -- vim.keymap.set({"n"}, "<Leader>fG", function()  fzf.live_grep({debug=true}) end, {desc = "search files"})
+
+    
+
+    print("fzf is loaded")
+else
+    print("fzf lua not loaded")
+end
 local ok, telescope = pcall(require, 'telescope')
 if ok then
     local builtin = "require('telescope.builtin')";
     local theme = "require('telescope.themes').get_ivy";
+    local my_theme = require('telescope.themes').get_ivy;
 
     require("dmitri.set")
-    vim.api.nvim_set_keymap("n", "<Leader>fr", "<cmd> lua ".. builtin..".resume()<CR>", { noremap = true, desc = "Resume last Telescope instance"})
-    vim.api.nvim_set_keymap("n", "<Leader>ff", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false}))<CR>", { noremap = true, desc = "Find files"})
-    vim.api.nvim_set_keymap("n", "<Leader>fa", "<cmd> lua ".. builtin..".find_files(".. theme .."({hidden=true, previewer=false,no_ignore=true}))<CR>", { noremap = true, desc = "Find all files"})
-    vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua ".. builtin..".live_grep(".. theme .."())<CR>", { noremap = true, desc = "Grep files"})
-    vim.api.nvim_set_keymap("n", "<leader>fG", "<cmd>lua ".. builtin..".live_grep(".. theme .."({no_ignore=true}))<CR>", { noremap = true, desc = "Grep all files"})
-    vim.api.nvim_set_keymap("n", "<leader>fl", "<cmd>lua ".. builtin..".buffers(".. theme .."())<CR>", { noremap = true, desc = "File browser in cwd"})
-    vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua ".. builtin..".help_tags(".. theme .."())<CR>", { noremap = true})
     vim.api.nvim_set_keymap("n", "<Leader>lds", "<cmd> lua ".. builtin..".lsp_document_symbols(".. theme .."())<CR>", { noremap = true, desc = "List document symbols"})
     vim.api.nvim_set_keymap("n", "<Leader>lws", "<cmd> lua ".. builtin..".lsp_workspace_symbols(".. theme .."())<CR>", { noremap = true, desc = "List workspace symbols"})
     vim.api.nvim_set_keymap("n", "<Leader>ldws", "<cmd> lua ".. builtin..".lsp_dynamic_workspace_symbols(".. theme .."())<CR>", { noremap = true, desc = "List dynamic workspace symbols"})
     -- vim.api.nvim_set_keymap("n", "<Leader>e", "<cmd> lua ".. builtin..".oldfiles(".. theme .."({previewer=false}))<CR>", { noremap = true, desc = "Recent files"})
-    vim.api.nvim_set_keymap("n", "<Leader>e", "<cmd> lua ".. builtin..".oldfiles(".. theme .."({previewer=false}))<CR>", { noremap = true, desc = "Recent files"})
-    vim.api.nvim_set_keymap("n", "<C-_>", "<cmd> lua ".. builtin..".current_buffer_fuzzy_find(".. theme .."())<CR>", { noremap = true, desc = "Fuzzy find buffer"})
+    -- vim.api.nvim_set_keymap("n", "<Leader>e", "<cmd> lua ".. builtin..".oldfiles(".. theme .."({previewer=false}))<CR>", { noremap = true, desc = "Recent files"})
+    -- vim.api.nvim_set_keymap("n", "<C-_>", "<cmd> lua ".. builtin..".current_buffer_fuzzy_find(".. theme .."())<CR>", { noremap = true, desc = "Fuzzy find buffer"})
     vim.api.nvim_set_keymap("n", "<Leader>gr", "<cmd> lua ".. builtin..".lsp_references(".. theme .."())<CR>", { noremap = true, desc = "LSP References"})
     vim.api.nvim_set_keymap("n", "<Leader>lic", "<cmd> lua ".. builtin..".lsp_incoming_calls(".. theme .."())<CR>", { noremap = true, desc = "LSP incoming calls"})
     vim.api.nvim_set_keymap("n", "<Leader>loc", "<cmd> lua ".. builtin..".lsp_outgoing_calls(".. theme .."())<CR>", { noremap = true, desc = "LSP outgoing calls"})
