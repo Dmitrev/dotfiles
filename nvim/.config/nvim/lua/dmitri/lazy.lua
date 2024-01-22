@@ -64,6 +64,9 @@ require("lazy").setup({
     },
 
     { 'ibhagwan/fzf-lua',
+        config = function()
+            require('dmitri.plugins.fzf-lua')
+        end,
         -- optional for icon support
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
@@ -133,7 +136,13 @@ require("lazy").setup({
     },
     {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     { 'navarasu/onedark.nvim', priority = 1000},
-    { "rebelot/kanagawa.nvim", priority = 1000 },
+    {
+        "rebelot/kanagawa.nvim",
+        config = function()
+            vim.cmd("colorscheme kanagawa")
+        end,
+        priority = 1000
+    },
 
     -- html
     {
@@ -177,5 +186,4 @@ require("lazy").setup({
             }
         end
     },
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 }, opts)
