@@ -54,7 +54,7 @@ if ok then
         fzf.buffers()
     end, {desc = "search buffers"})
 
-    vim.keymap.set({"n"}, "<Leader>fg", function()  fzf.live_grep_glob() end, {desc = "search pattern files"})
+    -- vim.keymap.set({"n"}, "<Leader>fg", function()  fzf.live_grep_glob() end, {desc = "search pattern files"})
     vim.keymap.set({"n"}, "<Leader>fh", function()  fzf.help_tags() end, {desc = "search help"})
     vim.keymap.set({"n"}, "<Leader>e", function()  fzf.oldfiles() end, {desc = "oldfiles"})
     vim.keymap.set({"n"}, "<C-_>", function()  fzf.blines() end, {desc = "buffer lines"})
@@ -83,6 +83,19 @@ if ok then
         function()
             telescope_builtin.find_files(telescope_theme({
                 hidden=true
+            }))
+        end
+    );
+
+    vim.keymap.set({"n"}, "<Leader>fg",
+        function()
+            telescope_builtin.live_grep(telescope_theme({
+                additional_args = function(opts)
+                    return {
+                        "--hidden",
+                        "--glob", "!.git",
+                    }
+               end
             }))
         end
     );
