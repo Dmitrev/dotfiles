@@ -7,20 +7,21 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font(
-    "Berkeley Mono Variable",
+    -- "Berkeley Mono Variable",
+    "PragmataPro Mono Liga",
     { weight = 'Regular' }
 )
 
 config.freetype_load_target = 'Normal'
 -- config.freetype_render_target = 'Normal'
 
-config.color_scheme = 'nightfox'
+config.color_scheme = 'monokai'
 
-local nightfox = wezterm.get_builtin_color_schemes()['nightfox']
-nightfox.cursor_fg = 'black';
+local monokai = wezterm.get_builtin_color_schemes()['Monokai Pro (Gogh)']
+monokai.cursor_fg = 'black';
 
 config.color_schemes = {
-    ['nightfox'] = nightfox
+    ['monokai'] = monokai
 }
 
 config.font_size = 16

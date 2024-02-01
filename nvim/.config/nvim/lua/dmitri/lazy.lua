@@ -135,12 +135,22 @@ require("lazy").setup({
         dependencies = { {'nvim-lua/plenary.nvim'} }
     },
     {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-    { 'navarasu/onedark.nvim', priority = 1000},
+    { 'navarasu/onedark.nvim',
+        priority = 1000},
+
+    {
+        "loctvl842/monokai-pro.nvim",
+        -- config = function()
+        --     require("monokai-pro").setup()
+        --     vim.cmd("MonokaiPro spectrum");
+        -- end,
+        priority = 1000
+    },
+    { "rose-pine/neovim", name = "rose-pine", config = function()
+        vim.cmd("colorscheme rose-pine")
+    end},
     {
         "rebelot/kanagawa.nvim",
-        config = function()
-            vim.cmd("colorscheme kanagawa")
-        end,
         priority = 1000
     },
 
