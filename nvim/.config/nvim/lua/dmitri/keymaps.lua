@@ -42,10 +42,10 @@ if ok then
     vim.keymap.set({"n"}, "<Leader><Leader>f", "<cmd>FzfLua resume<CR>", {desc = "resume fzf"})
     vim.keymap.set({"n"}, "<Leader>fa", "<cmd>FzfLua<CR>", {desc = "run fzf"})
 
-    vim.keymap.set({"n"}, "<Leader>ff", function()
-        fzf.files({fd_opts = '--type file --hidden --follow --no-ignore --exclude vendor --exclude node_modules --exclude docker/data'})
-    end, {desc = "search files"})
-
+    -- vim.keymap.set({"n"}, "<Leader>ff", function()
+    --     fzf.files({fd_opts = '--type file --hidden --follow --no-ignore --exclude vendor --exclude node_modules --exclude docker/data'})
+    -- end, {desc = "search files"})
+    --
     vim.keymap.set({"n"}, "<Leader>fF", function()
         fzf.files({fd_opts = '--type file --hidden --follow --no-ignore --exclude vendor --exclude node_modules'})
     end, {desc = "search files include all hidden files"})
@@ -73,9 +73,19 @@ else
 end
 local ok, telescope = pcall(require, 'telescope')
 if ok then
-    local builtin = "require('telescope.builtin')";
-    local theme = "require('telescope.themes').get_ivy";
-    local my_theme = require('telescope.themes').get_ivy;
+    local builtin = "require('telescope.builtin')"
+    local theme = "require('telescope.themes').get_ivy"
+
+    local telescope_builtin = require('telescope.builtin')
+    local telescope_theme = require('telescope.themes').get_ivy
+
+    vim.keymap.set({"n"}, "<Leader>ff",
+        function()
+            telescope_builtin.find_files(telescope_theme({
+                hidden=true
+            }))
+        end
+    );
 
     require("dmitri.set")
     vim.api.nvim_set_keymap("n", "<Leader>lds", "<cmd> lua ".. builtin..".lsp_document_symbols(".. theme .."())<CR>", { noremap = true, desc = "List document symbols"})
