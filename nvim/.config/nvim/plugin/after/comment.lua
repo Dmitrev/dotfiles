@@ -6,3 +6,4 @@ end
 
 ft.set('kdl', '// %s')
 ft.set('mysql', '-- %s')
+ft.set('hurl', '# %s')

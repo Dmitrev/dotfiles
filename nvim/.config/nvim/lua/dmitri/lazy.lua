@@ -109,6 +109,10 @@ require("lazy").setup({
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require("lualine").setup {
+            }
+        end,
         lazy = false,
     },
 
@@ -138,20 +142,61 @@ require("lazy").setup({
     { 'navarasu/onedark.nvim',
         priority = 1000},
 
+    { 'rktjmp/lush.nvim' },
+       {
+        'maxmx03/dracula.nvim',
+        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        priority = 1000, -- make sure to load this before all the other start plugins
+        -- config = function ()
+        -- local dracula = require 'dracula'
+        --     dracula.setup()
+        --
+        --     vim.cmd.colorscheme 'dracula'
+        -- end
+       },
+
     {
-        "loctvl842/monokai-pro.nvim",
+        'projekt0n/github-nvim-theme',
+        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        priority = 1000, -- make sure to load this before all the other start plugins
         -- config = function()
-        --     require("monokai-pro").setup()
-        --     vim.cmd("MonokaiPro spectrum");
+        --     require('github-theme').setup({
+        --         -- ...
+        --     })
+        --
+        --     vim.cmd('colorscheme github_dark_high_contrast')
         -- end,
-        priority = 1000
     },
-    { "rose-pine/neovim", name = "rose-pine", config = function()
-        vim.cmd("colorscheme rose-pine")
-    end},
+    { 'dasupradyumna/midnight.nvim',
+        lazy = false,
+        priority = 1000,
+        -- config = function()
+        --     vim.cmd.colorscheme('midnight')
+        -- end,
+    },
     {
-        "rebelot/kanagawa.nvim",
-        priority = 1000
+        "zootedb0t/citruszest.nvim",
+        -- dir = "~/tmp/citruszest.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme('citruszest')
+            -- vim.api.nvim_set_hl(0, "Substitute", { link = "IncSearch" })
+        end,
+    },
+    {
+        'marko-cerovac/material.nvim',
+        lazy = false,
+        priority = 1000,
+        -- config = function()
+        --     require('material').setup({
+        --         disable = {
+        --             colored_cursor = true
+        --         }
+        --     })
+        --     vim.cmd.colorscheme('material-darker')
+        --     vim.cmd('set guicursor=i:block,a:Cursor/Cursor')
+        -- end,
     },
 
     -- html

@@ -15,14 +15,8 @@ config.font = wezterm.font(
 config.freetype_load_target = 'Normal'
 -- config.freetype_render_target = 'Normal'
 
-config.color_scheme = 'monokai'
-
+config.color_scheme = 'Dracula (Official)'
 local monokai = wezterm.get_builtin_color_schemes()['Monokai Pro (Gogh)']
-monokai.cursor_fg = 'black';
-
-config.color_schemes = {
-    ['monokai'] = monokai
-}
 
 config.font_size = 16
 

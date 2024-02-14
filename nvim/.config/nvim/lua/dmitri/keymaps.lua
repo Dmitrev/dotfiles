@@ -56,8 +56,6 @@ if ok then
 
     -- vim.keymap.set({"n"}, "<Leader>fg", function()  fzf.live_grep_glob() end, {desc = "search pattern files"})
     vim.keymap.set({"n"}, "<Leader>fh", function()  fzf.help_tags() end, {desc = "search help"})
-    vim.keymap.set({"n"}, "<Leader>e", function()  fzf.oldfiles() end, {desc = "oldfiles"})
-    vim.keymap.set({"n"}, "<C-_>", function()  fzf.blines() end, {desc = "buffer lines"})
 
     -- vim.keymap.set({"n"}, "<Leader>ff", "<cmd>FzfLua files<CR>", {desc = "search files"})
     -- vim.keymap.set({"n"}, "<Leader>ff", function() fzf.files({ fzf_opts = {['--layout'] = 'reverse-list'} }) end, {desc = "search files"})
@@ -77,28 +75,43 @@ if ok then
     local theme = "require('telescope.themes').get_ivy"
 
     local telescope_builtin = require('telescope.builtin')
-    local telescope_theme = require('telescope.themes').get_ivy
+    local telescope_theme = require('telescope.themes').get_dropdown({
+        layout_config = {
+            width = 0.9,
+        },
+        -- previewer = false,
+    })
 
     vim.keymap.set({"n"}, "<Leader>ff",
         function()
-            telescope_builtin.find_files(telescope_theme({
-                hidden=true
-            }))
+            local opts = vim.deepcopy(telescope_theme)
+            opts.hidden = true
+            telescope_builtin.find_files(opts)
         end
     );
 
     vim.keymap.set({"n"}, "<Leader>fg",
         function()
-            telescope_builtin.live_grep(telescope_theme({
-                additional_args = function(opts)
-                    return {
-                        "--hidden",
-                        "--glob", "!.git",
-                    }
-               end
-            }))
+            local opts = vim.deepcopy(telescope_theme)
+            opts.additional_args = function(o)
+                return {
+                    "--hidden",
+                    "--glob", "!.git",
+                }
+            end
+            telescope_builtin.live_grep(opts)
         end
     );
+
+    vim.keymap.set({"n"}, "<C-_>", function()
+        local opts = vim.deepcopy(telescope_theme)
+        telescope_builtin.current_buffer_fuzzy_find(opts)
+    end, {desc = "buffer lines"})
+
+    vim.keymap.set({"n"}, "<Leader>e", function()  
+        local opts = vim.deepcopy(telescope_theme)
+        telescope_builtin.oldfiles(opts)
+        end, {desc = "oldfiles"})
 
     require("dmitri.set")
     vim.api.nvim_set_keymap("n", "<Leader>lds", "<cmd> lua ".. builtin..".lsp_document_symbols(".. theme .."())<CR>", { noremap = true, desc = "List document symbols"})
