@@ -2,8 +2,8 @@ export EDITOR="nvim"
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/nvim/bin:$PATH
 export PATH="$HOME/.ebcli-virtual-env/executables:$PATH"
 
 # EBS install
@@ -11,6 +11,9 @@ export PYENV_ROOT="$HOME/deps/pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 ## END EBS install
+
+# GOlang
+export CGO_ENABLED=1 # required for building cgo packages
 
 ## nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -59,18 +62,25 @@ alias zj="zellij"
 # alias dot="zellij attach dotfiles || zellij -s dotfiles --layout ~/.config/zellij/layouts/dotfiles.kdl"
 # alias rust="zellij --layout ~/.config/zellij/layouts/rust.kdl"
 
-# work shortcuts
-alias jira="open https://mediaexchangegroup.atlassian.net/jira/software/projects/MEG/boards/1"
-
 # nvim stuff
 # LSP cache clear
 alias lcc='rm ~/.local/state/nvim/lsp.log && echo "cleared LSP log"';
 
 # open mobility foler with streching excercises
-alias mob='xdg-open /mnt/nas/Ebooks/mobility';
+alias books='xdg-open ~/Documents/Ebooks';
 
 # random useful stuff
 alias last_downloaded_file="ls -t ~/Downloads | head -n 1 | xargs -I {} echo '$HOME/Downloads/{}'"
+
+# Set keybindings for PopOS tiler
+gsettings set org.gnome.mutter dynamic-workspaces false
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
+for i in {1..9} 
+do
+  gsettings set "org.gnome.shell.keybindings" "switch-to-application-$i" "[]"
+  gsettings set "org.gnome.desktop.wm.keybindings" "switch-to-workspace-$i" "['<Super>${i}']"
+  gsettings set "org.gnome.desktop.wm.keybindings" "move-to-workspace-$i" "['<Super><Shift>${i}']"
+done
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
