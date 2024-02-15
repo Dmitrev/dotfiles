@@ -1,9 +1,9 @@
 #!/bin/bash
 
 current_dir=$(pwd);
-neovim_dir="$HOME/deps/neovim";
+neovim_dir="$HOME/.local/apps/neovim";
 neovim_install_dir="$neovim_dir/nvim-dist";
-nvim_bin_path="$HOME/bin/nvim"
+nvim_bin_path="$HOME/.local/bin/nvim"
  
 [ ! -d "$neovim_dir" ] && git clone --depth 1 https://github.com/neovim/neovim.git $neovim_dir
 [ ! -d "$neovim_install_dir" ] && mkdir $neovim_install_dir
