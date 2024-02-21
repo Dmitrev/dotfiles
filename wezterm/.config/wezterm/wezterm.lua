@@ -15,10 +15,10 @@ config.font = wezterm.font(
 config.freetype_load_target = 'Normal'
 -- config.freetype_render_target = 'Normal'
 
-config.color_scheme = 'Dracula (Official)'
-local monokai = wezterm.get_builtin_color_schemes()['Monokai Pro (Gogh)']
+config.color_scheme = 'Tokyo Night Storm'
 
-config.font_size = 16
+config.font_size = 18
+config.line_height = 1.2
 
 config.window_padding = {
   left = 0,

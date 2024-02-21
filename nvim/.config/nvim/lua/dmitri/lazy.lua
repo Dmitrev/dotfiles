@@ -180,7 +180,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme('citruszest')
+            -- vim.cmd.colorscheme('citruszest')
             -- vim.api.nvim_set_hl(0, "Substitute", { link = "IncSearch" })
         end,
     },
@@ -197,6 +197,41 @@ require("lazy").setup({
         --     vim.cmd.colorscheme('material-darker')
         --     vim.cmd('set guicursor=i:block,a:Cursor/Cursor')
         -- end,
+    },
+    {
+        "neanias/everforest-nvim",
+        version = false,
+        lazy = false,
+        priority = 1000, -- make sure to load this before all the other start plugins
+        -- Optional; default configuration will be used if setup isn't called.
+        config = function()
+            -- require("everforest").setup({
+            --     background = "hard",
+            -- })
+            --
+            -- vim.cmd.colorscheme('everforest')
+        end,
+    },
+    {
+        "Tsuzat/NeoSolarized.nvim",
+        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        priority = 1000, -- make sure to load this before all the other start plugins
+        config = function()
+            -- require('NeoSolarized').setup({
+            --     transparent = false,
+            -- })
+            --
+            -- vim.cmd [[ colorscheme NeoSolarized ]]
+        end
+    },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+        config = function()
+            vim.cmd.colorscheme('tokyonight')
+        end
     },
 
     -- html

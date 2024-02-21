@@ -122,6 +122,20 @@ ls.add_snippets("vue", {
     debugobj()
 });
 
+ls.add_snippets("mysql", {
+    -- quickly query all foreign keys of table
+    s('foreign', fmta([[ 
+        select * from information_schema.TABLE_CONSTRAINTS
+        where 1 = 1
+        and information_schema.TABLE_CONSTRAINTS.CONSTRAINT_TYPE = 'FOREIGN KEY'
+        and information_schema.TABLE_CONSTRAINTS.TABLE_SCHEMA = DATABASE()
+        and information_schema.TABLE_CONSTRAINTS.TABLE_NAME = '<table_name>'
+    ]], {
+            table_name = i(0, 'table name')
+    }
+    ))
+})
+
 ls.add_snippets("php", {
     s("!!php", {
         t({

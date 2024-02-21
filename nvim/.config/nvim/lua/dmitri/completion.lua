@@ -10,12 +10,7 @@ if not cmp_loaded or not lspkind_loaded or not luasnip_loaded then
 end
 
 cmp.setup({
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'nvim_lua' },
-        { name = 'luasnip' },
-        { name = 'buffer' },
-    }),
+    sources = cmp.config.sources(require('dmitri.completion_sources').getSources()),
 
     window = {
       -- completion = cmp.config.window.bordered(),

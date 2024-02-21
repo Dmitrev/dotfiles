@@ -8,12 +8,10 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = {"sql", "mysql", "plsql"},
     callback = function()
         vim.schedule(function()
+            local global_sources = require('dmitri.completion_sources').getSources()
+            table.insert(global_sources, {name = 'vim-dadbod-completion'})
             cmp.setup.buffer({
-                sources = {
-                    {
-                        name = 'vim-dadbod-completion'
-                    }
-                }
+                sources = global_sources
             })
         end)
     end
