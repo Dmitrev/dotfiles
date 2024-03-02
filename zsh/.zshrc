@@ -14,6 +14,7 @@ eval "$(pyenv init -)"
 
 # GOlang
 export CGO_ENABLED=1 # required for building cgo packages
+export PATH=$PATH:/usr/local/go/bin
 
 ## nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
