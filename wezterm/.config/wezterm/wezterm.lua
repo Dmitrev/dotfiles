@@ -7,15 +7,15 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font(
-    -- "Berkeley Mono Variable",
-    "PragmataPro Mono Liga",
+    "Berkeley Mono Variable",
+    -- "PragmataPro Mono Liga",
     { weight = 'Regular' }
 )
 
 config.freetype_load_target = 'Normal'
 -- config.freetype_render_target = 'Normal'
 
-config.color_scheme = 'Tokyo Night Storm'
+config.color_scheme = 'Tokyo Night'
 
 config.font_size = 18
 config.line_height = 1.2
