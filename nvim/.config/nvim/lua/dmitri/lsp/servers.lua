@@ -16,7 +16,7 @@ local lsp_servers = {
    -- }, -- PHP, requires license for premium features in ~/intelephense/licence.txt
    -- psalm = {},
    phpactor = {
-      language_server_psalm = {
+      language_server_phpstan = {
          enabled = true
       },
       indexer = {
