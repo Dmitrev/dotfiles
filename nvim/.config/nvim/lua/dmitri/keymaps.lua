@@ -1,5 +1,17 @@
 vim.api.nvim_set_keymap("n", "<leader><leader>r", "<cmd> lua require('dmitri.utils').reload('dmitri')<CR>", { noremap = true })
 
+-- window command
+vim.keymap.set({"n"}, "<leader>nn", function()
+    if vim.wo.number and vim.wo.relativenumber then
+        vim.wo.relativenumber = false
+    elseif vim.wo.number and not vim.wo.relativenumber then
+        vim.wo.number = false
+    else
+        vim.wo.number = true
+        vim.wo.relativenumber = true
+    end
+end);
+
 -- save file 
 vim.keymap.set({"n"}, "<leader>w", "<cmd>w<CR>", { noremap = false })
 vim.keymap.set({"n"}, "<leader>q", "<cmd>q<CR>", { noremap = true })
