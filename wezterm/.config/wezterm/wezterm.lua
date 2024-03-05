@@ -17,7 +17,7 @@ config.freetype_load_target = 'Normal'
 
 config.color_scheme = 'Tokyo Night'
 
-config.font_size = 18
+config.font_size = 16
 config.line_height = 1.2
 
 config.window_padding = {
