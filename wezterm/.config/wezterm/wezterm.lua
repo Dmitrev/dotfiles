@@ -6,19 +6,21 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
-config.font = wezterm.font(
-    "Berkeley Mono Variable",
-    -- "PragmataPro Mono Liga",
-    { weight = 'Regular' }
-)
+config.font = wezterm.font {
+    family = "PragmataPro Mono Liga",
+    -- family = 'Berkeley Mono Variable',
+    harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
+    weight = 'Regular',
+}
 
 config.adjust_window_size_when_changing_font_size = false
 config.freetype_load_target = 'Normal'
+-- config.window_background_opacity = 0.8
 -- config.freetype_render_target = 'Normal'
 
 config.color_scheme = 'Tokyo Night'
 
-config.font_size = 16
+config.font_size = 18
 config.line_height = 1.2
 
 config.window_padding = {
