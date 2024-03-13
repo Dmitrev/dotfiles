@@ -7,9 +7,9 @@ vim.opt.guicursor = ""
 vim.opt.inccommand="nosplit"
 --
 -- print line numbers
-vim.opt.nu = true
+vim.opt.nu = false
  -- make line numbers relative to where the cursor is
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 -- highlight current line
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "120"

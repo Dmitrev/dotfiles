@@ -115,12 +115,16 @@ if ok then
         end
     );
 
+    vim.keymap.set({"n"}, "<Leader>fG", function()
+        require("telescope").extensions.live_grep_args.live_grep_args()
+    end)
+
     vim.keymap.set({"n"}, "<C-_>", function()
         local opts = vim.deepcopy(telescope_theme)
         telescope_builtin.current_buffer_fuzzy_find(opts)
     end, {desc = "buffer lines"})
 
-    vim.keymap.set({"n"}, "<Leader>e", function()  
+    vim.keymap.set({"n"}, "<Leader>e", function()
         local opts = vim.deepcopy(telescope_theme)
         telescope_builtin.oldfiles(opts)
         end, {desc = "oldfiles"})
