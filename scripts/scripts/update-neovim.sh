@@ -20,6 +20,8 @@ echo "    2) latest nightly"
 
 read -p "Your choice (1 or 2): " VERSION_CHOICE
 
+git fetch --tags --force
+
 if [ "$VERSION_CHOICE" = "2" ]
 then
     BRANCH="nightly"
