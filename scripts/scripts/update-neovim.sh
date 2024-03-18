@@ -10,7 +10,7 @@ nvim_bin_path="$HOME/.local/bin/nvim"
 
 cd $neovim_dir;
 
-git fetch --tags && git fetch && git checkout master && git pull;
+git fetch --tags --force && git fetch && git checkout master && git pull;
 
 latest_tag=$(git tag | tail -1);
 
