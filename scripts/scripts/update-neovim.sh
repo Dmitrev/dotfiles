@@ -10,7 +10,7 @@ nvim_bin_path="$HOME/.local/bin/nvim"
 
 cd $neovim_dir;
 
-git fetch --tags && git fetch && git checkout master && git pull;
+git fetch --tags --force && git fetch && git checkout master && git pull;
 
 latest_tag=$(git tag | tail -1);
 
@@ -19,8 +19,6 @@ echo "    1) latest stable ($latest_tag) - default"
 echo "    2) latest nightly"
 
 read -p "Your choice (1 or 2): " VERSION_CHOICE
-
-git fetch --tags --force
 
 if [ "$VERSION_CHOICE" = "2" ]
 then
