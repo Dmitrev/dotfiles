@@ -157,7 +157,7 @@ require("lazy").setup({
         priority = 1000},
 
     { 'rktjmp/lush.nvim' },
-       {
+    {
         'maxmx03/dracula.nvim',
         lazy = false, -- make sure we load this during startup if it is your main colorscheme
         priority = 1000, -- make sure to load this before all the other start plugins
@@ -167,76 +167,6 @@ require("lazy").setup({
         --
         --     vim.cmd.colorscheme 'dracula'
         -- end
-       },
-
-    {
-        'projekt0n/github-nvim-theme',
-        lazy = false, -- make sure we load this during startup if it is your main colorscheme
-        priority = 1000, -- make sure to load this before all the other start plugins
-        -- config = function()
-        --     require('github-theme').setup({
-        --         -- ...
-        --     })
-        --
-        --     vim.cmd('colorscheme github_dark_high_contrast')
-        -- end,
-    },
-    { 'dasupradyumna/midnight.nvim',
-        lazy = false,
-        priority = 1000,
-        -- config = function()
-        --     vim.cmd.colorscheme('midnight')
-        -- end,
-    },
-    {
-        "zootedb0t/citruszest.nvim",
-        -- dir = "~/tmp/citruszest.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            -- vim.cmd.colorscheme('citruszest')
-            -- vim.api.nvim_set_hl(0, "Substitute", { link = "IncSearch" })
-        end,
-    },
-    {
-        'marko-cerovac/material.nvim',
-        lazy = false,
-        priority = 1000,
-        -- config = function()
-        --     require('material').setup({
-        --         disable = {
-        --             colored_cursor = true
-        --         }
-        --     })
-        --     vim.cmd.colorscheme('material-darker')
-        --     vim.cmd('set guicursor=i:block,a:Cursor/Cursor')
-        -- end,
-    },
-    {
-        "neanias/everforest-nvim",
-        version = false,
-        lazy = false,
-        priority = 1000, -- make sure to load this before all the other start plugins
-        -- Optional; default configuration will be used if setup isn't called.
-        config = function()
-            -- require("everforest").setup({
-            --     background = "hard",
-            -- })
-            --
-            -- vim.cmd.colorscheme('everforest')
-        end,
-    },
-    {
-        "Tsuzat/NeoSolarized.nvim",
-        lazy = false, -- make sure we load this during startup if it is your main colorscheme
-        priority = 1000, -- make sure to load this before all the other start plugins
-        config = function()
-            -- require('NeoSolarized').setup({
-            --     transparent = false,
-            -- })
-            --
-            -- vim.cmd [[ colorscheme NeoSolarized ]]
-        end
     },
     {
         "folke/tokyonight.nvim",
@@ -262,9 +192,6 @@ require("lazy").setup({
     {
         'ThePrimeagen/harpoon',
         dependencies = { {'nvim-lua/plenary.nvim'} }
-    },
-    {
-        'rest-nvim/rest.nvim'
     },
     { "ellisonleao/dotenv.nvim" },
     {
