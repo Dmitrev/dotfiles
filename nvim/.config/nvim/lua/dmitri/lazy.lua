@@ -153,6 +153,7 @@ require("lazy").setup({
         end
     },
 
+    -- themes
     { 'navarasu/onedark.nvim',
         priority = 1000},
 
@@ -177,6 +178,98 @@ require("lazy").setup({
             vim.cmd.colorscheme('tokyonight-night')
         end
     },
+    {
+        "sainnhe/gruvbox-material",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+        -- config = function()
+        --     vim.cmd.colorscheme('gruvbox-material')
+        -- end
+    },
+    {
+        "sainnhe/everforest",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+        -- config = function()
+            -- vim.cmd.colorscheme('everforest')
+        -- end
+    },
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+        -- config = function()
+        --     vim.cmd.colorscheme('gruvbox-material')
+        -- end
+    },
+
+    {
+        "rebelot/kanagawa.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+        -- config = function()
+        --     vim.cmd.colorscheme('kanagawa')
+        -- end
+    },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        opts = {},
+        -- config = function()
+        --     vim.cmd.colorscheme('catppuccin')
+        -- end
+    },
+    {
+        "nyoom-engineering/oxocarbon.nvim",
+        priority = 1000,
+        opts = {},
+        -- config = function()
+        --     vim.cmd.colorscheme('oxocarbon')
+        -- end
+    },
+    {
+        'AlexvZyl/nordic.nvim',
+        lazy = false,
+        priority = 1000,
+        -- config = function()
+        --     require 'nordic' .load()
+        -- end
+    },
+    {
+        'ribru17/bamboo.nvim',
+        lazy = false,
+        priority = 1000,
+        -- config = function()
+        --     require('bamboo').setup {
+        --         -- optional configuration here
+        --     }
+        --     require('bamboo').load()
+        -- end,
+    },
+    {
+        "bluz71/vim-nightfly-colors",
+        name = "nightfly",
+        lazy = false,
+        priority = 1000,
+        -- config = function()
+        --     vim.cmd.colorscheme('nightlfy')
+        -- end
+    },
+    {
+        "bluz71/vim-moonfly-colors",
+        name = "moonfly",
+        lazy = false,
+        priority = 1000,
+        -- config = function()
+        --     vim.cmd.colorscheme('moonfly')
+        -- end
+    },
 
     -- html
     {
@@ -184,7 +277,7 @@ require("lazy").setup({
         config = function()
             require('nvim-ts-autotag').setup({
                 autotag = {
-                    enable = true
+                   enable = true
                 }
             })
         end
