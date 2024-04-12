@@ -32,20 +32,6 @@ telescope.setup {
     }
   },
   extensions = {
-    file_browser = {
-      hidden = true,
-      theme = "ivy",
-      -- disables netrw and use telescope-file-browser in its place
-      hijack_netrw = false,
-      mappings = {
-        ["i"] = {
-          -- your custom insert mode mappings
-        },
-        ["n"] = {
-          -- your custom normal mode mappings
-        },
-      },
-    },
     fzf = {
       fuzzy = true,                    -- false will only do exact matching
       override_generic_sorter = true,  -- override the generic sorter
@@ -58,8 +44,8 @@ telescope.setup {
       -- define mappings, e.g.
       mappings = { -- extend mappings
         i = {
-          ["<C-k>"] = lga_actions.quote_prompt(),
-          ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+          -- ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+          -- ["<C-k>"] = lga_actions.quote_prompt(),
         },
       },
       -- ... also accepts theme settings, for example:
