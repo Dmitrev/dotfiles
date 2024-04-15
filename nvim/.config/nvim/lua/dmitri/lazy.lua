@@ -212,9 +212,9 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         opts = {},
-        -- config = function()
-        --     vim.cmd.colorscheme('kanagawa')
-        -- end
+        config = function()
+            vim.cmd.colorscheme('kanagawa')
+        end
     },
     {
         "catppuccin/nvim",
@@ -225,14 +225,14 @@ require("lazy").setup({
         --     vim.cmd.colorscheme('catppuccin')
         -- end
     },
-    {
-        "nyoom-engineering/oxocarbon.nvim",
-        priority = 1000,
-        opts = {},
-        config = function()
-            vim.cmd.colorscheme('oxocarbon')
-        end
-    },
+    -- {
+    --     "nyoom-engineering/oxocarbon.nvim",
+    --     priority = 1000,
+    --     opts = {},
+    --     config = function()
+    --         vim.cmd.colorscheme('oxocarbon')
+    --     end
+    -- },
     {
         'AlexvZyl/nordic.nvim',
         lazy = false,
