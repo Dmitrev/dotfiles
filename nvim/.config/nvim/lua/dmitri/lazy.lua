@@ -174,9 +174,9 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         opts = {},
-        config = function()
-            vim.cmd.colorscheme('tokyonight-night')
-        end
+        -- config = function()
+        --     vim.cmd.colorscheme('tokyonight-night')
+        -- end
     },
     {
         "sainnhe/gruvbox-material",
@@ -229,9 +229,9 @@ require("lazy").setup({
         "nyoom-engineering/oxocarbon.nvim",
         priority = 1000,
         opts = {},
-        -- config = function()
-        --     vim.cmd.colorscheme('oxocarbon')
-        -- end
+        config = function()
+            vim.cmd.colorscheme('oxocarbon')
+        end
     },
     {
         'AlexvZyl/nordic.nvim',

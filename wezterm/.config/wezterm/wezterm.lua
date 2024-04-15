@@ -18,7 +18,7 @@ config.freetype_load_target = 'Normal'
 -- config.window_background_opacity = 0.8
 -- config.freetype_render_target = 'Normal'
 
-config.color_scheme = 'Tokyo Night'
+config.color_scheme = 'Oxocarbon Dark'
 
 config.font_size = 18
 -- config.line_height = 1.2
