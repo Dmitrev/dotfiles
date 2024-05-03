@@ -19,9 +19,10 @@ config.freetype_load_target = 'Normal'
 -- config.freetype_render_target = 'Normal'
 
 -- config.color_scheme = 'Oxocarbon Dark'
-config.color_scheme = 'Kanagawa (Gogh)'
+-- config.color_scheme = 'Kanagawa (Gogh)'
+config.color_scheme = 'Gruvbox Dark (Gogh)'
 
-config.font_size = 18
+config.font_size = 20
 -- config.line_height = 1.2
 
 config.window_padding = {

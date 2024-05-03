@@ -179,6 +179,14 @@ require("lazy").setup({
         -- end
     },
     {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000 ,
+        config = function()
+            vim.cmd.colorscheme('gruvbox')
+        end,
+        opts = {}
+    },
+    {
         "sainnhe/gruvbox-material",
         lazy = false,
         priority = 1000,
@@ -193,7 +201,7 @@ require("lazy").setup({
         priority = 1000,
         opts = {},
         -- config = function()
-            -- vim.cmd.colorscheme('everforest')
+        --     vim.cmd.colorscheme('everforest')
         -- end
     },
     {
@@ -212,9 +220,9 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         opts = {},
-        config = function()
-            vim.cmd.colorscheme('kanagawa')
-        end
+        -- config = function()
+        --     vim.cmd.colorscheme('kanagawa')
+        -- end
     },
     {
         "catppuccin/nvim",

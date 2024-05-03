@@ -18,7 +18,7 @@ if [ $? != 0 ]; then
     tmux split-window -t $session:$window.1 -h -c $dir
     tmux split-window -t $session:$window.1 -v -c $dir 
     tmux split-window -t $session:$window.3 -v -c $dir 
-    tmux send-keys -t $session:$window.4 'make up' C-m
+    tmux send-keys -t $session:$window.4 'docker compose up --build' C-m
     tmux send-keys -t $session:$window.3 'docker stats' C-m
 
     # # # these commands depend on Docker running
