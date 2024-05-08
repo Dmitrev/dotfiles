@@ -182,7 +182,7 @@ require("lazy").setup({
         "ellisonleao/gruvbox.nvim",
         priority = 1000 ,
         config = function()
-            vim.cmd.colorscheme('gruvbox')
+            -- vim.cmd.colorscheme('gruvbox')
         end,
         opts = {}
     },
@@ -229,9 +229,9 @@ require("lazy").setup({
         name = "catppuccin",
         priority = 1000,
         opts = {},
-        -- config = function()
-        --     vim.cmd.colorscheme('catppuccin')
-        -- end
+        config = function()
+            vim.cmd.colorscheme('catppuccin')
+        end
     },
     -- {
     --     "nyoom-engineering/oxocarbon.nvim",
