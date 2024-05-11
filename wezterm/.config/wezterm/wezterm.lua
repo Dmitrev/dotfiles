@@ -7,10 +7,10 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font {
-    -- family = "PragmataPro Mono Liga",
+    family = "PragmataPro Mono Liga",
     -- family = 'Berkeley Mono Variable',
     -- family = 'SauceCodePro Nerd Font Mono',
-    family = 'Comic Code Ligatures',
+    -- family = 'Comic Code Ligatures',
     -- family = 'Codelia Ligatures',
     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
     weight = 'Regular',
