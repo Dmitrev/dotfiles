@@ -12,7 +12,7 @@ cd $neovim_dir;
 
 git fetch --tags --force && git fetch && git checkout master && git pull;
 
-latest_tag=$(git tag | tail -1);
+latest_tag=$(git tag --sort=-version:refname| head -n 1);
 
 echo "Choose option: "
 echo "    1) latest stable ($latest_tag) - default" 
