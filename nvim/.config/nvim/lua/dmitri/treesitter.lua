@@ -51,9 +51,4 @@ ntc.setup {
     -- additional_vim_regex_highlighting = false, -- If i disable this PHP indentation is broken
     additional_vim_regex_highlighting = { "markdown" },
   },
-
-  autotag = {
-    enable = true,
-    filetypes = { "html", "php" }
-  }
 }
