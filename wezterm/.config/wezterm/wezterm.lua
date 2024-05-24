@@ -7,8 +7,8 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font {
-    family = "PragmataPro Mono Liga",
-    -- family = 'Berkeley Mono Variable',
+    -- family = "PragmataPro Mono Liga",
+    family = 'Berkeley Mono Variable',
     -- family = 'SauceCodePro Nerd Font Mono',
     -- family = 'Comic Code Ligatures',
     -- family = 'Codelia Ligatures',
