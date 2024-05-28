@@ -12,7 +12,7 @@ config.font = wezterm.font {
     -- family = 'SauceCodePro Nerd Font Mono',
     -- family = 'Comic Code Ligatures',
     -- family = 'Codelia Ligatures',
-    harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
+    -- harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
     weight = 'Regular',
 }
 
