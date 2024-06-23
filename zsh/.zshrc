@@ -26,6 +26,9 @@ if [ $? -eq 0 ]; then
     eval "$(starship init zsh)"
 fi
 
+# color output ls
+alias ls="ls --color=always"
+alias sqlf="sql-formatter-cli --config '{\"tabWidth\": 4}'"
 # login to development
 alias src="source ~/.zshrc"
 
