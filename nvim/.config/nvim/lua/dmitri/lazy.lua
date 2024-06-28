@@ -230,7 +230,7 @@ require("lazy").setup({
         priority = 1000,
         opts = {},
         config = function()
-            vim.cmd.colorscheme('catppuccin')
+            -- vim.cmd.colorscheme('catppuccin')
         end
     },
     -- {
@@ -277,6 +277,30 @@ require("lazy").setup({
         -- config = function()
         --     vim.cmd.colorscheme('moonfly')
         -- end
+    },
+    {
+        "shaunsingh/moonlight.nvim",
+        lazy = false,
+        priority = 1000,
+        -- config = function()
+            -- vim.cmd.colorscheme('moonlight')
+        -- end
+    },
+    {
+        "Mofiqul/adwaita.nvim",
+        lazy = false,
+        priority = 1000,
+        -- config = function()
+        --     vim.cmd.colorscheme('adwaita')
+        -- end
+    },
+    {
+        "blazkowolf/gruber-darker.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme('gruber-darker')
+        end
     },
 
     -- html
