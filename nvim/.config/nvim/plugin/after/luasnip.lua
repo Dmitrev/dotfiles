@@ -238,7 +238,7 @@ ls.add_snippets("php", {
             "",
             "use PHPUnit\\Framework\\TestCase;",
             "",
-            "class ",
+            "final class ",
         }),
         f(get_class_name, {}),
         t({" extends TestCase", "{", ""}),
@@ -273,7 +273,7 @@ ls.add_snippets("php", {
             "use Tests\\TestCase;",
             "use Illuminate\\Foundation\\Testing\\RefreshDatabase;",
             "",
-            "class ",
+            "final class ",
         }),
         f(get_class_name, {}),
         t({" extends TestCase", "{", ""}),
@@ -305,13 +305,6 @@ ls.add_snippets("php", {
     }),
     s("strict", {
         t("declare(strict_types=1);"),
-    }),
-
-    -- create data provider doc block data provider method
-    s("dataprovider", {
-        t({"/**"}),
-        t("* @dataProvider "), i(1, "name"),
-        t("*/"),
     }),
 })
 
