@@ -224,6 +224,27 @@ ls.add_snippets("php", {
         t({"", "}"}),
     }),
 
+    s("!!enum", {
+        t({
+            "<?php",
+            "",
+            "declare(strict_types=1);",
+            "",
+            "namespace ",
+        }),
+        f(get_namespace, {}),
+        t({
+            ";",
+            "",
+            "enum ",
+        }),
+        f(get_class_name, {}),
+        t({"", "{", ""}),
+        t("    "),
+        i(0),
+        t({"", "}"}),
+    }),
+
     s("!!test", {
         t({
             "<?php",
