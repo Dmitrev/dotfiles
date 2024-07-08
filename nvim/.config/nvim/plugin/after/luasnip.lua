@@ -316,8 +316,8 @@ ls.add_snippets("php", {
     }),
 
     s("pubf", {
-        t("public function "), i(1, "name"), t("("), i(2, "args"), t("): "), i(3, "void"), t(""),
-        t("{"),
+    t("public functions "), i(1, "name"), t("("), i(2, "args"), t("): "), i(3, "void"),
+        t({"", "{", ""}),
         t("    "), i(0),
         t({"", "}"}),
     }),
