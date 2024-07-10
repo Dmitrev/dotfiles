@@ -23,7 +23,7 @@ config.freetype_load_target = 'Normal'
 
 -- config.color_scheme = 'Oxocarbon Dark'
 -- config.color_scheme = 'Kanagawa (Gogh)'
--- config.color_scheme = 'Gruvbox Dark (Gogh)'
+config.color_scheme = 'Gruvbox Dark (Gogh)'
 -- config.color_scheme = 'Catppuccin Mocha'
 
 config.font_size = 16

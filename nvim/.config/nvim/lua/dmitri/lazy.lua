@@ -182,7 +182,7 @@ require("lazy").setup({
         "ellisonleao/gruvbox.nvim",
         priority = 1000 ,
         config = function()
-            -- vim.cmd.colorscheme('gruvbox')
+            vim.cmd.colorscheme('gruvbox')
         end,
         opts = {}
     },
@@ -299,8 +299,8 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme('gruber-darker')
-            vim.api.nvim_set_hl(0, "@property.php", {fg ="#FFFFFF"})
+            -- vim.cmd.colorscheme('gruber-darker')
+            -- vim.api.nvim_set_hl(0, "@property.php", {fg ="#FFFFFF"})
         end
     },
 
