@@ -102,20 +102,20 @@ if ok then
         end
     );
 
-    vim.keymap.set({"n"}, "<Leader>fg",
-        function()
-            local opts = vim.deepcopy(telescope_theme)
-            opts.additional_args = function(o)
-                return {
-                    "--hidden",
-                    "--glob", "!.git",
-                }
-            end
-            telescope_builtin.live_grep(opts)
-        end
-    );
+    -- vim.keymap.set({"n"}, "<Leader>fg",
+    --     function()
+    --         local opts = vim.deepcopy(telescope_theme)
+    --         opts.additional_args = function(o)
+    --             return {
+    --                 "--hidden",
+    --                 "--glob", "!.git",
+    --             }
+    --         end
+    --         telescope_builtin.live_grep(opts)
+    --     end
+    -- );
 
-    vim.keymap.set({"n"}, "<Leader>fG", function()
+    vim.keymap.set({"n"}, "<Leader>fg", function()
         require("telescope").extensions.live_grep_args.live_grep_args()
     end)
 
