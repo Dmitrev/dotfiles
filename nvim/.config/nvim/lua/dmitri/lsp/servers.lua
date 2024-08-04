@@ -76,6 +76,8 @@ local lsp_servers = {
          },
       }
    },
+   clangd = {},
+   zls = {},
 }
 
 ---return the mason config
