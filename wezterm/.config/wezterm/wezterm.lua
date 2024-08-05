@@ -8,15 +8,15 @@ end
 
 config.font = wezterm.font_with_fallback {
     -- { family = "PragmataPro Mono Liga", weight = "Regular"},
-    -- { family = 'Berkeley Mono Variable', weigth = "Regular" },
+    { family = 'Berkeley Mono Variable', weigth = "Regular" },
     -- family = 'SauceCodePro Nerd Font Mono',
-    { family = 'Comic Code Ligatures', weight = "Regular"},
+    -- { family = 'Comic Code Ligatures', weigth = "Regular"},
     -- { family = 'Codelia Ligatures', weigth = "Regular" },
     -- harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
     "Symbols Nerd Font"
 }
 
--- config.adjust_window_size_when_changing_font_size = false
+config.adjust_window_size_when_changing_font_size = false
 -- config.freetype_load_target = 'Normal'
 -- -- config.window_background_opacity = 0.8
 -- config.freetype_render_target = 'Normal'
@@ -26,7 +26,7 @@ config.font = wezterm.font_with_fallback {
 config.color_scheme = 'Gruvbox Dark (Gogh)'
 -- -- config.color_scheme = 'Catppuccin Mocha'
 --
-config.font_size = 20 
+config.font_size = 20
 -- -- config.line_height = 1.2
 --
 config.window_padding = {
