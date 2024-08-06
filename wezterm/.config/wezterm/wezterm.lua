@@ -8,10 +8,10 @@ end
 
 config.font = wezterm.font_with_fallback {
     -- { family = "PragmataPro Mono Liga", weight = "Regular"},
-    { family = 'Berkeley Mono Variable', weigth = "Regular" },
+    { family = 'Berkeley Mono Variable', weight = "Regular" },
     -- family = 'SauceCodePro Nerd Font Mono',
-    -- { family = 'Comic Code Ligatures', weigth = "Regular"},
-    -- { family = 'Codelia Ligatures', weigth = "Regular" },
+    -- { family = 'Comic Code Ligatures', weight = "Regular"},
+    -- { family = 'Codelia Ligatures', weight = "Regular" },
     -- harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
     "Symbols Nerd Font"
 }
