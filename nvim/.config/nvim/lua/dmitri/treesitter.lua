@@ -6,7 +6,7 @@ end
 
 ntc.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "php", "html", "css", "json", "dockerfile", "javascript", "kdl", "go", "markdown", "markdown_inline", "python", "http", "vue", "zig" },
+  ensure_installed = { "c", "php", "gotmpl", "html", "css", "json", "dockerfile", "javascript", "kdl", "go", "markdown", "markdown_inline", "python", "http", "vue", "zig" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -51,4 +51,14 @@ ntc.setup {
     -- additional_vim_regex_highlighting = false, -- If i disable this PHP indentation is broken
     additional_vim_regex_highlighting = { "markdown" },
   },
+}
+
+local parser_config = require'nvim-treesitter.parsers'.get_parser_configs()
+parser_config.gotmpl = {
+  install_info = {
+    url = "https://github.com/ngalaiko/tree-sitter-go-template",
+    files = {"src/parser.c"}
+  },
+  filetype = "gotmpl",
+  used_by = {"gohtmltmpl", "gotexttmpl", "gotmpl", "yaml"}
 }
