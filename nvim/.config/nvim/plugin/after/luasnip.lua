@@ -327,5 +327,10 @@ ls.add_snippets("php", {
     s("strict", {
         t("declare(strict_types=1);"),
     }),
+    s("lararule", {
+        t("function (string $attribute, mixed $value, Closure $fail) {"),
+        t({"    ", "$fail(" .. '"' .. "The {$attribute} is invalid.".. '"'..");"}),
+        t({"", "}"}),
+    }),
 })
 

@@ -26,9 +26,9 @@ vim.opt.softtabstop = 0
 vim.opt.expandtab = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-
 -- leave 8 lines above and below when scrolling
 vim.o.scrolloff = 10
+vim.o.conceallevel = 1
 vim.o.sidescrolloff = 5
 
 vim.opt.hlsearch = false

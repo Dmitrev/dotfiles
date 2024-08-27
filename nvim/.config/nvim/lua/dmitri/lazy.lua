@@ -182,7 +182,7 @@ require("lazy").setup({
         "ellisonleao/gruvbox.nvim",
         priority = 1000 ,
         config = function()
-            vim.cmd.colorscheme('gruvbox')
+            -- vim.cmd.colorscheme('gruvbox')
         end,
         opts = {}
     },
@@ -304,6 +304,14 @@ require("lazy").setup({
         end
     },
 
+    {
+        "RRethy/base16-nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme('base16-gruvbox-dark-hard')
+        end
+    },
     -- html
     {
         'windwp/nvim-ts-autotag',

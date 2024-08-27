@@ -16,6 +16,9 @@ config.font = wezterm.font_with_fallback {
     "Symbols Nerd Font"
 }
 
+-- Fixes weird issue with font sometimes having weird kerning
+config.cell_width = 1
+
 config.adjust_window_size_when_changing_font_size = false
 -- config.freetype_load_target = 'Normal'
 -- -- config.window_background_opacity = 0.8
@@ -23,7 +26,7 @@ config.adjust_window_size_when_changing_font_size = false
 --
 -- -- config.color_scheme = 'Oxocarbon Dark'
 -- -- config.color_scheme = 'Kanagawa (Gogh)'
-config.color_scheme = 'Gruvbox Dark (Gogh)'
+config.color_scheme = 'Gruvbox dark, hard (base16)'
 -- -- config.color_scheme = 'Catppuccin Mocha'
 --
 config.font_size = 20
