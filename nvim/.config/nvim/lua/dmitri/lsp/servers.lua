@@ -34,7 +34,7 @@ local lsp_servers = {
    html = {
       filetypes = {'html'},
    },
-   tsserver = {},
+   -- tsserver = {},
    jsonls = {},
    yamlls = {
       settings = {
