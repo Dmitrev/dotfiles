@@ -46,5 +46,18 @@ config.hide_tab_bar_if_only_one_tab = true
 -- config.front_end = "WebGpu"
 -- config.webgpu_power_preference = "LowPower"
 -- config.front_end = "Software"
+--
+config.keys = {
+    {
+        key = "LeftArrow",
+        mods = "CTRL | SHIFT",
+        action = wezterm.action.DisableDefaultAssignment,
+    },
+    {
+        key = "RightArrow",
+        mods = "CTRL | SHIFT",
+        action = wezterm.action.DisableDefaultAssignment,
+    },
+}
 
 return config
