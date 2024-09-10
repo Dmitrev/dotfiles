@@ -26,7 +26,8 @@ config.adjust_window_size_when_changing_font_size = false
 --
 -- -- config.color_scheme = 'Oxocarbon Dark'
 -- -- config.color_scheme = 'Kanagawa (Gogh)'
-config.color_scheme = 'Gruvbox dark, hard (base16)'
+-- config.color_scheme = 'Gruvbox dark, hard (base16)'
+config.color_scheme = 'Nord (Gogh)'
 -- -- config.color_scheme = 'Catppuccin Mocha'
 --
 config.font_size = 20
