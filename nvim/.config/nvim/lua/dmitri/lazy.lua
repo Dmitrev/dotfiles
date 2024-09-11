@@ -230,7 +230,7 @@ require("lazy").setup({
         priority = 1000,
         opts = {},
         config = function()
-            -- vim.cmd.colorscheme('catppuccin')
+            vim.cmd.colorscheme('catppuccin-mocha')
         end
     },
     -- {
@@ -318,8 +318,18 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-        vim.cmd.colorscheme('nord')
+            -- vim.cmd.colorscheme('nord')
         end
+    },
+
+    {
+        "metalelf0/jellybeans-nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme('jellybeans-nvim')
+        end
+
     },
     -- html
     {
