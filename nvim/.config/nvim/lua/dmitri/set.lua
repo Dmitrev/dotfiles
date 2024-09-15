@@ -59,5 +59,7 @@ vim.opt.autowriteall = true
 
 -- This is used for indent-blankline to show end of line char
 -- vim.opt.list = true
--- vim.opt.listchars:append "eol:↴"
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars:append "eol:↴"
 vim.lsp.set_log_level('off')
