@@ -20,3 +20,5 @@
 	showUntrackedFiles = all
 [commit]
 	gpgsign = true
+[init]
+	defaultBranch = main
