@@ -174,9 +174,9 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         opts = {},
-        -- config = function()
-        --     vim.cmd.colorscheme('tokyonight-night')
-        -- end
+        config = function()
+            vim.cmd.colorscheme('tokyonight-night')
+        end
     },
     {
         "ellisonleao/gruvbox.nvim",
@@ -230,7 +230,7 @@ require("lazy").setup({
         priority = 1000,
         opts = {},
         config = function()
-            vim.cmd.colorscheme('catppuccin-mocha')
+            -- vim.cmd.colorscheme('catppuccin-mocha')
         end
     },
     -- {
