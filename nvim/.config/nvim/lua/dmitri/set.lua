@@ -61,5 +61,5 @@ vim.opt.autowriteall = true
 -- vim.opt.list = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-vim.opt.listchars:append "eol:↴"
+-- vim.opt.listchars:append "eol:↴"
 vim.lsp.set_log_level('off')
