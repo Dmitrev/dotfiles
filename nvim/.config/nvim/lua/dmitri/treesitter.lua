@@ -1,5 +1,6 @@
 local ok, ntc = pcall(require, 'nvim-treesitter.configs')
 
+
 if not ok then
     return
 end
@@ -61,4 +62,13 @@ parser_config.gotmpl = {
   },
   filetype = "gotmpl",
   used_by = {"gohtmltmpl", "gotexttmpl", "gotmpl", "yaml"}
+}
+
+parser_config.blade = {
+  install_info = {
+    url = "https://github.com/EmranMR/tree-sitter-blade",
+    files = {"src/parser.c"},
+    branch = "main"
+  },
+  filetype = "blade"
 }
