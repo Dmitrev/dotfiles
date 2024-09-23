@@ -245,9 +245,9 @@ require("lazy").setup({
         'AlexvZyl/nordic.nvim',
         lazy = false,
         priority = 1000,
-        -- config = function()
-        --     require 'nordic' .load()
-        -- end
+        config = function()
+            require 'nordic' .load()
+        end
     },
     {
         'ribru17/bamboo.nvim',
@@ -318,7 +318,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme('nord')
+            -- vim.cmd.colorscheme('nord')
         end
     },
 
