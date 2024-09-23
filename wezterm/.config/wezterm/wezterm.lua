@@ -27,9 +27,9 @@ config.adjust_window_size_when_changing_font_size = false
 -- -- config.color_scheme = 'Oxocarbon Dark'
 -- -- config.color_scheme = 'Kanagawa (Gogh)'
 -- config.color_scheme = 'Gruvbox dark, hard (base16)'
--- config.color_scheme = 'Nord (Gogh)'
+config.color_scheme = 'Nord (Gogh)'
 -- config.color_scheme = 'tokyonight_storm'
-config.color_scheme = 'tokyonight_night'
+-- config.color_scheme = 'tokyonight_night'
 -- config.color_scheme = 'tokyonight_moon'
 -- config.color_scheme = 'Catppuccin Mocha'
 --

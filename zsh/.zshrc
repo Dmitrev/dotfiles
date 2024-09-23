@@ -56,6 +56,7 @@ alias megfrontend="~/scripts/meg_frontend.sh" # feature branch in new setup
 alias megmysql="~/scripts/meg_mysql.sh" # feature branch in new setup
 alias megpr="~/scripts/meg_pr.sh" # feature branch in new setup
 alias dot="~/scripts/dot.sh"
+alias notes="~/scripts/notes.sh"
 
 ## docker aliases
 alias dockstop="docker container ls | awk '{print $$1 spnsorshipEntityName \" $$2}' | fzf | awk '{print $$1}' | xargs -I {} docker container stop" 

@@ -175,7 +175,7 @@ require("lazy").setup({
         priority = 1000,
         opts = {},
         config = function()
-            vim.cmd.colorscheme('tokyonight-night')
+            -- vim.cmd.colorscheme('tokyonight-night')
         end
     },
     {
@@ -318,7 +318,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            -- vim.cmd.colorscheme('nord')
+            vim.cmd.colorscheme('nord')
         end
     },
 
