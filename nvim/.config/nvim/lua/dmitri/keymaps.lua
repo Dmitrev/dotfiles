@@ -16,6 +16,7 @@ end);
 vim.keymap.set({"n"}, "<leader>w", "<cmd>w<CR>", { noremap = false })
 vim.keymap.set({"n"}, "<leader>q", "<cmd>q<CR>", { noremap = true })
 vim.keymap.set({"n", "v", "i"}, "<c-c>", "<ESC>", { noremap = true })
+vim.keymap.set({"t",}, "<ESC>", "<c-\\><c-n>", { noremap = true })
 
 vim.keymap.set({"v"}, "<leader>yc", '"+y', { noremap = true }) -- copy
 vim.keymap.set({"n"}, "<leader>yy", '"+yy', { noremap = true }) -- copy
@@ -198,6 +199,22 @@ end
 vim.keymap.set('n', '<leader>re', '<Plug>RestNvim', { desc = 'execute request' })
 vim.keymap.set('n', '<leader>rp', '<Plug>RestNvimPreview', { desc = 'preview curl' })
 vim.keymap.set('n', '<leader>rl', '<Plug>RestNvimLast', { desc = 'repeat last request' })
+
+local isLspDiagnosticsVisible = false
+
+
+-- run once to set the default
+vim.diagnostic.config({
+    virtual_text = isLspDiagnosticsVisible,
+    underline = isLspDiagnosticsVisible
+})
+
+vim.keymap.set("n", "<leader>lx", function()
+    isLspDiagnosticsVisible = not isLspDiagnosticsVisible
+    vim.diagnostic.config({
+        virtual_text = isLspDiagnosticsVisible,
+        underline = isLspDiagnosticsVisible
+    }) end)
 
 
 -- Setup hover.nvim

@@ -27,7 +27,7 @@ end
 
 
 M.copy_github_link = function()
-    local relative_path = vim.fn.expand("%")
+    local relative_path = M.get_relative_path() 
     local git_cmd = "git ls-remote --get-url origin"
     local git_cmd_handle = io.popen(git_cmd)
 
@@ -59,5 +59,10 @@ M.copy_github_link = function()
     git_url = git_url .. line_anchor
     io.popen("open "..git_url)
 end
+
+-- get first hash of the file
+-- git log --all --reverse -m --pretty=format:%H --max-count=1 --find-object `git hash-object app/Utils/PricingUtils.php`
+-- git log -p -n 1 -s --pretty='format:%H' -- app/Utils/PricingUtils.php
+
 
 return M

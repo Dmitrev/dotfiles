@@ -7,12 +7,13 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font_with_fallback {
-    { family = "PragmataPro Mono Liga", weight = "Regular"},
+    -- { family = "PragmataPro Mono Liga", weight = "Regular"},
+    { family = "JetbrainsMono", weight = "Regular"},
     -- { family = 'Berkeley Mono Variable', weight = "Regular" },
     -- family = 'SauceCodePro Nerd Font Mono',
     -- { family = 'Comic Code Ligatures', weight = "Regular"},
     -- { family = 'Codelia Ligatures', weight = "Regular" },
-    -- harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
+    harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
     "Symbols Nerd Font"
 }
 
@@ -33,7 +34,9 @@ config.adjust_window_size_when_changing_font_size = false
 -- config.color_scheme = 'tokyonight_storm'
 -- config.color_scheme = 'tokyonight_night'
 -- config.color_scheme = 'tokyonight_moon'
-config.color_scheme = 'Catppuccin Mocha'
+-- config.color_scheme = 'Catppuccin Mocha'
+config.color_scheme = 'Rosé Pine (Gogh)'
+-- config.color_scheme = 'Catppuccin Latte'
 --
 config.font_size = 20
 -- -- config.line_height = 1.2
