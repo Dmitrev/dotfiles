@@ -23,7 +23,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 -- set to "debug" if debugging is required otherwise "off"
-vim.lsp.set_log_level("off")
+vim.lsp.set_log_level("debug")
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

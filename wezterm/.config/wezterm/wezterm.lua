@@ -7,8 +7,8 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font_with_fallback {
-    -- { family = "PragmataPro Mono Liga", weight = "Regular"},
-    { family = "JetbrainsMono", weight = "Regular"},
+    { family = "PragmataPro Mono Liga", weight = "Regular"},
+    -- { family = "JetbrainsMono", weight = "Regular"},
     -- { family = 'Berkeley Mono Variable', weight = "Regular" },
     -- family = 'SauceCodePro Nerd Font Mono',
     -- { family = 'Comic Code Ligatures', weight = "Regular"},

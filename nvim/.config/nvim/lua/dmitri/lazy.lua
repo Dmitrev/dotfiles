@@ -48,8 +48,6 @@ require("lazy").setup({
     'nvim-tree/nvim-web-devicons',
 
     {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     },
 
