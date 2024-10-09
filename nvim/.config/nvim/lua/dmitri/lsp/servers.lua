@@ -1,4 +1,22 @@
 local M = {}
+-- local vue_language_server_path = '/home/dmitri/.nvm/version/v20.18.0/lib/node_modules/@vue/language-server'
+--
+-- local lspconfig = require('lspconfig')
+--
+-- lspconfig.ts_ls.setup {
+--   init_options = {
+--     plugins = {
+--       {
+--         name = '@vue/typescript-plugin',
+--         location = vue_language_server_path,
+--         languages = { 'vue' },
+--       },
+--     },
+--   },
+--   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+-- }
+
+-- No need to set `hybridMode` to `true` as it's the default value
 
 -- for reference see:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#html
@@ -34,7 +52,17 @@ local lsp_servers = {
    html = {
       filetypes = {'html'},
    },
-   -- tsserver = {},
+   -- ts_ls = {
+   --    init_options = {
+   --       plugins = {
+   --          {
+   --             name = '@vue/typescript-plugin',
+   --             location = '/home/dmitri/.nvm/version/v20.18.0/lib/node_modules/@vue/typescript-plugin',
+   --             -- languages = { 'vue' },
+   --          },
+   --       },
+   --    },
+   -- },
    jsonls = {},
    yamlls = {
       settings = {
@@ -43,9 +71,14 @@ local lsp_servers = {
          }
       }
    },
-   volar = {
-      filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
-   }, -- vuejs
+   -- volar = {
+   --    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+   --    init_options = {
+   --       vue = {
+   --          hybridMode = false,
+   --       },
+   --    },
+   -- }, -- vuejs
    rust_analyzer = {},
    cssls = {},
    gopls = {},

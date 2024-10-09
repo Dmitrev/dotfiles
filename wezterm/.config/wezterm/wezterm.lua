@@ -55,7 +55,29 @@ config.hide_tab_bar_if_only_one_tab = true
 -- config.webgpu_power_preference = "LowPower"
 -- config.front_end = "Software"
 --
+--
+-- config.leader = { key = "s", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = {
+    {
+        mods = "LEADER",
+        key = "c",
+        action = wezterm.action.SpawnTab("CurrentPaneDomain")
+    },
+    {
+        mods = "LEADER",
+        key = "x",
+        action = wezterm.action.CloseCurrentPane({confirm = true})
+    },
+    {
+        mods = "LEADER",
+        key = "b",
+        action = wezterm.action.ActivateTabRelative(-1)
+    },
+    {
+        mods = "LEADER",
+        key = "n",
+        action = wezterm.action.ActivateTabRelative(1)
+    },
     {
         key = "LeftArrow",
         mods = "CTRL | SHIFT",

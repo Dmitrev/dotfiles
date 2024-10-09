@@ -27,3 +27,12 @@ fi
 
 ln -s $lsp_lua_bin_path $lsp_lua_symlink_target
 # end lua-language-server
+
+# install tailwindcss
+npm install -g @tailwindcss/language-server
+# end tailwindcss
+
+# install vue language-server
+npm isntall -g @vue/typescript-plugin
+npm install -g @vue/language-server
+# end vue language-server
