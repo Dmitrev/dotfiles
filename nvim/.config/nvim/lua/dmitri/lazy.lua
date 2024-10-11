@@ -150,10 +150,42 @@ require("lazy").setup({
         config = function()
         end
     },
+    {
+        "edeneast/nightfox.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme("duskfox")
+        end
+
+    },
+    {
+        "elianiva/gruvy.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme("nightfox")
+        end
+
+    },
 
     -- themes
-    { 'navarasu/onedark.nvim',
-        priority = 1000},
+    { 
+        'navarasu/onedark.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme("onedark")
+        end
+    },
+    { 
+        "MarcoKorinth/onehalf.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme("onehalfdark")
+        end
+    },
 
     { 'rktjmp/lush.nvim' },
     {
@@ -209,7 +241,7 @@ require("lazy").setup({
         priority = 1000,
         opts = {},
         config = function()
-            vim.cmd.colorscheme('rose-pine')
+            -- vim.cmd.colorscheme('rose-pine')
         end
     },
 
@@ -302,6 +334,15 @@ require("lazy").setup({
             -- vim.api.nvim_set_hl(0, "@property.php", {fg ="#FFFFFF"})
         end
     },
+    {
+        "phha/zenburn.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme('zenburn')
+        end
+    },
+
 
     {
         "RRethy/base16-nvim",

@@ -35,7 +35,9 @@ config.adjust_window_size_when_changing_font_size = false
 -- config.color_scheme = 'tokyonight_night'
 -- config.color_scheme = 'tokyonight_moon'
 -- config.color_scheme = 'Catppuccin Mocha'
-config.color_scheme = 'Rosé Pine (Gogh)'
+-- config.color_scheme = 'OneDark (base16)'
+config.color_scheme = 'duskfox'
+-- config.color_scheme = 'Rosé Pine (Gogh)'
 -- config.color_scheme = 'Catppuccin Latte'
 --
 config.font_size = 20
