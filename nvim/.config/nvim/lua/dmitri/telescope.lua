@@ -5,6 +5,7 @@ if not telescope_loaded then
 end
 
 local previewers = require("telescope.previewers")
+local actions = require("telescope.actions")
 local new_maker = function(filepath, bufnr, opts)
     opts = opts or {}
 
@@ -40,12 +41,13 @@ telescope.setup {
     },
 
     live_grep_args = {
-      auto_quoting = true, -- enable/disable auto-quoting
+      auto_quoting = false, -- enable/disable auto-quoting
       -- define mappings, e.g.
       mappings = { -- extend mappings
         i = {
-          -- ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
-          -- ["<C-k>"] = lga_actions.quote_prompt(),
+          ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+          ["<C-k>"] = lga_actions.quote_prompt(),
+          ["<C-space>"] = actions.to_fuzzy_refine,
         },
       },
       -- ... also accepts theme settings, for example:
