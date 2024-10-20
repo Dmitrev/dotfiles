@@ -52,17 +52,7 @@ local lsp_servers = {
    html = {
       filetypes = {'html'},
    },
-   -- ts_ls = {
-   --    init_options = {
-   --       plugins = {
-   --          {
-   --             name = '@vue/typescript-plugin',
-   --             location = '/home/dmitri/.nvm/version/v20.18.0/lib/node_modules/@vue/typescript-plugin',
-   --             -- languages = { 'vue' },
-   --          },
-   --       },
-   --    },
-   -- },
+   ts_ls = {},
    jsonls = {},
    yamlls = {
       settings = {

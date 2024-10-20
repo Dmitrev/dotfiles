@@ -45,11 +45,11 @@ require("lazy").setup({
          end
      },
 
-    'nvim-tree/nvim-web-devicons',
 
-    {
-        "neovim/nvim-lspconfig",
-    },
+    'nvim-tree/nvim-web-devicons',
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
 
 -- Show LSP progressbar
     -- TODO: update version when fidget is updated
