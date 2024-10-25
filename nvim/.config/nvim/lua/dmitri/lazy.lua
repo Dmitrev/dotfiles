@@ -155,7 +155,8 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme("duskfox")
+            vim.cmd.colorscheme("carbonfox")
+            vim.api.nvim_set_hl(0, "Comment", {fg = "#facc15"});
         end
 
     },
