@@ -32,14 +32,12 @@ alias sqlf="sql-formatter-cli --config '{\"tabWidth\": 4}'"
 # login to development
 alias src="source ~/.zshrc"
 
-alias meg_dev="eb use MEG-Development-81"
-alias meg_test="eb use MEG-Testing-81"
-alias meg_demo="eb use MEG-Staging-81"
-alias meg_prod="eb use MEG-Live-81"
+alias meg_dev="eb use MEG-Development-82"
+alias meg_test="eb use MEG-Testing-82"
+alias meg_prod="eb use MEG-Live-82"
 
 alias ssh_dev="meg_dev && eb ssh"
 alias ssh_test="meg_test && eb ssh"
-alias ssh_demo="meg_demo && eb ssh"
 alias ssh_prod="meg_prod && eb ssh"
 
 # restart bluetooth
