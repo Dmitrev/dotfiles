@@ -157,6 +157,7 @@ require("lazy").setup({
         config = function()
             vim.cmd.colorscheme("carbonfox")
             vim.api.nvim_set_hl(0, "Comment", {fg = "#facc15"});
+            vim.api.nvim_set_hl(0, "Visual", {bg = "#3ddbd9", fg="#000000"});
         end
 
     },
