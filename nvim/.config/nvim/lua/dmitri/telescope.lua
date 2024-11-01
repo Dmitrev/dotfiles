@@ -25,7 +25,13 @@ local lga_actions = require("telescope-live-grep-args.actions")
 telescope.setup {
   defaults = {
      -- winblend = 30, -- add transparency 
-     buffer_previewer_maker = new_maker
+     buffer_previewer_maker = new_maker,
+     mappings = {
+       i = {
+         ["<C-Down>"] = actions.cycle_history_next,
+         ["<C-Up>"] = actions.cycle_history_prev,
+       },
+     },
   },
   pickers = {
     oldfiles = {
@@ -50,6 +56,21 @@ telescope.setup {
     },
 
     live_grep_args = {
+      file_ignore_patterns = {".git/", "vendor/", "node_modules/"},
+      vimgrep_arguments = {
+        -- all required except `--smart-case`
+        "rg",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+        "--hidden",
+        "--no-ignore",
+
+        -- add your options
+      },
       auto_quoting = false, -- enable/disable auto-quoting
       -- define mappings, e.g.
       mappings = { -- extend mappings
