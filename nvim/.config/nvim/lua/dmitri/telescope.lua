@@ -30,6 +30,15 @@ telescope.setup {
   pickers = {
     oldfiles = {
       cwd_only = true
+    },
+    find_files = {
+      hidden = true,
+      no_ignore = true,
+      file_ignore_patterns = {
+        ".git",
+        "node_modules",
+        "vendor",
+      },
     }
   },
   extensions = {
