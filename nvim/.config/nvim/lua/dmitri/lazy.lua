@@ -177,7 +177,10 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            -- vim.cmd.colorscheme("onedark")
+            require('onedark').setup {
+                style = 'warmer'
+            }
+            require('onedark').load()
         end
     },
     { 
@@ -432,8 +435,8 @@ require("lazy").setup({
             --         Idnetifier = { fg = '#ff4797' },
             --     }
             }
-            require('starry').setup(config)
-            vim.cmd.colorscheme('starry')
+            -- require('starry').setup(config)
+            -- vim.cmd.colorscheme('starry')
         end
     },
     -- html
@@ -518,6 +521,12 @@ require("lazy").setup({
         event = {"CmdlineEnter"},
         ft = {"go", 'gomod'},
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+    },
+    { 
+        "norcalli/nvim-colorizer.lua",
+        config = function()
+            require('colorizer').setup()
+        end
     },
 
 }, opts)
