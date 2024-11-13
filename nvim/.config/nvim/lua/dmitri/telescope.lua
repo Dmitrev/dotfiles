@@ -44,6 +44,7 @@ telescope.setup {
         ".git",
         "node_modules",
         "vendor",
+        "coverage"
       },
     }
   },
@@ -56,7 +57,7 @@ telescope.setup {
     },
 
     live_grep_args = {
-      file_ignore_patterns = {".git/", "vendor/", "node_modules/"},
+      file_ignore_patterns = {".git/", "vendor/", "node_modules/", "coverage/"},
       vimgrep_arguments = {
         -- all required except `--smart-case`
         "rg",
