@@ -72,6 +72,10 @@ alias lcc='rm ~/.local/state/nvim/lsp.log && echo "cleared LSP log"';
 # open mobility foler with streching excercises
 alias books='xdg-open ~/Documents/Ebooks';
 
+# syncthing
+alias startsync='~/scripts/syncthing.sh'
+alias opensync='syncthing --browser-only'
+
 # random useful stuff
 alias last_downloaded_file="ls -t ~/Downloads | head -n 1 | xargs -I {} echo '$HOME/Downloads/{}'"
 
