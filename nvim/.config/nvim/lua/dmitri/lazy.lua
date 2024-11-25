@@ -177,10 +177,10 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            -- require('onedark').setup {
-            --     style = 'warmer'
-            -- }
-            -- require('onedark').load()
+            require('onedark').setup {
+                style = 'warmer'
+            }
+            require('onedark').load()
         end
     },
     { 
@@ -441,7 +441,7 @@ require("lazy").setup({
     },
     { "nuvic/flexoki-nvim", name = "flexoki",
         config = function()
-            vim.cmd.colorscheme("flexoki")
+            -- vim.cmd.colorscheme("flexoki")
         end
     },
     -- html
