@@ -7,3 +7,4 @@ end
 ft.set('kdl', '// %s')
 ft.set('mysql', '-- %s')
 ft.set('hurl', '# %s')
+ft.set('gohtmltmpl', '{{/* %s */}}')
