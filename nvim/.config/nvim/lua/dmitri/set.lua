@@ -13,6 +13,7 @@ vim.opt.relativenumber = false
 -- highlight current line
 vim.opt.cursorline = true
 vim.opt.colorcolumn = "120"
+vim.opt.termguicolors = true
 
 -- Make the colors more vivid https://github.com/morhetz/gruvbox/wiki/Terminal-specific#0-recommended-neovimvim-true-color-support
 -- Enables 24-bit RGB color in the TUI
