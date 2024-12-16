@@ -71,6 +71,11 @@ local get_class_name = function()
     return string.gsub(file_name, '.php', '')
 end
 
+local get_component_name = function()
+    local file_name = get_filename()
+    return string.gsub(file_name, '.jsx', '')
+end
+
 local get_namespace = function()
     local path = require('dmitri.utils').get_relative_path()
 
@@ -334,3 +339,16 @@ ls.add_snippets("php", {
     }),
 })
 
+ls.add_snippets("javascriptreact", {
+    s("!!component", {
+        t ("function "), f(get_component_name), t("() {"),
+        t({"", ""}),
+        t("  "), i(0),
+        t ({"", "}", "", ""}),
+        t ("export default "), f(get_component_name),
+    }),
+        -- t({
+        --     "export default",
+        --     "MyComponent",
+        -- }),
+})

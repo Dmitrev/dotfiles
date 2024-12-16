@@ -201,7 +201,7 @@ require("lazy").setup({
             -- local dracula = require 'dracula'
             -- dracula.setup()
 
-            vim.cmd.colorscheme 'dracula'
+            -- vim.cmd.colorscheme 'dracula'
         end
     },
     {
@@ -210,7 +210,7 @@ require("lazy").setup({
         priority = 1000,
         opts = {},
         config = function()
-            -- vim.cmd.colorscheme('tokyonight-night')
+            vim.cmd.colorscheme('tokyonight')
         end
     },
     {
