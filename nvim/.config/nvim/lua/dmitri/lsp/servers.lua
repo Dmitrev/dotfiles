@@ -49,6 +49,7 @@ local lsp_servers = {
          }
       }
    },
+   emmet_language_server = {},
    -- END PHP
    html = {
       filetypes = {'html'},

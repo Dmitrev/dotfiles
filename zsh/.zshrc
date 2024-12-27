@@ -1,4 +1,5 @@
 export EDITOR="nvim"
+os=$(uname)
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -7,8 +8,10 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH="$HOME/.ebcli-virtual-env/executables:$PATH"
 
 # EBS install
-export PYENV_ROOT="$HOME/deps/pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+if [[ "$os" == "Linux" ]]; then
+  export PYENV_ROOT="$HOME/deps/pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+fi
 eval "$(pyenv init -)"
 ## END EBS install
 
@@ -80,14 +83,17 @@ alias opensync='syncthing --browser-only'
 alias last_downloaded_file="ls -t ~/Downloads | head -n 1 | xargs -I {} echo '$HOME/Downloads/{}'"
 
 # Set keybindings for PopOS tiler
-gsettings set org.gnome.mutter dynamic-workspaces false
-gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
-for i in {1..9} 
-do
-  gsettings set "org.gnome.shell.keybindings" "switch-to-application-$i" "[]"
-  gsettings set "org.gnome.desktop.wm.keybindings" "switch-to-workspace-$i" "['<Super>${i}']"
-  gsettings set "org.gnome.desktop.wm.keybindings" "move-to-workspace-$i" "['<Super><Shift>${i}']"
-done
+
+if [[ "$os" == "Linux" ]]; then
+  gsettings set org.gnome.mutter dynamic-workspaces false
+  gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
+  for i in {1..9} 
+  do
+    gsettings set "org.gnome.shell.keybindings" "switch-to-application-$i" "[]"
+    gsettings set "org.gnome.desktop.wm.keybindings" "switch-to-workspace-$i" "['<Super>${i}']"
+    gsettings set "org.gnome.desktop.wm.keybindings" "move-to-workspace-$i" "['<Super><Shift>${i}']"
+  done
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

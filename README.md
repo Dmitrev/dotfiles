@@ -28,6 +28,16 @@ on Mac
 brew install stow
 ```
 
+
+# Todo mac brew todo:
+- tmux
+- bitwarden
+- git
+- kitty
+- pyenv
+- neovim
+- nvm
+
 ## install packer
 
 the plugin manager used for nvim
