@@ -6,6 +6,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH="$HOME/.ebcli-virtual-env/executables:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # EBS install
 if [[ "$os" == "Linux" ]]; then
@@ -18,6 +19,7 @@ eval "$(pyenv init -)"
 # GOlang
 export CGO_ENABLED=1 # required for building cgo packages
 export PATH=$PATH:/usr/local/go/bin
+export GPG_TTY=$(tty)
 
 ## nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
