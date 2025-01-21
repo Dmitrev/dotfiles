@@ -1,5 +1,6 @@
 {
     "$schema": "/home/dmitri/deps/phpactor/phpactor.schema.json",
+    "core.min_memory_limit": 6000000000,
     "language_server_indexer.workspace_symbol_search_limit": 100000,
     "language_server_reference_reference_finder.reference_timeout": 60,
     "rpc.store_replay": true,
