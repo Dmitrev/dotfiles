@@ -37,6 +37,7 @@ local lsp_servers = {
       language_server_phpstan = {
          enabled = true
       },
+      filetypes = {"php", "cucumber"},
       cmd = { vim.fn.getenv('HOME')..'/deps/phpactor/bin/phpactor', 'language-server' },
       indexer = {
         exclude_pattens = {
