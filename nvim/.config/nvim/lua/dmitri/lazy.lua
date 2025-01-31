@@ -104,16 +104,13 @@ require("lazy").setup({
     },
 
     "onsails/lspkind.nvim",
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            require("lualine").setup {
-            }
-        end,
-        lazy = false,
-    },
-
+    -- {
+    --     'nvim-lualine/lualine.nvim',
+    --     dependencies = { 'nvim-tree/nvim-web-devicons' },
+    --     lazy = false,
+    -- },
+    --
+    { 'echasnovski/mini.nvim', version = '*' },
     -- Auto complete
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
@@ -157,7 +154,7 @@ require("lazy").setup({
         priority = 1000,
         opts = {},
         config = function()
-            vim.cmd.colorscheme('catppuccin-mocha')
+            -- vim.cmd.colorscheme('catppuccin-mocha')
             -- vim.cmd.colorscheme('catppuccin-latte')
         end
     },
@@ -251,5 +248,15 @@ require("lazy").setup({
             require('colorizer').setup()
         end
     },
+    
+    {
+        "ellisonleao/gruvbox.nvim",
+        config = function()
+            vim.cmd.colorscheme('gruvbox')
+        end
+    },
 
+    {
+        "mbbill/undotree"
+    }
 }, opts)

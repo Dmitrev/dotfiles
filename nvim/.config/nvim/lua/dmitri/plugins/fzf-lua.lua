@@ -1,5 +1,6 @@
 local actions = require "fzf-lua.actions"
-require'fzf-lua'.setup {
+local overrides = require("dmitri.overrides")
+local config = {
   -- fzf_bin         = 'sk',            -- use skim instead of fzf?
                                         -- https://github.com/lotabout/skim
                                         -- can also be set to 'fzf-tmux'
@@ -63,7 +64,9 @@ require'fzf-lua'.setup {
     on_create = function()
       -- called once upon creation of the fzf main window
       -- can be used to add custom fzf-lua mappings, e.g:
-      --   vim.keymap.set("t", "<C-j>", "<Down>", { silent = true, buffer = true })
+
+      -- allow to use the register from fzflua
+      vim.keymap.set("t", "<C-r>", [['<C-\><C-N>"'.nr2char(getchar()).'pi']], { expr = true, buffer = true })
     end,
     -- called once *after* the fzf interface is closed
     -- on_close = function() ... end
@@ -202,7 +205,7 @@ require'fzf-lua'.setup {
       -- enable specific filetypes with: `{ enable = { "lua" } }
       -- exclude specific filetypes with: `{ disable = { "lua" } }
       -- disable fully with: `{ enable = false }`
-      treesitter      = { enable = true, disable = {} },
+      treesitter      = { enabled = true, disabled = {} },
       -- By default, the main window dimensions are calculted as if the
       -- preview is visible, when hidden the main window will extend to
       -- full size. Set the below to "extend" to prevent the main window
@@ -415,7 +418,7 @@ require'fzf-lua'.setup {
     -- default options are controlled by 'rg|grep_opts'
     -- cmd            = "rg --vimgrep",
     grep_opts         = "--binary-files=without-match --line-number --recursive --color=auto --perl-regexp -e",
-    rg_opts           = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
+    rg_opts           = "--column --hidden --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
     -- set to 'true' to always parse globs in both 'grep' and 'live_grep'
     -- search strings will be split using the 'glob_separator' and translated
     -- to '--iglob=' arguments, requires 'rg'
@@ -740,10 +743,10 @@ require'fzf-lua'.setup {
   file_icon_colors = {
     ["sh"] = "green",
   },
-  -- padding can help kitty term users with
-  -- double-width icon rendering
-  file_icon_padding = '',
-  -- uncomment if your terminal/font does not support unicode character
-  -- 'EN SPACE' (U+2002), the below sets it to 'NBSP' (U+00A0) instead
-  -- nbsp = '\xc2\xa0',
 }
+
+
+local fzf_overrides = overrides.fzf or {}
+config = vim.tbl_deep_extend("force", config, fzf_overrides)
+
+require'fzf-lua'.setup(config)

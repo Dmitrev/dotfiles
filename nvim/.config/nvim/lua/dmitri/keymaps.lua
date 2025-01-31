@@ -67,14 +67,13 @@ if ok then
         fzf.buffers()
     end, {desc = "search buffers"})
 
-    -- vim.keymap.set({"n"}, "<Leader>fg", function()  fzf.live_grep_glob() end, {desc = "search pattern files"})
+    vim.keymap.set({"n"}, "<Leader>fg", "<cmd>FzfLua live_grep<CR>", {desc = "search pattern files"})
     vim.keymap.set({"n"}, "<Leader>fh", function()  fzf.help_tags() end, {desc = "search help"})
 
-    -- vim.keymap.set({"n"}, "<Leader>ff", "<cmd>FzfLua files<CR>", {desc = "search files"})
+    vim.keymap.set({"n"}, "<Leader>ff", "<cmd>FzfLua files<CR>", {desc = "search files"})
+    vim.keymap.set({"n"}, "<Leader>e", "<cmd>FzfLua oldfiles<CR>", {desc = "old files"})
     -- vim.keymap.set({"n"}, "<Leader>ff", function() fzf.files({ fzf_opts = {['--layout'] = 'reverse-list'} }) end, {desc = "search files"})
     -- vim.keymap.set({"n"}, "<Leader>ff", function() fzf.files({prompt="LS>", cms="ls", cwd="~/rust"}) end, {desc = "search files"})
-    
-    -- vim.keymap.set({"n"}, "<Leader>fG", function()  fzf.live_grep({debug=true}) end, {desc = "search files"})
 
     
 
@@ -95,13 +94,13 @@ if ok then
         -- previewer = false,
     })
 
-    vim.keymap.set({"n"}, "<Leader>ff",
-        function()
-            local opts = vim.deepcopy(telescope_theme)
-            opts.hidden = true
-            telescope_builtin.find_files(opts)
-        end
-    );
+    -- vim.keymap.set({"n"}, "<Leader>ff",
+    --     function()
+    --         local opts = vim.deepcopy(telescope_theme)
+    --         opts.hidden = true
+    --         telescope_builtin.find_files(opts)
+    --     end
+    -- );
 
     -- vim.keymap.set({"n"}, "<Leader>fg",
     --     function()
@@ -116,19 +115,19 @@ if ok then
     --     end
     -- );
 
-    vim.keymap.set({"n"}, "<Leader>fg", function()
-        require("telescope").extensions.live_grep_args.live_grep_args()
-    end)
+    -- vim.keymap.set({"n"}, "<Leader>fg", function()
+    --     require("telescope").extensions.live_grep_args.live_grep_args()
+    -- end)
 
     vim.keymap.set({"n"}, "<C-_>", function()
         local opts = vim.deepcopy(telescope_theme)
         telescope_builtin.current_buffer_fuzzy_find(opts)
     end, {desc = "buffer lines"})
 
-    vim.keymap.set({"n"}, "<Leader>e", function()
-        local opts = vim.deepcopy(telescope_theme)
-        telescope_builtin.oldfiles(opts)
-        end, {desc = "oldfiles"})
+    -- vim.keymap.set({"n"}, "<Leader>e", function()
+    --     local opts = vim.deepcopy(telescope_theme)
+    --     telescope_builtin.oldfiles(opts)
+    --     end, {desc = "oldfiles"})
 
     require("dmitri.set")
     vim.api.nvim_set_keymap("n", "<Leader>lds", "<cmd> lua ".. builtin..".lsp_document_symbols(".. theme .."())<CR>", { noremap = true, desc = "List document symbols"})
@@ -216,6 +215,17 @@ vim.keymap.set("n", "<leader>lx", function()
         underline = isLspDiagnosticsVisible
     }) end)
 
+
+
+-- load overrides here
+local overrides = require('dmitri.overrides');
+
+if overrides.keymaps ~= nil then
+    for k in pairs(overrides.keymaps) do
+        local map = overrides.keymaps[k]
+        vim.keymap.set(map.mode, map.key, map.map)
+    end
+end
 
 -- Setup hover.nvim
 -- vim.keymap.set("n", "K", require("hover").hover, {desc = "hover.nvim"})
