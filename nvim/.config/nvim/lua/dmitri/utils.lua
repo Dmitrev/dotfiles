@@ -7,21 +7,33 @@ M.reload = function(module)
     dofile(vim.env.MYVIMRC)
 end
 
+--- @return string
 M.get_relative_path = function()
-    local path = vim.fn.expand("%") -- get relative path
-    local cwd = vim.fn.getcwd()
+    return vim.fn.expand("%:.") -- get relative path
+end
+---
+--- @return string
+M.get_filename = function()
+    return vim.fn.expand("%:t")
+end
 
-    -- Escape special characters that have meaning in regex
-    cwd = string.gsub(cwd, "%-", "%%-")
-    path = string.gsub(path, cwd, "") -- sometimes the path is absolute so we need to make it relative
+--- @return nil
+M.copy_to_clipboard = function(contents)
+    vim.fn.setreg("+", contents)
+end
 
-    local first_char = string.sub(path, 1, 1)
+--- @return boolean
+M.has_prefix = function(prefix, s)
+    return string.sub(s, 1, #prefix) == prefix
+end
 
-    if first_char == "/" then
-        path = string.sub(path, 2) -- skip first char
+--- @return string
+M.strip_prefix = function(prefix, s)
+    if M.has_prefix(prefix, s) ~= true then
+        return s
     end
 
-    return path
+    return string.sub(s, #prefix + 1)
 end
 
 

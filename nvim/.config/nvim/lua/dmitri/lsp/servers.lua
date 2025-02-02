@@ -38,7 +38,7 @@ local lsp_servers = {
          enabled = true
       },
       filetypes = {"php", "cucumber"},
-      cmd = { vim.fn.getenv('HOME')..'/deps/phpactor/bin/phpactor', 'language-server' },
+      cmd = { 'phpactor', 'language-server' },
       indexer = {
         exclude_pattens = {
             -- Default patterns
