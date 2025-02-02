@@ -1,0 +1,3 @@
+[submodule "goodlord-config"]
+	path = goodlord-config
+	url = git@github.com:Dmitrev/goodlord-config.git
