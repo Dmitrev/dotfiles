@@ -1,5 +1,9 @@
 #!/bin/bash
 
+
+#build dependencies
+sudo apt install ninja-build gettext cmake curl build-essential
+
 current_dir=$(pwd);
 bin_dir="$HOME/.local/bin";
 apps_dir="$HOME/.local/apps";
