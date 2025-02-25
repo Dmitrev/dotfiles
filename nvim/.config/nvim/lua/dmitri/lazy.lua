@@ -252,10 +252,23 @@ require("lazy").setup({
     {
         "ellisonleao/gruvbox.nvim",
         config = function()
-            vim.cmd.colorscheme('gruvbox')
+            -- vim.cmd.colorscheme('gruvbox')
         end
     },
 
+    {
+        "olimorris/onedarkpro.nvim",
+        priority = 1000, -- Ensure it loads first
+        config = function()
+            vim.cmd.colorscheme('onedark_dark')
+        end
+    },
+    -- {
+    --     "metalelf0/jellybeans-nvim",
+    --     config = function()
+    --         vim.cmd.colorscheme('jellybeans')
+    --     end
+    -- },
     {
         "mbbill/undotree"
     }
