@@ -63,6 +63,7 @@ alias notes="~/scripts/notes.sh"
 
 ## docker aliases
 alias dockstop="docker container ls | awk '{print $$1 spnsorshipEntityName \" $$2}' | fzf | awk '{print $$1}' | xargs -I {} docker container stop" 
+alias ds='sudo systemctl restart docker && sudo systemctl daemon-reload && echo "docker restarted.."'
 
 # zellij shortcuts
 alias zj="zellij"
@@ -97,6 +98,8 @@ if [[ "$os" == "Linux" ]]; then
   done
 fi
 
+# optional config (-s check if file not empty)
+[ -s "$HOME/goodlord-config/zsh" ] && source "$HOME/goodlord-config/zsh"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

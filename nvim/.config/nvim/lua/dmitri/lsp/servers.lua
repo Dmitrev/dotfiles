@@ -38,7 +38,7 @@ local lsp_servers = {
          enabled = true
       },
       filetypes = {"php", "cucumber"},
-      cmd = { 'phpactor', 'language-server' },
+      cmd = { os.getenv('HOME') .. '/.local/bin/phpactor', 'language-server' },
       indexer = {
         exclude_pattens = {
             -- Default patterns

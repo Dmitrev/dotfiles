@@ -167,15 +167,16 @@ vim.api.nvim_set_keymap("n", "<leader>cp", "<cmd>cprev<CR>", { noremap = true })
 
 
 -- Harppon
-vim.api.nvim_set_keymap("n", "<leader>hh", '<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, desc = "Open Harpoon UI" })
-vim.api.nvim_set_keymap("n", "<leader>ha", '<cmd>lua require("harpoon.mark").add_file()<CR>', { noremap = true, desc = "Add file tot Harpoon" })
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
 
-vim.api.nvim_set_keymap("n", "<leader>h1", '<cmd>lua require("harpoon.ui").nav_file(1)<CR>', { noremap = true, desc = "Go to file 1 Harpoon" })
-vim.api.nvim_set_keymap("n", "<leader>h2", '<cmd>lua require("harpoon.ui").nav_file(2)<CR>', { noremap = true, desc = "Go to file 2 Harpoon" })
-vim.api.nvim_set_keymap("n", "<leader>h3", '<cmd>lua require("harpoon.ui").nav_file(3)<CR>', { noremap = true, desc = "Go to file 3 Harpoon" })
-vim.api.nvim_set_keymap("n", "<leader>h4", '<cmd>lua require("harpoon.ui").nav_file(4)<CR>', { noremap = true, desc = "Go to file 4 Harpoon" })
-vim.api.nvim_set_keymap("n", "<leader>h5", '<cmd>lua require("harpoon.ui").nav_file(5)<CR>', { noremap = true, desc = "Go to file 5 Harpoon" })
+vim.keymap.set("n", "<leader>a", mark.add_file)
+vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
 
+vim.keymap.set("n", "<leader>ha", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<leader>hs", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<leader>hd", function() ui.nav_file(3) end)
+vim.keymap.set("n", "<leader>hf", function() ui.nav_file(4) end)
 -- DBUI
 vim.keymap.set("n", "<leader>dt", "<cmd>DBUIToggle<CR>", { noremap = true, desc = "Toggle DBUI"})
 vim.keymap.set("n", "<leader>db", "<cmd>DBUIFindBuffer<CR>", { noremap = true, desc = "Find DBUI buffer"})

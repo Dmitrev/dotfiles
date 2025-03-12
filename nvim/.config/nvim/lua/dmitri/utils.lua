@@ -36,6 +36,16 @@ M.strip_prefix = function(prefix, s)
     return string.sub(s, #prefix + 1)
 end
 
+--- @return string
+M.get_meta_from_git_url = function(s)
+    local host = s:gsub("git@", "")
+    local found_col = host:find(":")
+    host = string.sub(host, 1, found_col - 1)
+
+    return {
+        host = host
+    }
+end
 
 M.copy_github_link = function()
     local relative_path = M.get_relative_path() 
@@ -70,6 +80,8 @@ M.copy_github_link = function()
     git_url = git_url .. line_anchor
     io.popen("open "..git_url)
 end
+
+
 
 -- get first hash of the file
 -- git log --all --reverse -m --pretty=format:%H --max-count=1 --find-object `git hash-object app/Utils/PricingUtils.php`
