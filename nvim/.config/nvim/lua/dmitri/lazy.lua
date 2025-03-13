@@ -252,7 +252,13 @@ require("lazy").setup({
     {
         "ellisonleao/gruvbox.nvim",
         config = function()
-            vim.cmd.colorscheme('gruvbox')
+            -- vim.cmd.colorscheme('gruvbox')
+        end
+    },
+    {
+        "folke/tokyonight.nvim",
+        config = function()
+            vim.cmd.colorscheme('tokyonight-storm')
         end
     },
     {
