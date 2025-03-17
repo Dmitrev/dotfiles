@@ -23,7 +23,7 @@ else
     tmux new -s "$SYNCTHING_SESSION" -d
 fi
 
-if ps aux | grep syncthing | grep -v grep | grep -v "$SCRIPT_NAME"; then
+if ps aux | grep syncthing | grep -v grep | grep -v tmux | grep -v "$SCRIPT_NAME"; then
     echo "syncthing is running"
 else
     echo "syncthing is not running"
