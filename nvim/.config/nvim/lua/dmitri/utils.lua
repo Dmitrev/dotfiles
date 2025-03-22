@@ -36,14 +36,36 @@ M.strip_prefix = function(prefix, s)
     return string.sub(s, #prefix + 1)
 end
 
---- @return string
-M.get_meta_from_git_url = function(s)
-    local host = s:gsub("git@", "")
-    local found_col = host:find(":")
-    host = string.sub(host, 1, found_col - 1)
+M.ssh_host_lookup = function(s)
+    local handle = io.popen("ssh -G " .. s .." | grep ^hostname")
 
+    if handle == nil then
+        print("something went wrong trying to look up ssh host override")
+        return
+    end
+
+    local result = handle:read("*a")
+    handle:close()
+
+    local override = result:gsub("hostname ", "")
+    override = override:gsub("[\n\r]", "")
+
+    return override
+end
+
+--- @return table
+M.get_meta_from_git_url = function(s)
+    local found_at_sym = s:find("@")
+    local found_col_sym = s:find(":")
+    local start_index = found_at_sym + 1;
+    local end_index = found_col_sym - 1;
+    local host = string.sub(s, start_index, end_index)
+    local uri = string.sub(s, found_col_sym + 1)
+    uri = uri:gsub("[\n\r]", "")
+ 
     return {
-        host = host
+        host = host, 
+        uri = uri,
     }
 end
 
@@ -57,14 +79,12 @@ M.copy_github_link = function()
         return
     end
 
-    local git_repo_base = git_cmd_handle:read("*a")
-    git_repo_base = git_repo_base:gsub(":", "/")
-    git_repo_base = git_repo_base:gsub("git@", "https://")
-    git_repo_base = git_repo_base:gsub("%.git", "") -- the % is an escape char
-    git_repo_base = git_repo_base:gsub("[\n\r]", "") -- remove new line
+    local git_repo_url = git_cmd_handle:read("*a")
+    local url = M.get_meta_from_git_url(git_repo_url)
+    local host = M.ssh_host_lookup(url.host)
+    local uri = url.uri:gsub(".git", "")
 
-    local git_url = git_repo_base .. '/blob/master/' .. relative_path
-
+    local git_url = "https://".. host .. "/" .. uri .. '/blob/master/' .. relative_path
 
     local start_line = vim.fn.getpos("v")[2]
     local end_line = vim.api.nvim_win_get_cursor(0)[1]
