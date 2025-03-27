@@ -7,23 +7,11 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font_with_fallback {
-    -- { family = "PragmataPro Mono", weight = "Regular"},
-    -- { family = "Jetbrains Mono NL", weight = "Regular"},
-    -- { family = "Monaspace Krypton Var", weight = "Regular"},
-    -- { family = "Monaspace Radon Var", weight = "Regular"},
-    -- { family = "Monaspace Xenon Var", weight = "Regular"},
-    -- { family = "Monaspace Argon Var", weight = "Regular"},
-    -- { family = 'Berkeley Mono', weight = "Regular" },
-    -- { family = "PragmataPro Mono Liga", weight = "Regular"},
-    -- { family = "JetbrainsMono", weight = "Regular"},
     { family = 'Iosevka Fixed', weight = "Regular" },
-    -- family = 'SauceCodePro Nerd Font Mono',
-    -- { family = 'Comic Code Ligatures', weight = "Regular"},
-    -- { family = 'Codelia Ligatures', weight = "Regular" },
-    harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
     "Symbols Nerd Font"
 }
 
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 -- Fixes weird issue with font sometimes having weird kerning
 config.cell_width = 1
 
@@ -37,6 +25,7 @@ config.adjust_window_size_when_changing_font_size = false
 
 -- config.color_scheme = 'nordic'
 config.color_scheme = 'Gruvbox Dark (Gogh)'
+-- config.color_scheme = 'Kanagawa (Gogh)'
 -- config.color_scheme = 'Nord (Gogh)'
 -- config.color_scheme = 'tokyonight_storm'
 -- config.color_scheme = 'tokyonight_night'
@@ -48,7 +37,7 @@ config.color_scheme = 'Gruvbox Dark (Gogh)'
 -- config.color_scheme = 'Catppuccin Latte'
 --
 config.font_size = 20
--- config.line_height = 1.2
+config.line_height = 1.2
 --
 config.window_padding = {
   left = 0,
