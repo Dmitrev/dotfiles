@@ -22,6 +22,16 @@ M.copy_to_clipboard = function(contents)
     vim.fn.setreg("+", contents)
 end
 
+M.file_exists = function(filename)
+    local file = io.popen(filename, "r")
+    if file then 
+        file:close()
+        return true
+    else
+        return false
+    end
+end
+
 --- @return boolean
 M.has_prefix = function(prefix, s)
     return string.sub(s, 1, #prefix) == prefix
@@ -67,6 +77,24 @@ M.get_meta_from_git_url = function(s)
         host = host, 
         uri = uri,
     }
+end
+
+M.find_root_dir = function(files)
+    local current_dir = M.get_parent_dir(M.get_relative_path())
+    while current_dir ~= '/' do
+        for _, file in ipairs(files) do
+            local try_path = current_dir .. '/'.. file
+            if vim.fn.filereadable(try_path) == 1 then
+                return current_dir
+            end
+        end
+        current_dir = M.get_parent_dir(current_dir)
+    end
+    return nil
+end
+
+M.get_parent_dir = function(path)
+    return vim.fn.fnamemodify(path, ':h')
 end
 
 M.copy_github_link = function()

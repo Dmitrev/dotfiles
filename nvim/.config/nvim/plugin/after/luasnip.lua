@@ -1,4 +1,5 @@
 local ok, ls = pcall(require, 'luasnip')
+local utils  = require('dmitri.utils')
 if not ok then
     return
 end
@@ -76,8 +77,9 @@ local get_component_name = function()
     return string.gsub(file_name, '.jsx', '')
 end
 
-local get_namespace = function()
-    local path = require('dmitri.utils').get_relative_path()
+local guess_namespace_without_composer = function()
+    local path = utils.get_relative_path()
+
 
     -- captilize first letter in path
     local first_letter_index = 1
@@ -99,9 +101,75 @@ local get_namespace = function()
     path = string.sub(path, 1, -2) -- remove the last \ at end of line
     debug.path_after_remove_final_slash = path
 
-    print(vim.inspect(debug))
     return path
 end
+
+local get_namespace = function()
+
+    local root_path = utils.find_root_dir({"composer.json"})
+    local file_path = utils.get_relative_path()
+
+    if root_path ~= "." then
+        file_path = string.gsub(file_path, root_path.."/", "")
+    end
+
+    local debug = {}
+    debug.root_path = root_path
+    debug.file_path = file_path
+
+    local guessed_namespace = guess_namespace_without_composer()
+    if root_path == nil then
+        return guessed_namespace
+    end
+
+    -- search for composer.json
+
+    -- get mapping for composer namespaces
+    local composer_mapping_handle = io.popen("jq -r '.autoload.\"psr-4\" * .[\"autoload-dev\"].\"psr-4\" | to_entries | map([.key, .value | tostring]) | .[] | join(\",\")' ".. root_path  .. "/composer.json", "r")
+    local mappings_raw = composer_mapping_handle:read("*a")
+    local mappings = {}
+
+    for line in string.gmatch(mappings_raw, "[^\r\n]+") do
+        local namespace, composer_path = line:match("([^,]+),([^,]+)")
+
+        if file_path:find(composer_path) then
+
+            local last_char = string.sub(composer_path, #composer_path)
+            if last_char == "/" then
+                composer_path = string.sub(composer_path, 1, -2)
+            end
+
+            table.insert(mappings, {
+                namespace = namespace,
+                path = composer_path,
+                match_length = #composer_path
+            })
+        end
+    end
+    debug.mappings = mappings
+
+    local highest_match = nil
+    local highest_match_length = 0
+
+    for _, mapping in ipairs(mappings) do
+        if mapping.match_length > highest_match_length then
+            highest_match_length = mapping.match_length
+            highest_match = mapping
+        end
+    end
+
+    if highest_match == nil then
+        return guessed_namespace
+    end
+
+    file_path = file_path:gsub(highest_match.path.."/", highest_match.namespace)
+    file_path = string.gsub(file_path, "/", "\\")
+    file_path = string.gsub(file_path, get_filename(), "") -- remove filename from namespace
+    file_path = string.sub(file_path, 1, -2) -- remove the last \ at end of line
+
+    return file_path
+end
+
 
 ls.add_snippets("all" , {
     s("pound", t("£")),
