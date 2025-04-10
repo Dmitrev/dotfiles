@@ -256,6 +256,19 @@ require("lazy").setup({
         end
     },
     {
+        "loctvl842/monokai-pro.nvim",
+        config = function()
+            -- vim.cmd([[colorscheme monokai-pro]])
+            -- require("monokai-pro").setup()
+        end
+    },
+    -- {
+    --     'blazkowolf/gruber-darker.nvim',
+    --     config = function()
+    --         vim.cmd.colorscheme('gruber-darker')
+    --     end
+    -- },
+    {
         "mbbill/undotree"
     },
     { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
