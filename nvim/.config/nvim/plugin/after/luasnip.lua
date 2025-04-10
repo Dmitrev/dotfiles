@@ -242,6 +242,27 @@ ls.add_snippets("php", {
         t({"", "}"}),
     }),
 
+    s("!!trait", {
+        t({
+            "<?php",
+            "",
+            "declare(strict_types=1);",
+            "",
+            "namespace ",
+        }),
+        f(get_namespace, {}),
+        t({
+            ";",
+            "",
+            "trait ",
+        }),
+        f(get_class_name, {}),
+        t({"", "{", ""}),
+        t("    "),
+        i(0),
+        t({"", "}"}),
+    }),
+
     s("!!dto", {
         t({
             "<?php",
