@@ -243,7 +243,10 @@ require("lazy").setup({
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     },
     { 
-        "norcalli/nvim-colorizer.lua",
+        -- "norcalli/nvim-colorizer.lua", -- author abandonded plugin
+        -- Waiting for merge: https://github.com/norcalli/nvim-colorizer.lua/pull/103 to fix warning
+        "topaxi/nvim-colorizer.lua", -- temp solution
+        branch = "fix-deprecation-warning",
         config = function()
             require('colorizer').setup()
         end
