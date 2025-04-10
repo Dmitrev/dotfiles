@@ -65,7 +65,8 @@ local lsp_servers = {
       }
    },
    volar = {
-      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+      -- filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+      filetypes = { 'vue' },
       init_options = {
          vue = {
             hybridMode = false,
