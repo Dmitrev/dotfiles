@@ -7,7 +7,22 @@ end
 
 ntc.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "php", "gotmpl", "html", "css", "json", "dockerfile", "javascript", "kdl", "go", "markdown", "markdown_inline", "python", "http", "vue", "zig" },
+  ensure_installed = { 
+    "c",
+    "comment", -- highlights comment like todo and fixme, when uppercased
+    "php",
+    "html", "css",
+    "json",
+    "dockerfile",
+    "javascript",
+    "kdl",
+    "go", "gotmpl", "gomod", "gosum", "gowork",
+    "markdown", "markdown_inline",
+    "python",
+    "http",
+    "vue",
+    "zig"
+  },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
