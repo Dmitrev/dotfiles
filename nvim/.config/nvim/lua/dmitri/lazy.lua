@@ -251,18 +251,31 @@ require("lazy").setup({
             require('colorizer').setup()
         end
     },
-    
     {
         "ellisonleao/gruvbox.nvim",
         config = function()
-            vim.cmd.colorscheme('gruvbox')
+            -- vim.cmd.colorscheme('gruvbox')
         end
     },
     {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        config = function()
+            -- vim.cmd("colorscheme rose-pine")
+        end
+    },
+    {
+        "navarasu/onedark.nvim",
+        config = function()
+            -- vim.cmd.colorscheme("onedark")
+        end
+    },
+
+    {
         "loctvl842/monokai-pro.nvim",
         config = function()
-            -- vim.cmd([[colorscheme monokai-pro]])
-            -- require("monokai-pro").setup()
+            vim.cmd([[colorscheme monokai-pro-classic]])
+            require("monokai-pro").setup()
         end
     },
     -- {
