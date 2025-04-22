@@ -154,7 +154,7 @@ require("lazy").setup({
         priority = 1000,
         opts = {},
         config = function()
-            -- vim.cmd.colorscheme('catppuccin-mocha')
+            vim.cmd.colorscheme('catppuccin-mocha')
             -- vim.cmd.colorscheme('catppuccin-latte')
         end
     },
@@ -274,8 +274,17 @@ require("lazy").setup({
     {
         "loctvl842/monokai-pro.nvim",
         config = function()
-            vim.cmd([[colorscheme monokai-pro-classic]])
-            require("monokai-pro").setup()
+            -- vim.cmd([[colorscheme monokai-pro-classic]])
+            -- require("monokai-pro").setup()
+        end
+    },
+    {
+        'f4z3r/gruvbox-material.nvim',
+        name = 'gruvbox-material',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme("gruvbox-material")
         end
     },
     -- {
@@ -286,6 +295,22 @@ require("lazy").setup({
     -- },
     {
         "mbbill/undotree"
+    },
+    {
+        "Mofiqul/dracula.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme("dracula")
+        end
+    },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme("tokyonight")
+        end
     },
     { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
 }, opts)
