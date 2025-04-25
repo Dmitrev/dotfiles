@@ -256,6 +256,7 @@ local config = {
   --     copen        = "topleft copen",
   --   },
   files = {
+    previewer = false,
     -- previewer      = "bat",          -- uncomment to override previewer
                                         -- (name from 'previewers' table)
                                         -- set to 'false' to disable
@@ -426,6 +427,14 @@ local config = {
     rg_glob           = false,        -- default to glob parsing?
     glob_flag         = "--iglob",    -- for case sensitive globs use '--glob'
     glob_separator    = "%s%-%-",     -- query separator pattern (lua): ' --'
+    -- first returned string is the new search query
+    -- second returned string are (optional) additional rg flags
+    -- @return string, string?
+    rg_glob_fn = function(query, opts)
+      local regex, flags = query:match("^(.-)%s%-%-(.*)$")
+      -- If no separator is detected will return the original query
+      return (regex or query), flags
+    end,
     -- advanced usage: for custom argument parsing define
     -- 'rg_glob_fn' to return a pair:
     --   first returned argument is the new search query
