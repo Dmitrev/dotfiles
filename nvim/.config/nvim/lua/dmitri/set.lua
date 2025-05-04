@@ -1,5 +1,6 @@
 -- map leader key to space 
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- Keep the cursor fat in insert mode
 vim.opt.guicursor = ""
