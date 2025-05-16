@@ -98,6 +98,7 @@ local config = {
       ["ctrl-a"]      = "beginning-of-line",
       ["ctrl-e"]      = "end-of-line",
       ["alt-a"]       = "toggle-all",
+      ["ctrl-q"]       = "select-all+accept",
       -- Only valid with fzf previewers (bat/cat/git/etc)
       ["f3"]          = "toggle-preview-wrap",
       ["f4"]          = "toggle-preview",

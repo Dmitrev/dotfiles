@@ -312,5 +312,19 @@ require("lazy").setup({
             -- vim.cmd.colorscheme("tokyonight")
         end
     },
+
+    {
+        "mistweaverco/kulala.nvim",
+        keys = {
+            { "<leader>rs", desc = "Send request" },
+            { "<leader>ra", desc = "Send all requests" },
+            { "<leader>Rb", desc = "Open scratchpad" },
+        },
+        ft = {"http", "rest"},
+        opts = {
+            -- your configuration comes here
+            global_keymaps = true,
+        },
+    },
     { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
 }, opts)

@@ -1,4 +1,9 @@
-font-family = Iosevka Fixed
-font-size = 20
-theme = GruvboxDark
+font-family = Berkeley Mono Condensed
+#font-family = Berkeley Mono
+font-size = 20 
+theme = catppuccin-mocha
+adjust-cell-height = 20%
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor,sudo,title
 
