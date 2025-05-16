@@ -217,6 +217,8 @@ vim.keymap.set("n", "<leader>lx", function()
     }) end)
 
 
+-- grug-far
+vim.keymap.set("n", "<Leader>ss", "<cmd>GrugFar<cr>");
 
 -- load overrides here
 local overrides = require('dmitri.overrides');
