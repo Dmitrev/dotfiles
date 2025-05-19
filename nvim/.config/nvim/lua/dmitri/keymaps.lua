@@ -216,6 +216,17 @@ vim.keymap.set("n", "<leader>lx", function()
         underline = isLspDiagnosticsVisible
     }) end)
 
+-- TODO: make the , work in keymap
+-- vim.keymap.set("i", "<C-,>", function()
+--   vim.ui.input({ prompt = "Calculator: " }, function(input)
+--     local calc = load("return " .. (input or ""))()
+--     if (calc) then
+--       vim.api.nvim_feedkeys(tostring(calc), "i", true)
+--     end
+--   end)
+-- end)
+
+
 
 -- grug-far
 vim.keymap.set("n", "<Leader>ss", "<cmd>GrugFar<cr>");
