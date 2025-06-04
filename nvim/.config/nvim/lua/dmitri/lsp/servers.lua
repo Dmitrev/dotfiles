@@ -1,3 +1,6 @@
+-- For Mason v2,
+local vue_language_server_path = vim.fn.expand '$MASON/packages' .. '/vue-language-server' .. '/node_modules/@vue/language-server'
+
 local M = {}
 -- local vue_language_server_path = '/home/dmitri/.nvm/version/v20.18.0/lib/node_modules/@vue/language-server'
 --
@@ -55,7 +58,18 @@ local lsp_servers = {
    html = {
       filetypes = {'html'},
    },
-   ts_ls = {},
+   ts_ls = {
+      init_options = {
+         plugins = {
+            {
+               name = '@vue/typescript-plugin',
+               location = vue_language_server_path,
+               languages = { 'vue' },
+            },
+         },
+      },
+      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+   },
    jsonls = {},
    yamlls = {
       settings = {
@@ -64,15 +78,8 @@ local lsp_servers = {
          }
       }
    },
-   volar = {
-      -- filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-      filetypes = { 'vue' },
-      init_options = {
-         vue = {
-            hybridMode = false,
-         },
-      },
-   }, -- vuejs
+   -- vue_ls = {
+   -- },
    rust_analyzer = {},
    cssls = {},
    gopls = {},
@@ -80,29 +87,29 @@ local lsp_servers = {
    tailwindcss = {
       filetypes = {'vue'}
    },
-   lua_ls = {
-      settings = {
-         Lua = {
-            runtime = {
-               -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-               version = 'LuaJIT',
-            },
-            diagnostics = {
-               -- Get the language server to recognize the `vim` global
-               globals = {'vim'},
-            },
-            workspace = {
-               -- Make the server aware of Neovim runtime files
-               library = vim.api.nvim_get_runtime_file("", true),
-               checkThirdParty = false
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-               enable = false,
-            },
-         },
-      }
-   },
+   -- lua_ls = {
+   --    settings = {
+   --       Lua = {
+   --          runtime = {
+   --             -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+   --             version = 'LuaJIT',
+   --          },
+   --          diagnostics = {
+   --             -- Get the language server to recognize the `vim` global
+   --             globals = {'vim'},
+   --          },
+   --          workspace = {
+   --             -- Make the server aware of Neovim runtime files
+   --             library = vim.api.nvim_get_runtime_file("", true),
+   --             checkThirdParty = false
+   --          },
+   --          -- Do not send telemetry data containing a randomized but unique identifier
+   --          telemetry = {
+   --             enable = false,
+   --          },
+   --       },
+   --    }
+   -- },
    clangd = {},
    zls = {},
 }
