@@ -312,6 +312,14 @@ require("lazy").setup({
             -- vim.cmd.colorscheme("tokyonight")
         end
     },
+    {
+        "rebelot/kanagawa.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme("kanagawa")
+        end
+    },
 
     {
         "mistweaverco/kulala.nvim",
@@ -341,5 +349,22 @@ require("lazy").setup({
             });
         end
     },
+    {
+        "nyoom-engineering/oxocarbon.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme("oxocarbon")
+        end
+    },
+    -- {
+    --     "github/copilot.vim",
+    --     config = function()
+    --         -- can you disabled copilot?
+    --     end
+    -- },
+    -- {
+        -- "olimorris/codecompanion.nvim",
+    -- },
     { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
 }, opts)
