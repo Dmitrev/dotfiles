@@ -154,7 +154,7 @@ require("lazy").setup({
         priority = 1000,
         opts = {},
         config = function()
-            vim.cmd.colorscheme('catppuccin-mocha')
+            -- vim.cmd.colorscheme('catppuccin-mocha')
             -- vim.cmd.colorscheme('catppuccin-latte')
         end
     },
@@ -254,7 +254,7 @@ require("lazy").setup({
     {
         "ellisonleao/gruvbox.nvim",
         config = function()
-            -- vim.cmd.colorscheme('gruvbox')
+            vim.cmd.colorscheme('gruvbox')
         end
     },
     {

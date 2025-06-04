@@ -21,7 +21,8 @@ config.font = wezterm.font_with_fallback {
 -- -- config.freetype_render_target = 'Normal'
 -- --
 -- config.color_scheme = 'Oxocarbon Dark'
--- -- -- config.color_scheme = 'Kanagawa (Gogh)'
+-- config.color_scheme = 'Kanagawa (Gogh)'
+config.color_scheme = 'Gruvbox Dark (Gogh)'
 --
 -- -- config.color_scheme = 'nordic'
 -- -- config.color_scheme = 'Kanagawa (Gogh)'
@@ -33,10 +34,10 @@ config.font = wezterm.font_with_fallback {
 -- -- config.color_scheme = 'OneDark (base16)'
 -- -- config.color_scheme = 'duskfox'
 -- -- config.color_scheme = 'Rosé Pine (Gogh)'
-config.color_scheme = 'Catppuccin Mocha'
+-- config.color_scheme = 'Catppuccin Mocha'
 -- --
 config.font_size = 20
-config.line_height = 1.2
+-- config.line_height = 1.2
 -- --
 -- config.window_padding = {
 --   left = 0,
