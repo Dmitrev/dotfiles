@@ -254,9 +254,10 @@ require("lazy").setup({
     {
         "ellisonleao/gruvbox.nvim",
         config = function()
-            vim.cmd.colorscheme('gruvbox')
+            -- vim.cmd.colorscheme('gruvbox')
         end
     },
+    
     {
         "rose-pine/neovim",
         name = "rose-pine",
@@ -357,6 +358,24 @@ require("lazy").setup({
             -- vim.cmd.colorscheme("oxocarbon")
         end
     },
+    {
+        "sainnhe/sonokai",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.g.sonokai_style = 'espresso'
+            -- vim.cmd.colorscheme("sonokai")
+        end
+    },
+    {
+        "EdenEast/nightfox.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme("duskfox")
+        end
+    },
+
     -- {
     --     "github/copilot.vim",
     --     config = function()

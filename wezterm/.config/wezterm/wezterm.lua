@@ -7,11 +7,14 @@ if wezterm.config_builder then
 end
 --
 config.font = wezterm.font_with_fallback {
-    { family = 'Iosevka Fixed', weight = "Regular" },
+    -- { family = 'Iosevka Fixed', weight = "Regular" },
+    -- { family = 'IosevkaNerdFont', weight = "Regular" },
+    -- { family = 'IosevkaTermNerdFont', weight = "Regular" },
+    { family = 'IosevkaTermSlabNerdFont', weight = "Regular" },
     "Symbols Nerd Font"
 }
 --
--- -- config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 -- -- Fixes weird issue with font sometimes having weird kerning
 -- -- config.cell_width = 1
 --
@@ -22,7 +25,7 @@ config.font = wezterm.font_with_fallback {
 -- --
 -- config.color_scheme = 'Oxocarbon Dark'
 -- config.color_scheme = 'Kanagawa (Gogh)'
-config.color_scheme = 'Gruvbox Dark (Gogh)'
+-- config.color_scheme = 'Gruvbox Dark (Gogh)'
 --
 -- -- config.color_scheme = 'nordic'
 -- -- config.color_scheme = 'Kanagawa (Gogh)'
@@ -32,7 +35,8 @@ config.color_scheme = 'Gruvbox Dark (Gogh)'
 -- -- config.color_scheme = 'tokyonight_moon'
 -- -- config.color_scheme = 'Catppuccin Mocha'
 -- -- config.color_scheme = 'OneDark (base16)'
--- -- config.color_scheme = 'duskfox'
+config.color_scheme = 'duskfox'
+-- config.color_scheme = 'nightfox'
 -- -- config.color_scheme = 'Rosé Pine (Gogh)'
 -- config.color_scheme = 'Catppuccin Mocha'
 -- --
