@@ -7,10 +7,10 @@ if wezterm.config_builder then
 end
 --
 config.font = wezterm.font_with_fallback {
-    -- { family = 'Iosevka Fixed', weight = "Regular" },
+    { family = 'Iosevka Fixed', weight = "Regular" },
     -- { family = 'IosevkaNerdFont', weight = "Regular" },
     -- { family = 'IosevkaTermNerdFont', weight = "Regular" },
-    { family = 'IosevkaTermSlabNerdFont', weight = "Regular" },
+    -- { family = 'IosevkaTermSlabNerdFont', weight = "Regular" },
     "Symbols Nerd Font"
 }
 --
