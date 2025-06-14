@@ -60,15 +60,15 @@ if ok then
     -- end, {desc = "search files"})
     --
     vim.keymap.set({"n"}, "<Leader>fF", function()
-        fzf.files({fd_opts = '--type file --hidden --follow --no-ignore --exclude vendor --exclude node_modules'})
+        fzf.files({resume = true, fd_opts = '--type file --hidden --follow --no-ignore --exclude vendor --exclude node_modules'})
     end, {desc = "search files include all hidden files"})
 
     vim.keymap.set({"n"}, "<Leader>bb", function()
-        fzf.buffers()
+        fzf.buffers({})
     end, {desc = "search buffers"})
 
     vim.keymap.set({"n"}, "<Leader>fg", "<cmd>FzfLua live_grep_glob<CR>", {desc = "search pattern files"})
-    vim.keymap.set({"n"}, "<Leader>fh", function()  fzf.help_tags() end, {desc = "search help"})
+    vim.keymap.set({"n"}, "<Leader>fh", function()  fzf.help_tags({}) end, {desc = "search help"})
 
     vim.keymap.set({"n"}, "<Leader>ff", "<cmd>FzfLua files<CR>", {desc = "search files"})
     vim.keymap.set({"n"}, "<Leader>e", "<cmd>FzfLua oldfiles<CR>", {desc = "old files"})

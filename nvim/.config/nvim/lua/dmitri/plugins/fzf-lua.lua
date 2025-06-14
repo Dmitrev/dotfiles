@@ -273,7 +273,7 @@ local config = {
     -- NOTE: 'find -printf' requires GNU find
     -- cmd            = "find . -type f -printf '%P\n'",
     find_opts         = [[-type f -not -path '*/\.git/*' -printf '%P\n']],
-    rg_opts           = "--color=never --files --hidden --follow -g '!.git'",
+    rg_opts           = "--color=never --files --hidden --follow -g '!.git' --glob '!platform/var",
     fd_opts           = "--color=never --type f --hidden --follow --exclude .git",
     -- by default, cwd appears in the header only if {opts} contain a cwd
     -- parameter to a different folder than the current working directory

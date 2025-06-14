@@ -318,7 +318,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            -- vim.cmd.colorscheme("kanagawa")
+            vim.cmd.colorscheme("kanagawa")
         end
     },
 
@@ -372,7 +372,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme("duskfox")
+            -- vim.cmd.colorscheme("duskfox")
         end
     },
 

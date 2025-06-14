@@ -11,4 +11,4 @@ x = 0
 y = 0
 
 [general]
-import = ["/home/dmitri/.config/alacritty/catppuccin/catppuccin-mocha.yml"]
+import = ["/home/dmitri/.config/alacritty/kanagawa_wave.toml"]
