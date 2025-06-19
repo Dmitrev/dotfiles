@@ -241,6 +241,14 @@ if overrides.keymaps ~= nil then
     end
 end
 
+
+--debug
+vim.api.nvim_set_keymap('n', '<F5>', "<cmd>lua require'dap'.continue()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<F10>', "<cmd>lua require'dap'.step_over()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<F11>', "<cmd>lua require'dap'.step_into()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<F12>', "<cmd>lua require'dap'.step_out()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>b', "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { noremap = true })
+
 -- Setup hover.nvim
 -- vim.keymap.set("n", "K", require("hover").hover, {desc = "hover.nvim"})
 -- vim.keymap.set("n", "gK", require("hover").hover_select, {desc = "hover.nvim (select)"})
