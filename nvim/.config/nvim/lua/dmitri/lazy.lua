@@ -254,7 +254,7 @@ require("lazy").setup({
     {
         "ellisonleao/gruvbox.nvim",
         config = function()
-            -- vim.cmd.colorscheme('gruvbox')
+            vim.cmd.colorscheme('gruvbox')
         end
     },
     
@@ -318,7 +318,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme("kanagawa")
+            -- vim.cmd.colorscheme("kanagawa")
         end
     },
 
