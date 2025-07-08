@@ -11,4 +11,4 @@ x = 0
 y = 0
 
 [general]
-import = ["/home/dmitri/.config/alacritty/gruvbox_dark.toml"]
+import = ["/home/dmitri/.config/alacritty/ayu_dark.toml"]
