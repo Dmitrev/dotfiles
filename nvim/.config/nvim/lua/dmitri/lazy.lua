@@ -376,15 +376,21 @@ require("lazy").setup({
         end
     },
 
-    -- {
-    --     "github/copilot.vim",
-    --     config = function()
-    --         -- can you disabled copilot?
-    --     end
-    -- },
-    -- {
-        -- "olimorris/codecompanion.nvim",
-    -- },
+    {
+        "github/copilot.vim",
+        config = function()
+            -- can you disabled copilot?
+        end
+    },
+    {
+        "olimorris/codecompanion.nvim",
+        config = function()
+            require('codecompanion').setup({
+                -- your configuration comes here
+                global_keymaps = true,
+            })
+        end
+    },
     { 
         "rcarriga/nvim-dap-ui",
         dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"},
