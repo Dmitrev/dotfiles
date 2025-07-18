@@ -4,6 +4,7 @@ os=$(uname)
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH="$HOME/.ebcli-virtual-env/executables:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
@@ -81,6 +82,7 @@ alias books='xdg-open ~/Documents/Ebooks';
 # syncthing
 alias startsync='~/scripts/syncthing.sh'
 alias opensync='syncthing --browser-only'
+alias timer='pomodoro start --duration 60 && watch -n0 pomodoro status'
 
 # random useful stuff
 alias last_downloaded_file="ls -t ~/Downloads | head -n 1 | xargs -I {} echo '$HOME/Downloads/{}'"
