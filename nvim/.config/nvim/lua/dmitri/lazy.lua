@@ -254,7 +254,7 @@ require("lazy").setup({
     {
         "ellisonleao/gruvbox.nvim",
         config = function()
-            vim.cmd.colorscheme('gruvbox')
+            -- vim.cmd.colorscheme('gruvbox')
         end
     },
     
@@ -374,6 +374,14 @@ require("lazy").setup({
         config = function()
             -- vim.cmd.colorscheme("duskfox")
         end
+    },
+    {
+        'RostislavArts/naysayer.nvim',
+        priority = 1000,
+        lazy = false,
+        config = function()
+            vim.cmd.colorscheme('naysayer')
+        end,
     },
 
     {

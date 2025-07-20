@@ -53,6 +53,7 @@ local lsp_servers = {
          }
       }
    },
+   ruby_lsp = {},
    emmet_language_server = {},
    -- END PHP
    html = {

@@ -84,6 +84,9 @@ alias startsync='~/scripts/syncthing.sh'
 alias opensync='syncthing --browser-only'
 alias timer='pomodoro start --duration 60 && watch -n0 pomodoro status'
 
+alias hetznersshroot='ssh root@91.99.231.142'
+alias hetznerssh='ssh dmitri@91.99.231.142'
+
 # random useful stuff
 alias last_downloaded_file="ls -t ~/Downloads | head -n 1 | xargs -I {} echo '$HOME/Downloads/{}'"
 
@@ -105,3 +108,4 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(/home/dmitri/.local/bin/mise activate zsh)"
