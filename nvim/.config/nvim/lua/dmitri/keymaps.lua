@@ -170,7 +170,7 @@ vim.api.nvim_set_keymap("n", "<leader>cp", "<cmd>cprev<CR>", { noremap = true })
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
-vim.keymap.set("n", "<leader>a", mark.add_file)
+vim.keymap.set("n", "<leader>hh", mark.add_file)
 vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
 
 vim.keymap.set("n", "<leader>ha", function() ui.nav_file(1) end)
@@ -248,6 +248,13 @@ vim.api.nvim_set_keymap('n', '<F10>', "<cmd>lua require'dap'.step_over()<CR>", {
 vim.api.nvim_set_keymap('n', '<F11>', "<cmd>lua require'dap'.step_into()<CR>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<F12>', "<cmd>lua require'dap'.step_out()<CR>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>b', "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { noremap = true })
+
+
+-- AI
+vim.keymap.set("n", "<leader>ai", "<cmd>CodeCompanionChat<CR>", { noremap = true, desc = "Open AI chat" })
+vim.keymap.set("n", "<leader>aa", "<cmd>CodeCompanionActions<CR>", { noremap = true, desc = "List all actions" })
+
+vim.keymap.set("n", "<leader>ad", ":CodeCompanion ", { noremap = true, desc = "Start inline chat" })
 
 -- Setup hover.nvim
 -- vim.keymap.set("n", "K", require("hover").hover, {desc = "hover.nvim"})

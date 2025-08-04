@@ -318,7 +318,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            -- vim.cmd.colorscheme("kanagawa")
+            vim.cmd.colorscheme("kanagawa")
         end
     },
 
@@ -380,26 +380,39 @@ require("lazy").setup({
         priority = 1000,
         lazy = false,
         config = function()
-            vim.cmd.colorscheme('naysayer')
+            -- vim.cmd.colorscheme('naysayer')
+        end,
+    },
+    {
+        "Mofiqul/adwaita.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme('adwaita')
         end,
     },
 
     {
         "github/copilot.vim",
         config = function()
-            -- can you disabled copilot?
+            -- vim.g.copilot_no_tab_map = true
+            vim.g.copilot_enable = false
         end
     },
     {
         "olimorris/codecompanion.nvim",
-        config = function()
-            require('codecompanion').setup({
-                -- your configuration comes here
-                global_keymaps = true,
-            })
-        end
     },
-    { 
+    {
+        "ravitemer/mcphub.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        build = "npm install -g mcp-hub@latest",  -- Installs `mcp-hub` node binary globally
+        config = function()
+            require("mcphub").setup()
+        end,
+    },
+    {
         "rcarriga/nvim-dap-ui",
         dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"},
         config = function()
