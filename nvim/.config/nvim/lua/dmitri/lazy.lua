@@ -393,6 +393,15 @@ require("lazy").setup({
     },
 
     {
+        "gbprod/nord.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme('nord')
+        end,
+    },
+
+    {
         "github/copilot.vim",
         config = function()
             -- vim.g.copilot_no_tab_map = true
