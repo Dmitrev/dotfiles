@@ -391,7 +391,14 @@ require("lazy").setup({
             -- vim.cmd.colorscheme('adwaita')
         end,
     },
-
+    { 
+        "miikanissi/modus-themes.nvim",
+        priority = 1000,
+        lazy = false,
+        config = function()
+            -- vim.cmd.colorscheme('modus_operandi')
+        end,
+    },
     {
         "gbprod/nord.nvim",
         lazy = false,
