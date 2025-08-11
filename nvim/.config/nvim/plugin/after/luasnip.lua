@@ -190,6 +190,11 @@ ls.add_snippets("javascript", {
     debugobj()
 });
 
+ls.add_snippets("typescriptreact", {
+    -- debug javascript object
+    debugobj()
+});
+
 ls.add_snippets("vue", {
     -- debug javascript object
     debugobj()
