@@ -318,7 +318,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme("kanagawa")
+            -- vim.cmd.colorscheme("kanagawa")
         end
     },
 
@@ -405,6 +405,14 @@ require("lazy").setup({
         priority = 1000,
         config = function()
             -- vim.cmd.colorscheme('nord')
+        end,
+    },
+    {
+        "Shatur/neovim-ayu",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme('ayu-mirage')
         end,
     },
 
