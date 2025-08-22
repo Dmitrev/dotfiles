@@ -36,7 +36,7 @@ vim.o.sidescrolloff = 5
 vim.opt.hlsearch = false
 -- search as you type --
 vim.opt.incsearch = true
-vim.api.nvim_command('set noshowmode')
+-- vim.api.nvim_command('set noshowmode')
 vim.opt.wrap = false
 vim.opt.splitright = true
 
