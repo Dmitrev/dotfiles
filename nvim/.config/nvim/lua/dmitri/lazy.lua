@@ -149,17 +149,6 @@ require("lazy").setup({
         end
     },
 
-    {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        priority = 1000,
-        opts = {},
-        config = function()
-            -- vim.cmd.colorscheme('catppuccin-mocha')
-            -- vim.cmd.colorscheme('catppuccin-latte')
-        end
-    },
-
     -- html
     {
         'windwp/nvim-ts-autotag',
@@ -200,214 +189,67 @@ require("lazy").setup({
         end
     },
 
-    -- {
-    --     "epwalsh/obsidian.nvim",
-    --     version = "*",  -- recommended, use latest release instead of latest commit
-    --     lazy = true,
-    --     ft = "markdown",
-    --     -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-    --     -- event = {
-    --     --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-    --     --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
-    --     --   -- refer to `:h file-pattern` for more examples
-    --     --   "BufReadPre path/to/my-vault/*.md",
-    --     --   "BufNewFile path/to/my-vault/*.md",
-    --     -- },
-    --     dependencies = {
-    --         -- Required.
-    --         "nvim-lua/plenary.nvim",
-    --
-    --         -- see below for full list of optional dependencies 👇
-    --     },
-    --     opts = {
-    --         workspaces = {
-    --             {
-    --                 name = "personal",
-    --                 path = "~/Sync/obsidian/personal",
-    --             },
-    --         },
-    --         -- see below for full list of options 👇
-    --     },
-    -- },
-    -- {
-    --     "ray-x/go.nvim",
-    --     dependencies = {  -- optional packages
-    --         "ray-x/guihua.lua",
-    --         "neovim/nvim-lspconfig",
-    --         "nvim-treesitter/nvim-treesitter",
-    --     },
-    --     config = function()
-    --         require("go").setup()
-    --     end,
-    --     event = {"CmdlineEnter"},
-    --     ft = {"go", 'gomod'},
-    --     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
-    -- },
-    -- { 
-    --     -- "norcalli/nvim-colorizer.lua", -- author abandonded plugin
-    --     -- Waiting for merge: https://github.com/norcalli/nvim-colorizer.lua/pull/103 to fix warning
-    --     "topaxi/nvim-colorizer.lua", -- temp solution
-    --     branch = "fix-deprecation-warning",
-    --     config = function()
-    --         require('colorizer').setup()
-    --     end
-    -- },
-    -- {
-    --     "ellisonleao/gruvbox.nvim",
-    --     config = function()
-    --         -- vim.cmd.colorscheme('gruvbox')
-    --     end
-    -- },
-    -- 
-    -- {
-    --     "rose-pine/neovim",
-    --     name = "rose-pine",
-    --     config = function()
-    --         -- vim.cmd("colorscheme rose-pine")
-    --     end
-    -- },
-    -- {
-    --     "navarasu/onedark.nvim",
-    --     config = function()
-    --         -- vim.cmd.colorscheme("onedark")
-    --     end
-    -- },
-    --
-    -- {
-    --     "loctvl842/monokai-pro.nvim",
-    --     config = function()
-    --         -- vim.cmd([[colorscheme monokai-pro-classic]])
-    --         -- require("monokai-pro").setup()
-    --     end
-    -- },
-    -- {
-    --     'f4z3r/gruvbox-material.nvim',
-    --     name = 'gruvbox-material',
-    --     lazy = false,
-    --     priority = 1000,
-    --     config = function()
-    --         -- vim.cmd.colorscheme("gruvbox-material")
-    --     end
-    -- },
-    -- {
-    --     'blazkowolf/gruber-darker.nvim',
-    --     config = function()
-    --         vim.cmd.colorscheme('gruber-darker')
-    --     end
-    -- },
+    {
+        "epwalsh/obsidian.nvim",
+        version = "*",  -- recommended, use latest release instead of latest commit
+        lazy = true,
+        ft = "markdown",
+        -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+        -- event = {
+        --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+        --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
+        --   -- refer to `:h file-pattern` for more examples
+        --   "BufReadPre path/to/my-vault/*.md",
+        --   "BufNewFile path/to/my-vault/*.md",
+        -- },
+        dependencies = {
+            -- Required.
+            "nvim-lua/plenary.nvim",
+
+            -- see below for full list of optional dependencies 👇
+        },
+        opts = {
+            workspaces = {
+                {
+                    name = "personal",
+                    path = "~/Sync/obsidian/personal",
+                },
+            },
+            -- see below for full list of options 👇
+        },
+    },
+    {
+        "ray-x/go.nvim",
+        dependencies = {  -- optional packages
+            "ray-x/guihua.lua",
+            "neovim/nvim-lspconfig",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        config = function()
+            require("go").setup()
+        end,
+        event = {"CmdlineEnter"},
+        ft = {"go", 'gomod'},
+        build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+    },
     {
         "mbbill/undotree"
     },
-    -- {
-    --     "Mofiqul/dracula.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     config = function()
-    --         -- vim.cmd.colorscheme("dracula")
-    --     end
-    -- },
-    -- {
-    --     "folke/tokyonight.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     config = function()
-    --         -- vim.cmd.colorscheme("tokyonight")
-    --     end
-    -- },
-    -- {
-    --     "rebelot/kanagawa.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     config = function()
-    --         -- vim.cmd.colorscheme("kanagawa")
-    --     end
-    -- },
-    --
-    -- {
-    --     "mistweaverco/kulala.nvim",
-    --     keys = {
-    --         { "<leader>rs", desc = "Send request" },
-    --         { "<leader>ra", desc = "Send all requests" },
-    --         { "<leader>Rb", desc = "Open scratchpad" },
-    --     },
-    --     ft = {"http", "rest"},
-    --     opts = {
-    --         -- your configuration comes here
-    --         global_keymaps = true,
-    --     },
-    -- },
-    -- {
-    --     'MagicDuck/grug-far.nvim',
-    --     -- Note (lazy loading): grug-far.lua defers all it's requires so it's lazy by default
-    --     -- additional lazy config to defer loading is not really needed...
-    --     config = function()
-    --         -- optional setup call to override plugin options
-    --         -- alternatively you can set options with vim.g.grug_far = { ... }
-    --         require('grug-far').setup({
-    --             -- options, see Configuration section below
-    --             -- there are no required options atm
-    --             -- engine = 'ripgrep' is default, but 'astgrep' or 'astgrep-rules' can
-    --             -- be specified
-    --         });
-    --     end
-    -- },
-    -- {
-    --     "nyoom-engineering/oxocarbon.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     config = function()
-    --         -- vim.cmd.colorscheme("oxocarbon")
-    --     end
-    -- },
-    -- {
-    --     "sainnhe/sonokai",
-    --     lazy = false,
-    --     priority = 1000,
-    --     config = function()
-    --         vim.g.sonokai_style = 'espresso'
-    --         -- vim.cmd.colorscheme("sonokai")
-    --     end
-    -- },
-    -- {
-    --     "EdenEast/nightfox.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     config = function()
-    --         -- vim.cmd.colorscheme("duskfox")
-    --     end
-    -- },
-    -- {
-    --     'RostislavArts/naysayer.nvim',
-    --     priority = 1000,
-    --     lazy = false,
-    --     config = function()
-    --         -- vim.cmd.colorscheme('naysayer')
-    --     end,
-    -- },
-    -- {
-    --     "Mofiqul/adwaita.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     config = function()
-    --         -- vim.cmd.colorscheme('adwaita')
-    --     end,
-    -- },
-    -- { 
-    --     "miikanissi/modus-themes.nvim",
-    --     priority = 1000,
-    --     lazy = false,
-    --     config = function()
-    --         -- vim.cmd.colorscheme('modus_operandi')
-    --     end,
-    -- },
-    -- {
-    --     "gbprod/nord.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     config = function()
-    --         -- vim.cmd.colorscheme('nord')
-    --     end,
-    -- },
+    {
+        'MagicDuck/grug-far.nvim',
+        -- Note (lazy loading): grug-far.lua defers all it's requires so it's lazy by default
+        -- additional lazy config to defer loading is not really needed...
+        config = function()
+            -- optional setup call to override plugin options
+            -- alternatively you can set options with vim.g.grug_far = { ... }
+            require('grug-far').setup({
+                -- options, see Configuration section below
+                -- there are no required options atm
+                -- engine = 'ripgrep' is default, but 'astgrep' or 'astgrep-rules' can
+                -- be specified
+            });
+        end
+    },
     {
         "Shatur/neovim-ayu",
         lazy = false,
@@ -416,27 +258,6 @@ require("lazy").setup({
             vim.cmd.colorscheme('ayu-mirage')
         end,
     },
-
-    -- {
-    --     "github/copilot.vim",
-    --     config = function()
-    --         -- vim.g.copilot_no_tab_map = true
-    --         vim.g.copilot_enable = false
-    --     end
-    -- },
-    -- {
-    --     "olimorris/codecompanion.nvim",
-    -- },
-    -- {
-    --     "ravitemer/mcphub.nvim",
-    --     dependencies = {
-    --         "nvim-lua/plenary.nvim",
-    --     },
-    --     build = "npm install -g mcp-hub@latest",  -- Installs `mcp-hub` node binary globally
-    --     config = function()
-    --         require("mcphub").setup()
-    --     end,
-    -- },
     {
         'NickvanDyke/opencode.nvim',
         dependencies = {
