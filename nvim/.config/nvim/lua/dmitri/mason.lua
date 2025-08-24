@@ -11,5 +11,6 @@ end
 mason.setup()
 
 mason_lspconfig.setup({
-    ensure_installed = s.getMasonConfig()
+    ensure_installed = s.getMasonConfig(),
+    automatic_enable = false
 })
