@@ -1,5 +1,5 @@
-local ok, mini_statusline = pcall(require, 'mini.statusline')
+-- local ok, mini_statusline = pcall(require, 'mini.statusline')
 
-if ok then
+-- if ok then
   -- mini_statusline.setup()
-end
+-- end
