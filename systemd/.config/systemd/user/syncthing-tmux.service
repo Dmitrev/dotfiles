@@ -1,0 +1,13 @@
+[Unit]
+Description=Syncthing in tmux
+After=graphical-session.target
+
+[Service]
+Type=forking
+Environment=HOME=%h
+ExecStart=/usr/bin/tmux new-session -d -s syncthing -- %h/.local/bin/syncthing --no-browser
+ExecStop=/usr/bin/tmux kill-session -t syncthing
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

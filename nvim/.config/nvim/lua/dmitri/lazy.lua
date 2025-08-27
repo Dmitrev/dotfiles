@@ -255,7 +255,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            -- vim.cmd.colorscheme('ayu-mirage')
+            vim.cmd.colorscheme('ayu-mirage')
         end,
     },
     -- Using Lazy
@@ -263,11 +263,11 @@ require("lazy").setup({
         "navarasu/onedark.nvim",
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
-            require('onedark').setup {
-                style = 'deep'
-            }
-            -- Enable theme
-            require('onedark').load()
+            -- require('onedark').setup {
+            --     style = 'deep'
+            -- }
+            -- -- Enable theme
+            -- require('onedark').load()
         end
     },
     {
