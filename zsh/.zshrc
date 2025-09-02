@@ -112,3 +112,7 @@ eval "$(/home/dmitri/.local/bin/mise activate zsh)"
 
 # opencode
 export PATH=/home/dmitri/.opencode/bin:$PATH
+
+#fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
