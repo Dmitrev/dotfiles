@@ -6,6 +6,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+COMPOSER_BIN="$HOME/.config/composer/vendor/bin"
+[ -d "$COMPOSER_BIN" ] && export PATH="$COMPOSER_BIN":$PATH
 export PATH="$HOME/.ebcli-virtual-env/executables:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
