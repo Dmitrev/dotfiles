@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 local dbui_group = vim.api.nvim_create_augroup('DadBodUI', { clear = true })
 
+-- makes it so that tables don't fold in the DB UI
 vim.api.nvim_create_autocmd('FileType', {
   callback = function()
     -- disable folding
@@ -20,10 +21,10 @@ vim.api.nvim_create_autocmd('FileType', {
   group = dbui_group
 })
 
+-- don't auto convert tabs to spaces in Makefile in case there is no editorconfig
 local make_group = vim.api.nvim_create_augroup('Makefile', { clear = true })
 vim.api.nvim_create_autocmd('FileType', {
   callback = function()
-    -- disable folding
     vim.opt_local.expandtab = false
   end,
   pattern = 'make',

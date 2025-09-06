@@ -1,21 +1,26 @@
-require("dmitri.set")
-require("dmitri.deps")
-require("dmitri.lazy")
-require("dmitri.filetypes")
-require("dmitri.colorscheme")
-require("dmitri.devicons")
-require("dmitri.mason")
-require("dmitri.lsp")
-require("dmitri.dap")
--- require("dmitri.lsp.laravel_ext")
-require("dmitri.completion")
-require("dmitri.autocmd")
-require("dmitri.telescope")
-require("dmitri.treesitter")
-require("dmitri.treesitter-text-objects")
-require("dmitri.commands")
-require("dmitri.plugins.obisidian")
-require("dmitri.plugins.mini")
-require("dmitri.plugins.ai")
-require("dmitri.keymaps")
-require("dmitri.overrides")
+local configs = {
+  "dmitri.set",
+  "dmitri.deps",
+  "dmitri.lazy",
+  "dmitri.filetypes",
+  "dmitri.devicons",
+  "dmitri.mason",
+  "dmitri.lsp",
+  "dmitri.dap",
+  "dmitri.completion",
+  "dmitri.autocmd",
+  "dmitri.treesitter",
+  "dmitri.treesitter-text-objects",
+  "dmitri.plugins.obisidian",
+  "dmitri.plugins.mini",
+  "dmitri.plugins.ai",
+  "dmitri.keymaps",
+  "dmitri.overrides",
+}
+
+for _, config in ipairs(configs) do
+  local ok = pcall(require, config)
+  if not ok then
+    vim.notify("Failed to load config: "..config, vim.log.levels.WARN)
+  end
+end
