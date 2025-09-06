@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Syncthing in tmux
+Exec=/home/dmitri/scripts/syncthing.sh
+X-GNOME-Autostart-enabled=true
