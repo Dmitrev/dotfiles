@@ -68,82 +68,20 @@ if ok then
     end, {desc = "search buffers"})
 
     vim.keymap.set({"n"}, "<Leader>fg", "<cmd>FzfLua live_grep_glob<CR>", {desc = "search pattern files"})
+    vim.keymap.set({"n"}, "<Leader>fg", "<cmd>FzfLua live_grep_glob<CR>", {desc = "search pattern files"})
     vim.keymap.set({"n"}, "<Leader>fh", function()  fzf.help_tags({}) end, {desc = "search help"})
 
     vim.keymap.set({"n"}, "<Leader>ff", "<cmd>FzfLua files<CR>", {desc = "search files"})
     vim.keymap.set({"n"}, "<Leader>e", "<cmd>FzfLua oldfiles<CR>", {desc = "old files"})
-    -- vim.keymap.set({"n"}, "<Leader>ff", function() fzf.files({ fzf_opts = {['--layout'] = 'reverse-list'} }) end, {desc = "search files"})
-    -- vim.keymap.set({"n"}, "<Leader>ff", function() fzf.files({prompt="LS>", cms="ls", cwd="~/rust"}) end, {desc = "search files"})
+    vim.keymap.set({"n"}, "<C-_>", "<cmd>FzfLua grep_curbuf<CR>", {desc = "buffer lines"})
 
-    
-
-    print("fzf is loaded")
+    vim.api.nvim_set_keymap("n", "<Leader>lds", "<cmd>FzfLua lsp_document_symbols<CR>", { noremap = true, desc = "List document symbols"})
+    vim.api.nvim_set_keymap("n", "<Leader>gr", "<cmd>FzfLua lsp_references<CR>", { noremap = true, desc = "LSP References"})
+    vim.api.nvim_set_keymap("n", "<Leader>gi", "<cmd>FzfLua lsp_implementations<CR>", { noremap = true, desc = "LSP implementations"})
+    vim.api.nvim_set_keymap("n", "<Leader>dl", "<cmd>FzfLua diagnostics_document<CR>", { noremap = true, desc = "List Diagnostics"})
 else
-    print("fzf lua not loaded")
+    vim.notify("Failed to load fzf-lua skipping setting the keybinds", vim.log.levels.WARN)
 end
-local ok, telescope = pcall(require, 'telescope')
-if ok then
-    local builtin = "require('telescope.builtin')"
-    local theme = "require('telescope.themes').get_ivy"
-
-    local telescope_builtin = require('telescope.builtin')
-    local telescope_theme = require('telescope.themes').get_dropdown({
-        layout_config = {
-            width = 0.9,
-        },
-        -- previewer = false,
-    })
-
-    -- vim.keymap.set({"n"}, "<Leader>ff",
-    --     function()
-    --         local opts = vim.deepcopy(telescope_theme)
-    --         opts.hidden = true
-    --         telescope_builtin.find_files(opts)
-    --     end
-    -- );
-
-    -- vim.keymap.set({"n"}, "<Leader>fg",
-    --     function()
-    --         local opts = vim.deepcopy(telescope_theme)
-    --         opts.additional_args = function(o)
-    --             return {
-    --                 "--hidden",
-    --                 "--glob", "!.git",
-    --             }
-    --         end
-    --         telescope_builtin.live_grep(opts)
-    --     end
-    -- );
-
-    -- vim.keymap.set({"n"}, "<Leader>fg", function()
-    --     require("telescope").extensions.live_grep_args.live_grep_args()
-    -- end)
-
-    vim.keymap.set({"n"}, "<C-_>", function()
-        local opts = vim.deepcopy(telescope_theme)
-        telescope_builtin.current_buffer_fuzzy_find(opts)
-    end, {desc = "buffer lines"})
-
-    -- vim.keymap.set({"n"}, "<Leader>e", function()
-    --     local opts = vim.deepcopy(telescope_theme)
-    --     telescope_builtin.oldfiles(opts)
-    --     end, {desc = "oldfiles"})
-
-    require("dmitri.set")
-    vim.api.nvim_set_keymap("n", "<Leader>lds", "<cmd> lua ".. builtin..".lsp_document_symbols(".. theme .."())<CR>", { noremap = true, desc = "List document symbols"})
-    vim.api.nvim_set_keymap("n", "<Leader>lws", "<cmd> lua ".. builtin..".lsp_workspace_symbols(".. theme .."())<CR>", { noremap = true, desc = "List workspace symbols"})
-    vim.api.nvim_set_keymap("n", "<Leader>ldws", "<cmd> lua ".. builtin..".lsp_dynamic_workspace_symbols(".. theme .."())<CR>", { noremap = true, desc = "List dynamic workspace symbols"})
-    -- vim.api.nvim_set_keymap("n", "<Leader>e", "<cmd> lua ".. builtin..".oldfiles(".. theme .."({previewer=false}))<CR>", { noremap = true, desc = "Recent files"})
-    -- vim.api.nvim_set_keymap("n", "<Leader>e", "<cmd> lua ".. builtin..".oldfiles(".. theme .."({previewer=false}))<CR>", { noremap = true, desc = "Recent files"})
-    -- vim.api.nvim_set_keymap("n", "<C-_>", "<cmd> lua ".. builtin..".current_buffer_fuzzy_find(".. theme .."())<CR>", { noremap = true, desc = "Fuzzy find buffer"})
-    vim.api.nvim_set_keymap("n", "<Leader>gr", "<cmd> lua ".. builtin..".lsp_references(".. theme .."())<CR>", { noremap = true, desc = "LSP References"})
-    vim.api.nvim_set_keymap("n", "<Leader>lic", "<cmd> lua ".. builtin..".lsp_incoming_calls(".. theme .."())<CR>", { noremap = true, desc = "LSP incoming calls"})
-    vim.api.nvim_set_keymap("n", "<Leader>loc", "<cmd> lua ".. builtin..".lsp_outgoing_calls(".. theme .."())<CR>", { noremap = true, desc = "LSP outgoing calls"})
-    vim.api.nvim_set_keymap("n", "<Leader>gi", "<cmd> lua ".. builtin..".lsp_implementations(".. theme .."())<CR>", { noremap = true, desc = "LSP implementations"})
-    vim.api.nvim_set_keymap("n", "<Leader>dl", "<cmd> lua ".. builtin..".diagnostics(".. theme .."())<CR>", { noremap = true, desc = "List Diagnostics"})
-end
-
-
 -- copy file path into clipboard, I used this to run a specific test
 vim.keymap.set({"n"}, "<leader>yf", function()
     local utils = require('dmitri.utils')
@@ -152,12 +90,6 @@ end)
 
 vim.api.nvim_set_keymap("n", "<leader>yg", "<cmd>lua require('dmitri.utils').copy_github_link()<CR>", { noremap = true, desc = "Get link to github"})
 vim.api.nvim_set_keymap("v", "<leader>yg", "<cmd>lua require('dmitri.utils').copy_github_link()<CR>", { noremap = true, desc = "Get link to github"})
-
--- open file browser in current dir
--- vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope file_browser hidden=true path=%:p:h<CR>", { noremap = true, desc = "File browser cwd" })
--- open file browser from root dir
--- vim.api.nvim_set_keymap("n", "<leader>fB", ":Telescope file_browser hidden=true<CR>", { noremap = true, desc = "File browser root" })
-
 
 -- Quickfix list
 vim.api.nvim_set_keymap("n", "<leader>co", "<cmd>copen<CR>", { noremap = true })
