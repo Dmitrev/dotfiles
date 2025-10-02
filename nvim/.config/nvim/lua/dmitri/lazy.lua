@@ -236,6 +236,20 @@ require("lazy").setup({
             vim.cmd.colorscheme('ayu-mirage')
         end,
     },
+    {
+        "blazkowolf/gruber-darker.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme('gruber-darker')
+        end,
+    },
+    {
+        "catgoose/nvim-colorizer.lua",
+        event = "BufReadPre",
+        opts = { -- set to setup table
+        },
+    },
     -- Using Lazy
     {
         "navarasu/onedark.nvim",

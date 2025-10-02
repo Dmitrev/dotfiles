@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define variables
-PHP_VERSION="8.4.9"
+PHP_VERSION="8.3.25"
 PHP_SOURCE_DIR="$HOME/.local/apps/php/$PHP_VERSION"
 PHP_BIN_DIR="$HOME/.local/bin"
 

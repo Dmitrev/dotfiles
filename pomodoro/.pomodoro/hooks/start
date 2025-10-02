@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -exo pipefail
+notify-send "started Pomodoro timer"

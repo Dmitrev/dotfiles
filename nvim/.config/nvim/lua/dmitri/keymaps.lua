@@ -68,7 +68,6 @@ if ok then
     end, {desc = "search buffers"})
 
     vim.keymap.set({"n"}, "<Leader>fg", "<cmd>FzfLua live_grep_glob<CR>", {desc = "search pattern files"})
-    vim.keymap.set({"n"}, "<Leader>fg", "<cmd>FzfLua live_grep_glob<CR>", {desc = "search pattern files"})
     vim.keymap.set({"n"}, "<Leader>fh", function()  fzf.help_tags({}) end, {desc = "search help"})
 
     vim.keymap.set({"n"}, "<Leader>ff", "<cmd>FzfLua files<CR>", {desc = "search files"})
