@@ -11,6 +11,13 @@ COMPOSER_BIN="$HOME/.config/composer/vendor/bin"
 export PATH="$HOME/.ebcli-virtual-env/executables:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
+#phpenv
+export PHPENV_ROOT="$HOME/.local/apps/phpenv"
+[ -d "$PHPENV_ROOT" ] && export PATH="$PHPENV_ROOT/shims:$PATH"
+[ -s phpenv ] && eval "$(phpenv init -)"
+# makes sure to compile libararies
+export PHP_BUILD_CONFIGURE_OPTS="--with-sodium --with-tidy --with-xsl --with-zip"
+
 # EBS install
 if [[ "$os" == "Linux" ]]; then
   export PYENV_ROOT="$HOME/deps/pyenv"
