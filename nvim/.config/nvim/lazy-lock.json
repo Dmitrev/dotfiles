@@ -12,7 +12,6 @@
   "fzf-lua": { "branch": "main", "commit": "2388dcd61731ae158bf7dad2ae0419291837e557" },
   "gitsigns.nvim": { "branch": "main", "commit": "f780609807eca1f783a36a8a31c30a48fbe150c5" },
   "go.nvim": { "branch": "master", "commit": "45526446280a570a10c76dc9a4acfaa7dcd982c4" },
-  "gruber-darker.nvim": { "branch": "main", "commit": "b22e1bbf06dd604d7d3483823d63103b86ebe942" },
   "grug-far.nvim": { "branch": "main", "commit": "50d9ee2b5a19634670441948e7e4afaa042f1059" },
   "guihua.lua": { "branch": "master", "commit": "53fc5aa54c068bd4e2e043506e21beb7d8a04061" },
   "harpoon": { "branch": "master", "commit": "1bc17e3e42ea3c46b33c0bbad6a880792692a1b3" },
