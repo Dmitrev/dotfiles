@@ -88,4 +88,5 @@ parser_config.blade = {
   filetype = "blade"
 }
 
+-- make named arguments less visible
 vim.api.nvim_set_hl(0, "@constructor.param.name", {link = "@comment.php"})

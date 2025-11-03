@@ -1,6 +1,5 @@
 local s = require("dmitri.lsp.servers")
 
-
 local mason_loaded, mason = pcall(require, "mason")
 local mason_lspconfig_loaded, mason_lspconfig = pcall(require, "mason-lspconfig")
 

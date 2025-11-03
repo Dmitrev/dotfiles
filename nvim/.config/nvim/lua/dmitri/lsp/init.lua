@@ -23,13 +23,18 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 -- set to "debug" if debugging is required otherwise "off"
-vim.lsp.set_log_level("off")
+vim.lsp.log.set_level("off")
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', '[d', function ()
+    vim.diagnostic.jump({count = 1, float = true})
+end, opts)
+vim.keymap.set('n', ']d', function ()
+    vim.diagnostic.jump({count = -1, float = true})
+end, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
@@ -74,5 +79,7 @@ for server, server_config in pairs(servers.getLspConfig()) do
         lsp_config[index] = value
     end
 
-    lspconfig[server].setup(lsp_config)
+    vim.lsp.config[server] = lsp_config
+    vim.lsp.enable(server)
+
 end

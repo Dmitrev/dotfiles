@@ -19,8 +19,9 @@ local configs = {
 }
 
 for _, config in ipairs(configs) do
-  local ok = pcall(require, config)
+  local ok, err = pcall(require, config)
   if not ok then
     vim.notify("Failed to load config: "..config, vim.log.levels.WARN)
+    vim.notify("err: "..err, vim.log.levels.ERROR)
   end
 end
