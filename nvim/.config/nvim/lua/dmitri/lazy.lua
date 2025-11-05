@@ -12,6 +12,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.keymap.set('n', '<leader>hc', function()
+  local hl = vim.fn.synIDattr(vim.fn.synID(vim.fn.line('.'), vim.fn.col('.'), 1), 'name')
+  print(hl)
+end, { desc = "Show highlight group under cursor" })
+
+
 require("lazy").setup({
     "folke/neodev.nvim",
     {
@@ -233,7 +239,23 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme('ayu-mirage')
+            -- vim.cmd.colorscheme('ayu-mirage')
+        end,
+    },
+    {
+        "blazkowolf/gruber-darker.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            -- vim.cmd.colorscheme('gruber-darker')
+        end,
+    },
+    {
+        "Kaikacy/Lemons.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme('lemons')
         end,
     },
     {
