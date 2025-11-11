@@ -6,6 +6,8 @@ if gl_loaded then
     overrides = vim.tbl_deep_extend("force", overrides, gl)
   else
   end
+else
+  vim.print(vim.inspect(gl))
 end
 
 return overrides
