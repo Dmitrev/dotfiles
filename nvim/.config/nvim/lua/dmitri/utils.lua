@@ -32,14 +32,9 @@ M.file_exists = function(filename)
     end
 end
 
---- @return boolean
-M.has_prefix = function(prefix, s)
-    return string.sub(s, 1, #prefix) == prefix
-end
-
 --- @return string
-M.strip_prefix = function(prefix, s)
-    if M.has_prefix(prefix, s) ~= true then
+M.strip_prefix = function(s, prefix)
+    if M.str_starts_with(s, prefix) ~= true then
         return s
     end
 
@@ -72,14 +67,18 @@ M.get_meta_from_git_url = function(s)
     local host = string.sub(s, start_index, end_index)
     local uri = string.sub(s, found_col_sym + 1)
     uri = uri:gsub("[\n\r]", "")
- 
+
     return {
-        host = host, 
+        host = host,
         uri = uri,
     }
 end
 
+--- Find the root directory
+--- @param files [string] - a list of files names that mark the root directory
+--- @return string|nil
 M.find_root_dir = function(files)
+    -- local files = files or {".git", "composer.json"}
     local current_dir = M.get_parent_dir(M.get_relative_path())
     while current_dir ~= '/' do
         for _, file in ipairs(files) do
@@ -97,8 +96,9 @@ M.get_parent_dir = function(path)
     return vim.fn.fnamemodify(path, ':h')
 end
 
+--- @return void
 M.copy_github_link = function()
-    local relative_path = M.get_relative_path() 
+    local relative_path = M.get_relative_path()
     local git_cmd = "git ls-remote --get-url origin"
     local git_cmd_handle = io.popen(git_cmd)
 
@@ -127,6 +127,13 @@ M.copy_github_link = function()
 
     git_url = git_url .. line_anchor
     io.popen("open "..git_url)
+end
+
+--- @param haystack string
+--- @param needle string
+--- @return boolean
+M.str_starts_with = function(haystack, needle)
+    return haystack:sub(1, #needle) == needle
 end
 
 
