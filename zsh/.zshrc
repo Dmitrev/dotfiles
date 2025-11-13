@@ -16,7 +16,7 @@ export PHPENV_ROOT="$HOME/.local/apps/phpenv"
 [ -d "$PHPENV_ROOT" ] && export PATH="$PHPENV_ROOT/shims:$PATH"
 [ -s phpenv ] && eval "$(phpenv init -)"
 # makes sure to compile libararies
-export PHP_BUILD_CONFIGURE_OPTS="--with-sodium --with-tidy --with-xsl --with-zip"
+export PHP_CONFIGURE_OPTIONS="--with-sodium --with-tidy --with-xsl --with-zip --with-pdo-mysql --with-mysqli"
 
 # EBS install
 if [[ "$os" == "Linux" ]]; then
