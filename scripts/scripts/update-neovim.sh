@@ -41,7 +41,7 @@ git checkout $BRANCH;
 # clean up
 rm -r build/
 make distclean
-make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=$neovim_install_dir install
+make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=$neovim_install_dir install
 
 if [ ! -f $nvim_bin_path ]; then
     ln -s "${neovim_install_dir}/bin/nvim" $nvim_bin_path
