@@ -1,4 +1,8 @@
-local dap = require('dap')
+local dap_loaded, dap = pcall(require, 'dap')
+
+if not dap_loaded then
+    return
+end
 
 dap.adapters.php = {
   type = "executable",

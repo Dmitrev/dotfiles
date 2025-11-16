@@ -96,18 +96,6 @@ vim.api.nvim_set_keymap("n", "<leader>cc", "<cmd>cclose<CR>", { noremap = true }
 vim.api.nvim_set_keymap("n", "<leader>cn", "<cmd>cnext<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>cp", "<cmd>cprev<CR>", { noremap = true })
 
-
--- Harppon
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
-
-vim.keymap.set("n", "<leader>hh", mark.add_file)
-vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
-
-vim.keymap.set("n", "<leader>ha", function() ui.nav_file(1) end)
-vim.keymap.set("n", "<leader>hs", function() ui.nav_file(2) end)
-vim.keymap.set("n", "<leader>hd", function() ui.nav_file(3) end)
-vim.keymap.set("n", "<leader>hf", function() ui.nav_file(4) end)
 -- DBUI
 vim.keymap.set("n", "<leader>dt", "<cmd>DBUIToggle<CR>", { noremap = true, desc = "Toggle DBUI"})
 vim.keymap.set("n", "<leader>db", "<cmd>DBUIFindBuffer<CR>", { noremap = true, desc = "Find DBUI buffer"})

@@ -23,6 +23,10 @@ local M = {}
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#html
 local lsp_servers = {
    phpactor = {
+      cmd = { 'phpactor', 'language-server' },
+      filetypes = { 'php' },
+      root_markers = { '.git', 'composer.json', '.phpactor.json', '.phpactor.yml' },
+      workspace_required = true,
       language_server_phpstan = {
          enabled = true
       },

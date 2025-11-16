@@ -22,19 +22,23 @@ require("lazy").setup({
     "folke/neodev.nvim",
     {
         'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate'
+        build = ':TSUpdate',
+        enabled = true,
     },
     {
         'nvim-treesitter/nvim-treesitter-context',
         dependencies = {
             'nvim-treesitter/nvim-treesitter'
-        }
+        },
+        enabled = true,
     },
     {
         'nvim-treesitter/nvim-treesitter-textobjects',
         dependencies = {
             'nvim-treesitter/nvim-treesitter'
-        }
+        },
+        enabled = true,
+
     },
 
     {
@@ -42,21 +46,23 @@ require("lazy").setup({
         build = ':TSInstall query',
         dependencies = {
             'nvim-treesitter/nvim-treesitter'
-        }
+        },
+        enabled = true
     },
 
      {
          'numToStr/Comment.nvim',
          config = function()
              require('Comment').setup()
-         end
+         end,
+        enabled = true
      },
 
 
-    'nvim-tree/nvim-web-devicons',
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+    { 
+        'nvim-tree/nvim-web-devicons',
+        enabled = true,
+    },
 
 -- Show LSP progressbar
     -- TODO: update version when fidget is updated
@@ -65,7 +71,8 @@ require("lazy").setup({
         tag = "legacy",
         config = function()
             require('fidget').setup()
-        end
+        end,
+        enabled = true,
     },
 
     { 'ibhagwan/fzf-lua',
@@ -73,33 +80,57 @@ require("lazy").setup({
             require('dmitri.plugins.fzf-lua')
         end,
         -- optional for icon support
-        dependencies = { 'nvim-tree/nvim-web-devicons' }
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        enabled = true,
     },
 
 
     -- Automatically set shiftwidth, expand tab and alld that kind of buff options (respects EDITORCONFIG)
-    'tpope/vim-sleuth',
+    {
+        'tpope/vim-sleuth',
+        enabled = true,
+    },
 
     -- Awesome Git plugin
-    'tpope/vim-fugitive',
+    {
+        'tpope/vim-fugitive',
+        enabled = true,
+    },
 
     -- Use DB
-    'tpope/vim-dadbod',
-    'kristijanhusak/vim-dadbod-ui',
-    'kristijanhusak/vim-dadbod-completion',
+    {
+        'tpope/vim-dadbod',
+        enabled = true,
+    },
+    {
+        'kristijanhusak/vim-dadbod-ui',
+        enabled = true,
+    },
+    {
+        'kristijanhusak/vim-dadbod-completion',
+        enabled = true,
+    },
 
     -- Cool file browser
-    { 'stevearc/oil.nvim' },
+    {
+        'stevearc/oil.nvim',
+        enabled = true,
+    },
 
     -- show git diff inside neovim
     {
         'lewis6991/gitsigns.nvim',
         config = function()
             require('gitsigns').setup()
-        end
+        end,
+        enabled = true,
     },
 
-    "sindrets/diffview.nvim",
+    {
+        "sindrets/diffview.nvim",
+        enabled = true,
+    },
+
 
     -- allows to surround text with quotes, tags, brackets etc..
     {
@@ -107,30 +138,44 @@ require("lazy").setup({
         --tag = "*", -- for stability; omit to use `main` branch for the latest features
         config = function()
             require("nvim-surround").setup()
-        end
+        end,
+        enabled = true,
     },
 
-    "onsails/lspkind.nvim",
-    -- {
-    --     'nvim-lualine/lualine.nvim',
-    --     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    --     lazy = false,
-    -- },
-    --
-    -- { 'echasnovski/mini.nvim', version = '*' },
+    {
+        "onsails/lspkind.nvim",
+        enabled = true,
+    },
     -- Auto complete
-    'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
+    {
+        'hrsh7th/nvim-cmp',
+        enabled = true,
+    },
+    {
+        'hrsh7th/cmp-nvim-lsp',
+        enabled = true,
+    },
+    {
+        'hrsh7th/cmp-buffer',
+        enabled = true,
+    },
+    {
+        'hrsh7th/cmp-path',
+        enabled = true,
+    },
+    {
+        'hrsh7th/cmp-cmdline',
+        enabled = true,
+    },
 
     {
         "L3MON4D3/LuaSnip", -- Lua snippets engine
         tag = "v1.2.1",
         dependencies = {
             {'saadparwaiz1/cmp_luasnip'} -- required to autocomplete luasnips!!
-        }
+        },
+
+        enabled = true,
     },
 
     -- html
@@ -139,16 +184,16 @@ require("lazy").setup({
         config = function()
             require('nvim-ts-autotag').setup({
                 autotag = {
-                   enable = true
+                   enabled = true
                 }
             })
-        end
+        end,
+        enabled = true,
     },
-    {
-        'ThePrimeagen/harpoon',
-        dependencies = { {'nvim-lua/plenary.nvim'} }
+    { 
+        "ellisonleao/dotenv.nvim",
+        enabled = true,
     },
-    { "ellisonleao/dotenv.nvim" },
     {
         "lewis6991/hover.nvim",
         config = function()
@@ -170,7 +215,8 @@ require("lazy").setup({
                 preview_window = false,
                 title = true
             }
-        end
+        end,
+        enabled = true,
     },
 
     {
@@ -201,6 +247,7 @@ require("lazy").setup({
             },
             -- see below for full list of options 👇
         },
+        enabled = true,
     },
     {
         "ray-x/go.nvim",
@@ -214,10 +261,12 @@ require("lazy").setup({
         end,
         event = {"CmdlineEnter"},
         ft = {"go", 'gomod'},
-        build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+        build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+        enabled = true,
     },
     {
-        "mbbill/undotree"
+        "mbbill/undotree",
+        enabled = true,
     },
     {
         'MagicDuck/grug-far.nvim',
@@ -232,7 +281,8 @@ require("lazy").setup({
                 -- engine = 'ripgrep' is default, but 'astgrep' or 'astgrep-rules' can
                 -- be specified
             });
-        end
+        end,
+        enabled = true,
     },
     {
         "Shatur/neovim-ayu",
@@ -241,6 +291,7 @@ require("lazy").setup({
         config = function()
             -- vim.cmd.colorscheme('ayu-mirage')
         end,
+        enabled = true,
     },
     {
         "blazkowolf/gruber-darker.nvim",
@@ -249,6 +300,7 @@ require("lazy").setup({
         config = function()
             -- vim.cmd.colorscheme('gruber-darker')
         end,
+        enabled = true,
     },
     {
         "Kaikacy/Lemons.nvim",
@@ -257,12 +309,14 @@ require("lazy").setup({
         config = function()
             vim.cmd.colorscheme('lemons')
         end,
+        enabled = true,
     },
     {
         "catgoose/nvim-colorizer.lua",
         event = "BufReadPre",
         opts = { -- set to setup table
         },
+        enabled = true,
     },
     -- Using Lazy
     {
@@ -272,15 +326,16 @@ require("lazy").setup({
             -- require('onedark').setup {
             --     style = 'deep'
             -- }
-            -- -- Enable theme
+            -- -- enabled theme
             -- require('onedark').load()
-        end
+        end,
+        enabled = true,
     },
     {
         'NickvanDyke/opencode.nvim',
         dependencies = {
             -- Recommended for better prompt input, and required to use opencode.nvim's embedded terminal — otherwise optional
-            { 'folke/snacks.nvim', opts = { input = { enabled = true } } },
+            { 'folke/snacks.nvim', opts = { input = { enabledd = true } } },
         },
         ---@type opencode.Opts
         opts = {
@@ -300,6 +355,7 @@ require("lazy").setup({
             -- Example: keymap for custom prompt
             { '<leader>oe', function() require('opencode').prompt("Explain @cursor and its context") end, desc = "Explain code near cursor", },
         },
+        enabled = true,
     },
     {
         "rcarriga/nvim-dap-ui",
@@ -338,7 +394,8 @@ require("lazy").setup({
                     port = 9000
                 }
             }
-        end
+        end,
+        enabled = true,
     },
     {
         "HakonHarnes/img-clip.nvim",
@@ -351,5 +408,6 @@ require("lazy").setup({
             -- suggested keymap
             { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
         },
+        enabled = true,
     },
 }, opts)

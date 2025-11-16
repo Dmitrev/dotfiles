@@ -4,7 +4,6 @@ local configs = {
   "dmitri.lazy",
   "dmitri.filetypes",
   "dmitri.devicons",
-  "dmitri.mason",
   "dmitri.lsp",
   "dmitri.dap",
   "dmitri.completion",
