@@ -1,6 +1,4 @@
 -- For Mason v2,
-local vue_language_server_path = vim.fn.expand '$MASON/packages' .. '/vue-language-server' .. '/node_modules/@vue/language-server'
-
 local M = {}
 -- local vue_language_server_path = '/home/dmitri/.nvm/version/v20.18.0/lib/node_modules/@vue/language-server'
 --
@@ -24,18 +22,6 @@ local M = {}
 -- for reference see:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#html
 local lsp_servers = {
-   -- PHP
-   -- intelephense = {
-   --    settings = {
-   --      intelephense = {
-   --        files = {
-   --          maxSize = 3000000;
-   --        }
-   --      }
-   --      -- See https://github.com/bmewburn/intelephense-docs
-   --    }
-   -- }, -- PHP, requires license for premium features in ~/intelephense/licence.txt
-   -- psalm = {},
    phpactor = {
       language_server_phpstan = {
          enabled = true
@@ -53,41 +39,41 @@ local lsp_servers = {
          }
       }
    },
-   ruby_lsp = {},
-   emmet_language_server = {},
-   -- END PHP
-   html = {
-      filetypes = {'html'},
-   },
-   ts_ls = {
-      init_options = {
-         plugins = {
-            {
-               name = '@vue/typescript-plugin',
-               location = vue_language_server_path,
-               languages = { 'vue' },
-            },
-         },
-      },
-      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-   },
-   jsonls = {},
-   yamlls = {
-      settings = {
-         yaml = {
-            keyOrdering = false
-         }
-      }
-   },
-   -- vue_ls = {
+   -- ruby_lsp = {},
+   -- emmet_language_server = {},
+   -- -- END PHP
+   -- html = {
+   --    filetypes = {'html'},
    -- },
-   -- rust_analyzer = {},
-   cssls = {},
+   -- ts_ls = {
+   --    init_options = {
+   --       plugins = {
+   --          {
+   --             name = '@vue/typescript-plugin',
+   --             location = vue_language_server_path,
+   --             languages = { 'vue' },
+   --          },
+   --       },
+   --    },
+   --    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+   -- },
+   -- jsonls = {},
+   -- yamlls = {
+   --    settings = {
+   --       yaml = {
+   --          keyOrdering = false
+   --       }
+   --    }
+   -- },
+   -- -- vue_ls = {
+   -- -- },
+   -- -- rust_analyzer = {},
+   -- cssls = {},
    gopls = {},
-   pyright = {},
-   tailwindcss = {
-      filetypes = {'vue'}
-   },
+   -- pyright = {},
+   -- tailwindcss = {
+   --    filetypes = {'vue'}
+   -- },
    lua_ls = {
       settings = {
          Lua = {
@@ -111,8 +97,8 @@ local lsp_servers = {
          },
       }
    },
-   clangd = {},
-   zls = {},
+   -- clangd = {},
+   -- zls = {},
 }
 
 ---return the mason config
