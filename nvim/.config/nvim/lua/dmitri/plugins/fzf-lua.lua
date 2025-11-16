@@ -425,17 +425,12 @@ local config = {
     -- search strings will be split using the 'glob_separator' and translated
     -- to '--iglob=' arguments, requires 'rg'
     -- can still be used when 'false' by calling 'live_grep_glob' directly
-    rg_glob           = false,        -- default to glob parsing?
+    rg_glob           = true,        -- default to glob parsing?
     glob_flag         = "--iglob",    -- for case sensitive globs use '--glob'
     glob_separator    = "%s%-%-",     -- query separator pattern (lua): ' --'
     -- first returned string is the new search query
     -- second returned string are (optional) additional rg flags
     -- @return string, string?
-    rg_glob_fn = function(query, opts)
-      local regex, flags = query:match("^(.-)%s%-%-(.*)$")
-      -- If no separator is detected will return the original query
-      return (regex or query), flags
-    end,
     -- advanced usage: for custom argument parsing define
     -- 'rg_glob_fn' to return a pair:
     --   first returned argument is the new search query

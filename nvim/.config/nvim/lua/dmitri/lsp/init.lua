@@ -1,8 +1,7 @@
 local cmp_loaded, cmp = pcall(require, "cmp")
 local cmp_nvim_lsp_loaded, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-local lspconfig_loaded, lspconfig = pcall(require, "lspconfig")
 
-if not cmp_loaded or not cmp_nvim_lsp_loaded or not lspconfig_loaded then
+if not cmp_loaded or not cmp_nvim_lsp_loaded then
     return
 end
 
