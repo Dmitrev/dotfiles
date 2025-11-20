@@ -285,31 +285,12 @@ require("lazy").setup({
         enabled = true,
     },
     {
-        "Shatur/neovim-ayu",
+        "sainnhe/gruvbox-material",
         lazy = false,
         priority = 1000,
         config = function()
-            -- vim.cmd.colorscheme('ayu-mirage')
-        end,
-        enabled = true,
-    },
-    {
-        "blazkowolf/gruber-darker.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            -- vim.cmd.colorscheme('gruber-darker')
-        end,
-        enabled = true,
-    },
-    {
-        "Kaikacy/Lemons.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.cmd.colorscheme('lemons')
-        end,
-        enabled = true,
+            vim.cmd("colorscheme gruvbox-material")
+        end
     },
     {
         "catgoose/nvim-colorizer.lua",
