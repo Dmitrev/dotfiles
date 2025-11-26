@@ -1,0 +1,6 @@
+layout tall
+
+cd ~/go/htmx
+
+launch --title "htmx" nvim
+launch --title "build" go run .
