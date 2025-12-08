@@ -289,9 +289,27 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            vim.g.gruvbox_material_foreground = "original"
-            vim.cmd("colorscheme gruvbox-material")
+            -- vim.g.gruvbox_material_foreground = "original"
+            -- vim.cmd("colorscheme gruvbox-material")
         end
+    },
+    {
+        "blazkowolf/gruber-darker.nvim",
+        lazy = false,
+        priority = 1000,
+
+        config = function()
+            require("gruber-darker").setup(
+                {
+                    italic = {
+                        strings = false,
+                        operators = false,
+                    }
+                }
+            )
+            vim.cmd("colorscheme gruber-darker")
+        end
+
     },
     {
         "catgoose/nvim-colorizer.lua",

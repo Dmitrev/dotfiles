@@ -15,6 +15,7 @@ local configs = {
   "dmitri.plugins.ai",
   "dmitri.keymaps",
   "dmitri.overrides",
+  "dmitri.colorscheme",
 }
 
 for _, config in ipairs(configs) do
