@@ -2,7 +2,8 @@
 set -e
 
 GCC_VERSION="15.2.0"
-INSTALL_DIR="$HOME/.local/apps"
+INSTALL_DIR="$HOME/.local/apps/gcc"
+BIN_DIR="$HOME/.local/bin"
 CURRENT_DIR=$(pwd)
 
 # Download GCC
@@ -34,3 +35,15 @@ make install
 cd "$CURRENT_DIR"
 
 echo "GCC $GCC_VERSION installed to $INSTALL_DIR"
+
+ln -s "$INSTALL_DIR/gcc/bin/c++" "$BIN_DIR"
+ln -s "$INSTALL_DIR/gcc/bin/cpp" "$BIN_DIR"
+ln -s "$INSTALL_DIR/gcc/bin/g++" "$BIN_DIR"
+ln -s "$INSTALL_DIR/gcc/bin/gcc" "$BIN_DIR"
+ln -s "$INSTALL_DIR/gcc/bin/gcc-ar" "$BIN_DIR"
+ln -s "$INSTALL_DIR/gcc/bin/gcc-nm" "$BIN_DIR"
+ln -s "$INSTALL_DIR/gcc/bin/gcc-ranlib" "$BIN_DIR"
+ln -s "$INSTALL_DIR/gcc/bin/gcov" "$BIN_DIR"
+ln -s "$INSTALL_DIR/gcc/bin/gcov-dump" "$BIN_DIR"
+ln -s "$INSTALL_DIR/gcc/bin/gcov-tool" "$BIN_DIR"
+ln -s "$INSTALL_DIR/gcc/bin/lto-dump" "$BIN_DIR"
