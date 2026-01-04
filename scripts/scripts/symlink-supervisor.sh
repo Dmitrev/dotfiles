@@ -15,7 +15,7 @@ done
 
 
 # reload supervisor
-sudo supervisorctl reread
-sudo supervisorctl reload
+sudo env "PATH=$PATH" supervisorctl reread
+sudo env "PATH=$PATH" supervisorctl reload
 
 
