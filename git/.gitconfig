@@ -1,0 +1,12 @@
+[user]
+	name = Dmitri Chebotarev
+	email = dmitri.chebotarev@gmail.com
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[gpg]
+	format = openpgp
+[include]
+	path = ~/.gitconfig.local
+	
