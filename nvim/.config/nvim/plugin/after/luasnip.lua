@@ -446,3 +446,13 @@ ls.add_snippets("javascriptreact", {
         --     "MyComponent",
         -- }),
 })
+
+ls.add_snippets("sh", {
+    s("!!", {
+        t({
+            "#!/usr/bin/env bash",
+            "set -exo pipefail"
+        }),
+        i(0),
+    }),
+})

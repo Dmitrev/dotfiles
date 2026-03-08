@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -exo pipefail
+
+cd /tmp
+
+curl -L -O https://gmplib.org/download/gmp/gmp-6.3.0.tar.xz
+
