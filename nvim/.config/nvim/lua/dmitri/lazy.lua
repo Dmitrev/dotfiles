@@ -335,7 +335,7 @@ require("lazy").setup({
         name = "catppuccin", 
         priority = 1000, 
         config = function()
-            vim.cmd.colorscheme("catppuccin-mocha")
+            -- vim.cmd.colorscheme("catppuccin-mocha")
         end
     },
     {
@@ -437,4 +437,11 @@ require("lazy").setup({
         },
         enabled = true,
     },
+      { 
+        'kepano/flexoki-neovim',
+        name = 'flexoki',
+        config = function()
+            vim.cmd.colorscheme("flexoki-dark")
+        end
+    }
 }, opts)
