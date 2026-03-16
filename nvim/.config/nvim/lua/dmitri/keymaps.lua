@@ -53,24 +53,24 @@ vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true })
 local ok, fzf = pcall(require, 'fzf-lua')
 if ok then
     vim.keymap.set({"n"}, "<Leader><Leader>f", "<cmd>FzfLua resume<CR>", {desc = "resume fzf"})
-    vim.keymap.set({"n"}, "<Leader>fa", "<cmd>FzfLua<CR>", {desc = "run fzf"})
 
     -- vim.keymap.set({"n"}, "<Leader>ff", function()
     --     fzf.files({fd_opts = '--type file --hidden --follow --no-ignore --exclude vendor --exclude node_modules --exclude docker/data'})
     -- end, {desc = "search files"})
     --
-    vim.keymap.set({"n"}, "<Leader>fF", function()
+    vim.keymap.set({"n"}, "<Leader>fa", function()
         fzf.files({resume = true, fd_opts = '--type file --hidden --follow --no-ignore --exclude vendor --exclude node_modules'})
     end, {desc = "search files include all hidden files"})
 
     vim.keymap.set({"n"}, "<Leader>bb", function()
-        fzf.buffers({})
+        fzf.buffers({resume = true})
     end, {desc = "search buffers"})
 
-    vim.keymap.set({"n"}, "<Leader>fg", function() fzf.live_grep({}) end, {desc = "search pattern files"})
-    vim.keymap.set({"n"}, "<Leader>fh", function()  fzf.help_tags({}) end, {desc = "search help"})
+    vim.keymap.set({"n"}, "<Leader>fg", function() fzf.live_grep({resume = true}) end, {desc = "search pattern files"})
 
-    vim.keymap.set({"n"}, "<Leader>ff", "<cmd>FzfLua files<CR>", {desc = "search files"})
+    vim.keymap.set({"n"}, "<Leader>ff", function() 
+        fzf.files({resume = true})
+    end, {desc = "search files"})
     vim.keymap.set({"n"}, "<Leader>e", "<cmd>FzfLua oldfiles<CR>", {desc = "old files"})
     vim.keymap.set({"n"}, "<C-_>", "<cmd>FzfLua grep_curbuf<CR>", {desc = "buffer lines"})
 
@@ -174,7 +174,3 @@ vim.keymap.set("n", "<leader>ai", "<cmd>CodeCompanionChat<CR>", { noremap = true
 vim.keymap.set("n", "<leader>aa", "<cmd>CodeCompanionActions<CR>", { noremap = true, desc = "List all actions" })
 
 vim.keymap.set("n", "<leader>ad", ":CodeCompanion ", { noremap = true, desc = "Start inline chat" })
-
--- Setup hover.nvim
--- vim.keymap.set("n", "K", require("hover").hover, {desc = "hover.nvim"})
--- vim.keymap.set("n", "gK", require("hover").hover_select, {desc = "hover.nvim (select)"})
