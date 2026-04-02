@@ -35,3 +35,6 @@
 
 # install the ESLint language-server extract from VSCode
 npm install -g vscode-langservers-extracted
+
+# install css language server
+npm install -g vscode-css-languageserver-bin
