@@ -456,3 +456,16 @@ ls.add_snippets("sh", {
         i(0),
     }),
 })
+
+
+
+-- Todo add this snippet to sql to show which tables references an id in their FK
+--SELECT 
+--     TABLE_NAME,
+--     COLUMN_NAME,
+--     CONSTRAINT_NAME
+-- FROM information_schema.KEY_COLUMN_USAGE
+-- WHERE 
+--     REFERENCED_TABLE_NAME = 'tenancy_rent_review'
+--     AND REFERENCED_COLUMN_NAME = 'id';
+
