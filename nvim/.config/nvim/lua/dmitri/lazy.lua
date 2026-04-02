@@ -23,6 +23,7 @@ require("lazy").setup({
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
+        branch = 'main',
         enabled = true,
     },
     {
@@ -34,6 +35,7 @@ require("lazy").setup({
     },
     {
         'nvim-treesitter/nvim-treesitter-textobjects',
+        branch = 'main',
         dependencies = {
             'nvim-treesitter/nvim-treesitter'
         },
@@ -343,7 +345,7 @@ require("lazy").setup({
         event = "BufReadPre",
         opts = { -- set to setup table
         },
-        enabled = true,
+        enabled = false,
     },
     -- Using Lazy
     {
