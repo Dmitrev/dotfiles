@@ -75,3 +75,29 @@ for server, server_config in pairs(servers.getLspConfig()) do
     vim.lsp.enable(server)
 
 end
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+
+vim.lsp.config['eslint'] = {
+    cmd = { "vscode-eslint-language-server", "--stdio" },
+
+    settings = {
+        workingDirectory = { mode = "auto" },
+    },
+
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.buf.code_action({
+                    context = { only = {"source.fixAll.eslint" } },
+                    apply = true
+                })
+            end
+        })
+    end,
+}
+
+vim.lsp.enable('eslint')
