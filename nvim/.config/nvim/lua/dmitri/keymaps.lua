@@ -114,13 +114,7 @@ if ok then
     vim.keymap.set("n", "<leader>fB", function() oil.open(cwd) end, {desc = "Open file browser in project root"});
 end
 
--- rest
-vim.keymap.set('n', '<leader>re', '<Plug>RestNvim', { desc = 'execute request' })
-vim.keymap.set('n', '<leader>rp', '<Plug>RestNvimPreview', { desc = 'preview curl' })
-vim.keymap.set('n', '<leader>rl', '<Plug>RestNvimLast', { desc = 'repeat last request' })
-
 local isLspDiagnosticsVisible = false
-
 
 -- run once to set the default
 vim.diagnostic.config({
@@ -146,9 +140,18 @@ vim.keymap.set("n", "<leader>lx", function()
 -- end)
 
 
+--debug
+vim.api.nvim_set_keymap('n', '<F5>', "<cmd>lua require'dap'.continue()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<F10>', "<cmd>lua require'dap'.step_over()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<F11>', "<cmd>lua require'dap'.step_into()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<F12>', "<cmd>lua require'dap'.step_out()<CR>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<Leader>b', "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { noremap = true })
 
--- grug-far
-vim.keymap.set("n", "<Leader>ss", "<cmd>GrugFar<cr>");
+-- bit of a rare usecase, but
+vim.keymap.set('n', '<leader>hc', function()
+  local hl = vim.fn.synIDattr(vim.fn.synID(vim.fn.line('.'), vim.fn.col('.'), 1), 'name')
+  print(hl)
+end, { desc = "Show highlight group under cursor" })
 
 -- load overrides here
 local overrides = require('dmitri.overrides');
@@ -159,18 +162,3 @@ if overrides.keymaps ~= nil then
         vim.keymap.set(map.mode, map.key, map.map)
     end
 end
-
-
---debug
-vim.api.nvim_set_keymap('n', '<F5>', "<cmd>lua require'dap'.continue()<CR>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<F10>', "<cmd>lua require'dap'.step_over()<CR>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<F11>', "<cmd>lua require'dap'.step_into()<CR>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<F12>', "<cmd>lua require'dap'.step_out()<CR>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<Leader>b', "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { noremap = true })
-
-
--- AI
-vim.keymap.set("n", "<leader>ai", "<cmd>CodeCompanionChat<CR>", { noremap = true, desc = "Open AI chat" })
-vim.keymap.set("n", "<leader>aa", "<cmd>CodeCompanionActions<CR>", { noremap = true, desc = "List all actions" })
-
-vim.keymap.set("n", "<leader>ad", ":CodeCompanion ", { noremap = true, desc = "Start inline chat" })
