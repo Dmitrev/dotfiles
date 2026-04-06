@@ -10,7 +10,7 @@ local parsers = {
   'bash',
   'c',
   'css',
-  'comment' -- highlight comments like todo and fixme, when uppercased
+  'comment', -- highlight comments like todo and fixme, when uppercased
   'diff',
   'dockerfile',
   "go", "gotmpl", "gomod", "gosum", "gowork",
