@@ -12,15 +12,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
-
 require("lazy").setup({
     "folke/neodev.nvim",
-    {
+    { -- Highlight, edit, and navigate code
         'nvim-treesitter/nvim-treesitter',
+        lazy = false,
         build = ':TSUpdate',
         branch = 'main',
-        enabled = true,
     },
     {
         'nvim-treesitter/nvim-treesitter-context',
@@ -40,21 +38,12 @@ require("lazy").setup({
     },
 
     {
-        'nvim-treesitter/playground',
-        build = ':TSInstall query',
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter'
-        },
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end,
         enabled = true
     },
-
-     {
-         'numToStr/Comment.nvim',
-         config = function()
-             require('Comment').setup()
-         end,
-        enabled = true
-     },
 
 
     { 
@@ -312,7 +301,7 @@ require("lazy").setup({
         },
         enabled = true,
     },
-      { 
+    { 
         'kepano/flexoki-neovim',
         name = 'flexoki',
         config = function()
