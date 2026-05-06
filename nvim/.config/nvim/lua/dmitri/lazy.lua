@@ -311,7 +311,13 @@ require("lazy").setup({
     { 
         'sainnhe/everforest',
         config = function()
-            vim.cmd.colorscheme("everforest")
+            -- vim.cmd.colorscheme("everforest")
+        end
+    },
+    { 
+        'shatur/neovim-ayu',
+        config = function()
+            vim.cmd.colorscheme("ayu-mirage")
         end
     }
 }, opts)
