@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$( { \
+        find ~/sites ~/go ~/.local/share/nvim/lazy -mindepth 1 -maxdepth 1 -type d; \
+        printf "$HOME/dotfiles\n$HOME/goodlord-config\n"; } \
+        | fzf)
+fi
+
+[[ -z $selected ]] && exit 0
+
+selected_name=$(basename "$selected" | tr . _)
+
+# Try to focus an existing tab with this name
+if kitten @ focus-tab --match "title:^$selected_name$" 2>/dev/null; then
+    exit 0
+fi
+
+# Otherwise create a new tab
+kitten @ launch --type=tab --tab-title "$selected_name" --cwd "$selected"
