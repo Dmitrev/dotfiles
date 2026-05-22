@@ -302,19 +302,6 @@ require("lazy").setup({
         enabled = true,
     },
     { 
-        'kepano/flexoki-neovim',
-        name = 'flexoki',
-        config = function()
-            -- vim.cmd.colorscheme("flexoki-dark")
-        end
-    },
-    { 
-        'sainnhe/everforest',
-        config = function()
-            -- vim.cmd.colorscheme("everforest")
-        end
-    },
-    { 
         'shatur/neovim-ayu',
         config = function()
             vim.cmd.colorscheme("ayu-mirage")
