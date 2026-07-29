@@ -1,0 +1,8 @@
+# Emacs temporary and generated files
+emacs/.config/emacs/auto-save-list/*
+emacs/.config/emacs/eln-cache/*
+
+# Emacs backup and auto-save files
+*~
+\#*\#
+.\#*
