@@ -166,7 +166,7 @@ local lsp_servers = {
    -- },
    -- -- vue_ls = {
    -- -- },
-   -- -- rust_analyzer = {},
+   rust_analyzer = {},
    -- cssls = {},
    gopls = {},
    -- pyright = {},
