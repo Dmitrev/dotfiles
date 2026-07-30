@@ -93,8 +93,9 @@ alias startsync='~/scripts/syncthing.sh'
 alias opensync='syncthing --browser-only'
 alias timer='pomodoro start --duration 60 && watch -n0 pomodoro status'
 
-alias hetznersshroot='ssh root@2a01:4f9:c014:7ad6::1'
-alias hetznerssh='ssh dmitri@2a01:4f9:c014:7ad6::1'
+alias hetznersshroot='ssh root@204.168.253.196'
+# alias hetznerssh='ssh dmitri@2a01:4f9:c014:7ad6::1'
+alias hetznerssh='ssh dmitri@204.168.253.196'
 
 # random useful stuff
 alias last_downloaded_file="ls -t ~/Downloads | head -n 1 | xargs -I {} echo '$HOME/Downloads/{}'"
