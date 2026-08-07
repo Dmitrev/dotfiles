@@ -304,16 +304,7 @@ require("lazy").setup({
     { 
         'shatur/neovim-ayu',
         config = function()
-            -- vim.cmd.colorscheme("ayu-mirage")
-        end
-    },
-    {
-        "wtfox/luna.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-        config = function()
-            vim.cmd.colorscheme('luna')
+            vim.cmd.colorscheme("ayu-mirage")
         end
     }
 }, opts)
