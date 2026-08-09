@@ -304,7 +304,13 @@ require("lazy").setup({
     { 
         'shatur/neovim-ayu',
         config = function()
-            vim.cmd.colorscheme("ayu-mirage")
+            -- vim.cmd.colorscheme("ayu-mirage")
+        end
+    },
+    {
+        "blazkowolf/gruber-darker.nvim" ,
+        config = function() 
+            vim.cmd.colorscheme("gruber-darker")
         end
     }
 }, opts)
