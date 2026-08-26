@@ -1,3 +1,5 @@
-BREW_BIN=$(which brew)
+#!/usr/bin/env bash
 
-echo $BREW_BIN
+set -euo pipefail
+
+stow -R git --dotfiles
