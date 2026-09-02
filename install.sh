@@ -3,3 +3,4 @@
 set -euo pipefail
 
 stow -R git --dotfiles
+stow -R syncthing

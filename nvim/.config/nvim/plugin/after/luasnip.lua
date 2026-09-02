@@ -457,6 +457,23 @@ ls.add_snippets("sh", {
     }),
 })
 
+ls.add_snippets("html", {
+    s("!!",
+        fmt([[
+        <!DOCTYPE html>
+        <html>
+            <head>
+            </head>
+            <body>
+                {body}
+            </body>
+        </html>
+        ]], {
+            body = i(0)
+        })
+    ),
+})
+
 
 
 -- Todo add this snippet to sql to show which tables references an id in their FK

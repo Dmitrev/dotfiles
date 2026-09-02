@@ -18,14 +18,6 @@ export PHPENV_ROOT="$HOME/.local/apps/phpenv"
 # makes sure to compile libararies
 export PHP_CONFIGURE_OPTIONS="--with-sodium --with-tidy --with-xsl --with-zip --with-pdo-mysql --with-mysqli"
 
-# EBS install
-if [[ "$os" == "Linux" ]]; then
-  export PYENV_ROOT="$HOME/deps/pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-fi
-eval "$(pyenv init -)"
-## END EBS install
-
 # GOlang
 export CGO_ENABLED=1 # required for building cgo packages
 export PATH=$PATH:/usr/local/go/bin
@@ -101,25 +93,11 @@ alias myip='curl checkip.amazonaws.com'
 # random useful stuff
 alias last_downloaded_file="ls -t ~/Downloads | head -n 1 | xargs -I {} echo '$HOME/Downloads/{}'"
 
-# Set keybindings for PopOS tiler
-
-if [[ "$os" == "Linux" ]]; then
-  gsettings set org.gnome.mutter dynamic-workspaces false
-  gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
-  for i in {1..9} 
-  do
-    gsettings set "org.gnome.shell.keybindings" "switch-to-application-$i" "[]"
-    gsettings set "org.gnome.desktop.wm.keybindings" "switch-to-workspace-$i" "['<Super>${i}']"
-    gsettings set "org.gnome.desktop.wm.keybindings" "move-to-workspace-$i" "['<Super><Shift>${i}']"
-  done
-fi
-
 # optional config (-s check if file not empty)
 [ -s "$HOME/goodlord-config/zsh" ] && source "$HOME/goodlord-config/zsh"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-eval "$(/home/dmitri/.local/bin/mise activate zsh)"
 
 # opencode
 export PATH=/home/dmitri/.opencode/bin:$PATH

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Syncthing Web UI
+Exec=xdg-open http://localhost:8384
+Icon=syncthing
+Type=Application
+Categories=Network;
