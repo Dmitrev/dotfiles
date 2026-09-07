@@ -317,7 +317,24 @@ require("lazy").setup({
             vim.g.gruvbox_material_enable_italic = false
             vim.g.gruvbox_material_disable_italic_comment = true
             vim.g.gruvbox_material_foreground = 'original'
-            vim.cmd.colorscheme('gruvbox-material')
+            -- vim.cmd.colorscheme('gruvbox-material')
+        end
+    }, {
+        "rebelot/kanagawa.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme('kanagawa')
+        end
+    },
+    {
+        "navarasu/onedark.nvim",
+        priority = 1000, -- make sure to load this before all the other start plugins
+        config = function()
+            -- require('onedark').setup {
+            --     style = 'warm'
+            -- }
+            -- require('onedark').load()
         end
     }
 }, opts)
