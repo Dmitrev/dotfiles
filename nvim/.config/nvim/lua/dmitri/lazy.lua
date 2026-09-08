@@ -324,7 +324,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme('kanagawa')
+            -- vim.cmd.colorscheme('kanagawa')
         end
     },
     {
@@ -335,6 +335,13 @@ require("lazy").setup({
             --     style = 'warm'
             -- }
             -- require('onedark').load()
+        end
+    },
+    {
+        "nyoom-engineering/oxocarbon.nvim",
+        build = false,
+        config = function()
+            vim.cmd.colorscheme('oxocarbon')
         end
     }
 }, opts)
