@@ -341,7 +341,20 @@ require("lazy").setup({
         "nyoom-engineering/oxocarbon.nvim",
         build = false,
         config = function()
-            vim.cmd.colorscheme('oxocarbon')
+            -- vim.cmd.colorscheme('oxocarbon')
+        end
+    },
+    { 
+        "blazkowolf/gruber-darker.nvim" ,
+        config = function()
+            require('gruber-darker').setup({
+              italic = {
+                strings = false,
+                comments = false,
+                folds = false,
+              },
+            })
+            vim.cmd.colorscheme('gruber-darker')
         end
     }
 }, opts)
