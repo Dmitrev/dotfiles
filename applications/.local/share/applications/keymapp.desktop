@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Keymapp
+Exec=~/.local/apps/keymapp/keymapp
+Icon=~/.local/apps/keymapp/icon.png
+Type=Application
+
