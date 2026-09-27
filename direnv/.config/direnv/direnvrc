@@ -1,0 +1,3 @@
+use_phpenv() {
+  PATH_add "$(phpenv prefix)/bin"
+}
