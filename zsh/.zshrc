@@ -109,3 +109,61 @@ export PATH=/home/dmitri/.opencode/bin:$PATH
 #fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
+# ─── Bastion (Goodlord) ─────────────────────────────────────────────
+BASTION_DEFAULT=green
+
+prod() {
+  case "${1:-$BASTION_DEFAULT}" in
+    --legacy|legacy) ssossh EngineersProductionAccountAccess bastion-prod bash ;;
+    --green|green)   ssossh EngineersProductionAccountAccess bastion-green zsh prod ;;
+    *)               ssossh EngineersProductionAccountAccess bastion-green zsh prod ;;
+  esac
+}
+
+support() {
+  case "${1:-$BASTION_DEFAULT}" in
+    --legacy|legacy) ssossh EngineersProductionAccountAccess bastion-support bash ;;
+    --green|green)   ssossh EngineersProductionAccountAccess bastion-green zsh support ;;
+    *)               ssossh EngineersProductionAccountAccess bastion-green zsh support ;;
+  esac
+}
+
+demo() {
+  case "${1:-$BASTION_DEFAULT}" in
+    --legacy|legacy) ssossh EngineersProductionAccountAccess bastion-prod bash ;;
+    --green|green)   ssossh EngineersProductionAccountAccess bastion-green zsh demo ;;
+    *)               ssossh EngineersProductionAccountAccess bastion-green zsh demo ;;
+  esac
+}
+
+staging() {
+  case "${1:-$BASTION_DEFAULT}" in
+    --legacy|legacy) ssossh EngineersStagingAccountAccess bastion-staging bash ;;
+    --green|green)   ssossh EngineersStagingAccountAccess bastion-green zsh staging ;;
+    *)               ssossh EngineersStagingAccountAccess bastion-green zsh staging ;;
+  esac
+}
+
+qa() {
+  case "${1:-$BASTION_DEFAULT}" in
+    --legacy|legacy) ssossh EngineersStagingAccountAccess bastion-staging bash ;;
+    --green|green)   ssossh EngineersStagingAccountAccess bastion-green zsh qa ;;
+    *)               ssossh EngineersStagingAccountAccess bastion-green zsh qa ;;
+  esac
+}
+
+ssossh() {
+  local profile="$1" host="$2" rshell="$3" kubectx_context="${4:-}"
+  if ! aws sts get-caller-identity --profile "$profile" &>/dev/null; then
+    aws sso login --profile "$profile"
+  fi
+  local env_vars
+  env_vars="$(aws configure export-credentials --profile "$profile" --format env-no-export | tr '\n' ' ')"
+  if [ -n "$kubectx_context" ]; then
+    ssh -t "$host" "$env_vars ZDOTDIR=~/.kube-contexts/$kubectx_context $rshell -l"
+  else
+    ssh -t "$host" "$env_vars" "$rshell" -l
+  fi
+}
+# ─── End Bastion ─────────────────────────────────────────────────────
