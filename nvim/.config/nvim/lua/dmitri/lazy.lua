@@ -324,7 +324,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme('kanagawa')
+            -- vim.cmd.colorscheme('kanagawa')
         end
     },
     {
@@ -362,7 +362,7 @@ require("lazy").setup({
         name = "catppuccin",
         priority = 1000,
         config = function()
-            -- vim.cmd.colorscheme("catppuccin-mocha")
+            vim.cmd.colorscheme("catppuccin-mocha")
         end
     },
     {

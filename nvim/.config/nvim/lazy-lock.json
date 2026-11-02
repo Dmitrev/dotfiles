@@ -21,6 +21,7 @@
   "kanagawa.nvim": { "branch": "master", "commit": "bb85e4bfc8d89b0e62c8fa53ccdd13d12e2f77b3" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "lspkind.nvim": { "branch": "master", "commit": "c7274c48137396526b59d86232eabcdc7fed8a32" },
+  "modus-themes.nvim": { "branch": "master", "commit": "15ffb5ab6a12f72ee1e8393fe5810d5317da2d3e" },
   "neodev.nvim": { "branch": "main", "commit": "46aa467dca16cf3dfe27098042402066d2ae242d" },
   "neovim-ayu": { "branch": "master", "commit": "e5a9f0fa2918d6b5f57c21b3ac014314ee5e41c8" },
   "nvim-cmp": { "branch": "main", "commit": "2ffe79f1f021def8dd1fcd81deb16f1bb0d989f3" },
